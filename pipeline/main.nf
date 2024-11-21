@@ -1,13 +1,15 @@
 #!/usr/bin/env nextflow
-// hash:sha256:9adc2de5f9411ef0538cd69273b2723031918991d657b307516e4fda1673f310
+// hash:sha256:37cce80dbec1221d073dcb8d4b06403b80b061c3c2a1f13c8db71201c4aa6898
 
 nextflow.enable.dsl = 1
 
 params.fip_url = 's3://aind-scratch-data/behavior_700708_2024-06-13_09-06-26'
 
-fip_to_copy_of_nwb_packaging_subject_capsule_1 = channel.fromPath(params.fip_url + "/*", type: 'any')
+fip_to_copy_of_nwb_packaging_subject_capsule_1 = channel.fromPath(params.fip_url + "/", type: 'any')
 capsule_copy_of_nwb_packaging_subject_capsule_1_to_capsule_nwb_packaging_fiber_photometry_base_capsule_8_2 = channel.create()
-capsule_nwb_packaging_fiber_photometry_base_capsule_8_to_capsule_aind_fip_dff_9_3 = channel.create()
+fip_to_nwb_packaging_fiberphotometry_base_capsule_3 = channel.fromPath(params.fip_url + "/", type: 'any')
+capsule_nwb_packaging_fiber_photometry_base_capsule_8_to_capsule_aind_fip_dff_9_4 = channel.create()
+fip_to_aind_fip_dff_5 = channel.fromPath(params.fip_url + "/", type: 'any')
 
 // capsule - Copy of NWB-Packaging-Subject-Capsule
 process capsule_copy_of_nwb_packaging_subject_capsule_1 {
@@ -18,7 +20,7 @@ process capsule_copy_of_nwb_packaging_subject_capsule_1 {
 	memory '8 GB'
 
 	input:
-	path 'capsule/data/' from fip_to_copy_of_nwb_packaging_subject_capsule_1
+	path 'capsule/data/fiber_session' from fip_to_copy_of_nwb_packaging_subject_capsule_1.collect()
 
 	output:
 	path 'capsule/results/*' into capsule_copy_of_nwb_packaging_subject_capsule_1_to_capsule_nwb_packaging_fiber_photometry_base_capsule_8_2
@@ -60,10 +62,11 @@ process capsule_nwb_packaging_fiber_photometry_base_capsule_8 {
 	memory '8 GB'
 
 	input:
-	path 'capsule/data/' from capsule_copy_of_nwb_packaging_subject_capsule_1_to_capsule_nwb_packaging_fiber_photometry_base_capsule_8_2
+	path 'capsule/data/nwb/' from capsule_copy_of_nwb_packaging_subject_capsule_1_to_capsule_nwb_packaging_fiber_photometry_base_capsule_8_2.collect()
+	path 'capsule/data/fiber_raw_data' from fip_to_nwb_packaging_fiberphotometry_base_capsule_3.collect()
 
 	output:
-	path 'capsule/results/*' into capsule_nwb_packaging_fiber_photometry_base_capsule_8_to_capsule_aind_fip_dff_9_3
+	path 'capsule/results/*' into capsule_nwb_packaging_fiber_photometry_base_capsule_8_to_capsule_aind_fip_dff_9_4
 
 	script:
 	"""
@@ -104,7 +107,8 @@ process capsule_aind_fip_dff_9 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from capsule_nwb_packaging_fiber_photometry_base_capsule_8_to_capsule_aind_fip_dff_9_3
+	path 'capsule/data/' from capsule_nwb_packaging_fiber_photometry_base_capsule_8_to_capsule_aind_fip_dff_9_4.collect()
+	path 'capsule/data/fiber_raw_data' from fip_to_aind_fip_dff_5.collect()
 
 	output:
 	path 'capsule/results/*'

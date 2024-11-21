@@ -19,7 +19,9 @@
 					"source_id": "bf811465-ed52-438d-ae82-7c68c98df056",
 					"type": "dataset",
 					"name": "FIP",
-					"source_path": "FIP/"
+					"source_path": "FIP/",
+					"target_path": "fiber_session",
+					"collect": true
 				}
 			]
 		},
@@ -39,7 +41,18 @@
 					"id": "2d1e7tXRLXsoozXD",
 					"source_id": "capsule_copy_of_nwb_packaging_subject_capsule_1",
 					"type": "capsule",
-					"name": "Copy of NWB-Packaging-Subject-Capsule"
+					"name": "Copy of NWB-Packaging-Subject-Capsule",
+					"target_path": "nwb",
+					"collect": true
+				},
+				{
+					"id": "p9aSsO4shppoXYDn",
+					"source_id": "bf811465-ed52-438d-ae82-7c68c98df056",
+					"type": "dataset",
+					"name": "FIP",
+					"source_path": "FIP/",
+					"target_path": "fiber_raw_data",
+					"collect": true
 				}
 			]
 		},
@@ -59,7 +72,17 @@
 					"id": "Y0lnRRTu1d2F9VKU",
 					"source_id": "capsule_nwb_packaging_fiber_photometry_base_capsule_8",
 					"type": "capsule",
-					"name": "NWB-Packaging-FiberPhotometry-Base-Capsule"
+					"name": "NWB-Packaging-FiberPhotometry-Base-Capsule",
+					"collect": true
+				},
+				{
+					"id": "igacaEDRzylO5BS6",
+					"source_id": "bf811465-ed52-438d-ae82-7c68c98df056",
+					"type": "dataset",
+					"name": "FIP",
+					"source_path": "FIP/",
+					"target_path": "fiber_raw_data/",
+					"collect": true
 				}
 			],
 			"results": {

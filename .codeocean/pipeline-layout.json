@@ -19,6 +19,16 @@
 			"id": "reactflow__edge-capsule_aind_fip_dff_9-results",
 			"source": "capsule_aind_fip_dff_9",
 			"target": "results"
+		},
+		{
+			"id": "reactflow__edge-bf811465-ed52-438d-ae82-7c68c98df056-capsule_nwb_packaging_fiber_photometry_base_capsule_8",
+			"source": "bf811465-ed52-438d-ae82-7c68c98df056",
+			"target": "capsule_nwb_packaging_fiber_photometry_base_capsule_8"
+		},
+		{
+			"id": "reactflow__edge-bf811465-ed52-438d-ae82-7c68c98df056-capsule_aind_fip_dff_9",
+			"source": "bf811465-ed52-438d-ae82-7c68c98df056",
+			"target": "capsule_aind_fip_dff_9"
 		}
 	],
 	"nodes": [
@@ -76,10 +86,10 @@
 			"type": "dataset"
 		}
 	],
-	"timestamp": 1732215225814,
+	"timestamp": 1732215312880,
 	"viewport": {
-		"x": 166.91807408833307,
-		"y": 305.42542382559986,
+		"x": 153.91807408833307,
+		"y": 313.42542382559986,
 		"zoom": 0.3322480174207812
 	}
 }
