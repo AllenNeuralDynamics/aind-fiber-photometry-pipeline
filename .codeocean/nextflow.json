@@ -1,0 +1,70 @@
+{
+	"version": 1,
+	"processes": [
+		{
+			"name": "capsule_copy_of_nwb_packaging_subject_capsule_1",
+			"capsule": {
+				"id": "fbc2117a-512e-4687-ad90-dc1a67c5bb90",
+				"name": "Copy of NWB-Packaging-Subject-Capsule",
+				"slug": "9127683",
+				"app_panel": true
+			},
+			"resources": {
+				"cpus": 1,
+				"memory": 8
+			},
+			"inputs": [
+				{
+					"id": "rJWWSVOqDEYWnnyr",
+					"source_id": "bf811465-ed52-438d-ae82-7c68c98df056",
+					"type": "dataset",
+					"name": "FIP",
+					"source_path": "FIP/"
+				}
+			]
+		},
+		{
+			"name": "capsule_nwb_packaging_fiber_photometry_base_capsule_8",
+			"capsule": {
+				"id": "1117b9cd-46d6-4804-95bd-7349051dc910",
+				"name": "NWB-Packaging-FiberPhotometry-Base-Capsule",
+				"slug": "9216710"
+			},
+			"resources": {
+				"cpus": 1,
+				"memory": 8
+			},
+			"inputs": [
+				{
+					"id": "2d1e7tXRLXsoozXD",
+					"source_id": "capsule_copy_of_nwb_packaging_subject_capsule_1",
+					"type": "capsule",
+					"name": "Copy of NWB-Packaging-Subject-Capsule"
+				}
+			]
+		},
+		{
+			"name": "capsule_aind_fip_dff_9",
+			"capsule": {
+				"id": "26792844-1b2c-400d-8514-42d58028e5e5",
+				"name": "aind-fip-dff",
+				"slug": "3526719"
+			},
+			"resources": {
+				"cpus": 1,
+				"memory": 8
+			},
+			"inputs": [
+				{
+					"id": "Y0lnRRTu1d2F9VKU",
+					"source_id": "capsule_nwb_packaging_fiber_photometry_base_capsule_8",
+					"type": "capsule",
+					"name": "NWB-Packaging-FiberPhotometry-Base-Capsule"
+				}
+			],
+			"results": {
+				"id": "26792844-1b2c-400d-8514-42d58028e5e5"
+			}
+		}
+	]
+}

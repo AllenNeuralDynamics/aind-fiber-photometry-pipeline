@@ -1,0 +1,85 @@
+{
+	"edges": [
+		{
+			"id": "reactflow__edge-bf811465-ed52-438d-ae82-7c68c98df056-capsule_copy_of_nwb_packaging_subject_capsule_1",
+			"source": "bf811465-ed52-438d-ae82-7c68c98df056",
+			"target": "capsule_copy_of_nwb_packaging_subject_capsule_1"
+		},
+		{
+			"id": "reactflow__edge-capsule_copy_of_nwb_packaging_subject_capsule_1-capsule_nwb_packaging_fiber_photometry_base_capsule_8",
+			"source": "capsule_copy_of_nwb_packaging_subject_capsule_1",
+			"target": "capsule_nwb_packaging_fiber_photometry_base_capsule_8"
+		},
+		{
+			"id": "reactflow__edge-capsule_nwb_packaging_fiber_photometry_base_capsule_8-capsule_aind_fip_dff_9",
+			"source": "capsule_nwb_packaging_fiber_photometry_base_capsule_8",
+			"target": "capsule_aind_fip_dff_9"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_fip_dff_9-results",
+			"source": "capsule_aind_fip_dff_9",
+			"target": "results"
+		}
+	],
+	"nodes": [
+		{
+			"data": {
+				"capsule_id": "fbc2117a-512e-4687-ad90-dc1a67c5bb90"
+			},
+			"id": "capsule_copy_of_nwb_packaging_subject_capsule_1",
+			"position": {
+				"x": 189.86396488192054,
+				"y": -389.1433078531437
+			},
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"id": "results",
+			"position": {
+				"x": 321.1285581505249,
+				"y": 476.6990452763985
+			},
+			"selected": false,
+			"type": "results"
+		},
+		{
+			"data": {
+				"capsule_id": "1117b9cd-46d6-4804-95bd-7349051dc910"
+			},
+			"id": "capsule_nwb_packaging_fiber_photometry_base_capsule_8",
+			"position": {
+				"x": 229.793962660822,
+				"y": -88.16333278423826
+			},
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "26792844-1b2c-400d-8514-42d58028e5e5"
+			},
+			"id": "capsule_aind_fip_dff_9",
+			"position": {
+				"x": 320.0879551814937,
+				"y": 173.68924552570974
+			},
+			"selected": true,
+			"type": "capsule"
+		},
+		{
+			"id": "bf811465-ed52-438d-ae82-7c68c98df056",
+			"position": {
+				"x": 714.37172252176,
+				"y": -608.8586896534448
+			},
+			"type": "dataset"
+		}
+	],
+	"timestamp": 1732215225814,
+	"viewport": {
+		"x": 166.91807408833307,
+		"y": 305.42542382559986,
+		"zoom": 0.3322480174207812
+	}
+}
