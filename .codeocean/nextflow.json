@@ -8,7 +8,6 @@
 				"name": "NWB-Packaging-Subject-Capsule",
 				"slug": "1748641",
 				"commit": "0817b7aa432c788d00c49aab0fa5da19a5199d07",
-				"image_tag": "cfac593fe3228c6ee40d14cd2f3509e0",
 				"app_panel": true
 			},
 			"resources": {
@@ -18,43 +17,11 @@
 			"inputs": [
 				{
 					"id": "rJWWSVOqDEYWnnyr",
-					"source_id": "bf811465-ed52-438d-ae82-7c68c98df056",
+					"source_id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
 					"type": "dataset",
 					"name": "FIP",
 					"source_path": "FIP/",
 					"target_path": "fiber_session",
-					"collect": true
-				}
-			]
-		},
-		{
-			"name": "capsule_nwb_packaging_fiber_photometry_base_capsule_8",
-			"capsule": {
-				"id": "e45742e4-7920-4985-ba36-262bc891377a",
-				"name": "aind-FiberPhotometry-Base-NWB-Capsule",
-				"slug": "0550370",
-				"version": 3
-			},
-			"resources": {
-				"cpus": 1,
-				"memory": 8
-			},
-			"inputs": [
-				{
-					"id": "2d1e7tXRLXsoozXD",
-					"source_id": "capsule_nwb_packaging_subject_capsule_1",
-					"type": "capsule",
-					"name": "NWB-Packaging-Subject-Capsule",
-					"target_path": "nwb",
-					"collect": true
-				},
-				{
-					"id": "p9aSsO4shppoXYDn",
-					"source_id": "bf811465-ed52-438d-ae82-7c68c98df056",
-					"type": "dataset",
-					"name": "FIP",
-					"source_path": "FIP/",
-					"target_path": "fiber_raw_data",
 					"collect": true
 				}
 			]
@@ -65,7 +32,7 @@
 				"id": "603a2149-6281-4a7b-bbd6-ff50ca0e064e",
 				"name": "aind-fip-dff",
 				"slug": "1001867",
-				"version": 1
+				"version": 2
 			},
 			"resources": {
 				"cpus": 1,
@@ -73,15 +40,14 @@
 			},
 			"inputs": [
 				{
-					"id": "Y0lnRRTu1d2F9VKU",
-					"source_id": "capsule_nwb_packaging_fiber_photometry_base_capsule_8",
+					"id": "4xi4xliOnCsyNxWr",
+					"source_id": "capsule_aind_fiber_photometry_base_nwb_capsule_10",
 					"type": "capsule",
-					"name": "NWB-Packaging-FiberPhotometry-Base-Capsule",
-					"collect": true
+					"name": "aind-FiberPhotometry-Base-NWB-Capsule"
 				},
 				{
 					"id": "igacaEDRzylO5BS6",
-					"source_id": "bf811465-ed52-438d-ae82-7c68c98df056",
+					"source_id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
 					"type": "dataset",
 					"name": "FIP",
 					"source_path": "FIP/",
@@ -90,8 +56,40 @@
 				}
 			],
 			"results": {
-				"id": "26792844-1b2c-400d-8514-42d58028e5e5"
+				"id": "603a2149-6281-4a7b-bbd6-ff50ca0e064e"
 			}
+		},
+		{
+			"name": "capsule_aind_fiber_photometry_base_nwb_capsule_10",
+			"capsule": {
+				"id": "e45742e4-7920-4985-ba36-262bc891377a",
+				"name": "aind-FiberPhotometry-Base-NWB-Capsule",
+				"slug": "0550370",
+				"version": 6
+			},
+			"resources": {
+				"cpus": 1,
+				"memory": 8
+			},
+			"inputs": [
+				{
+					"id": "6fXBc26LcMT5gcIN",
+					"source_id": "capsule_nwb_packaging_subject_capsule_1",
+					"type": "capsule",
+					"name": "NWB-Packaging-Subject-Capsule",
+					"target_path": "nwb",
+					"collect": true
+				},
+				{
+					"id": "djG6gHrBuu8yAY60",
+					"source_id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
+					"type": "dataset",
+					"name": "FIP",
+					"source_path": "FIP/",
+					"target_path": "fiber_raw_data/",
+					"collect": true
+				}
+			]
 		}
 	]
 }
