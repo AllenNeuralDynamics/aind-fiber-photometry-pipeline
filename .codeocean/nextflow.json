@@ -32,7 +32,7 @@
 				"id": "603a2149-6281-4a7b-bbd6-ff50ca0e064e",
 				"name": "aind-fip-dff",
 				"slug": "1001867",
-				"version": 2
+				"version": 3
 			},
 			"resources": {
 				"cpus": 1,
