@@ -2,24 +2,8 @@
 	"version": 1,
 	"attached_datasets": [
 		{
-			"id": "04ec3aac-9121-40d5-9a78-a0cfe3154782",
-			"mount": "FIP_old_old"
-		},
-		{
-			"id": "056c3593-2289-401e-8e89-ff76016dd0e4",
-			"mount": "FIP_OLD"
-		},
-		{
-			"id": "09adf0cb-dccc-48e5-8c5f-323a091895a6",
-			"mount": "FIB"
-		},
-		{
 			"id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
 			"mount": "FIP"
-		},
-		{
-			"id": "f86bf546-7f31-47c0-a215-d4fe8e52991c",
-			"mount": "FIP_NEW_NEW"
 		}
 	]
 }

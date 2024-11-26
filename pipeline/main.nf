@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:ff27f87ddb153a0be7e1b09184d5cca43803c3084d95d8f0825a414f79e6d7a7
+// hash:sha256:c3bb2c7dfe8d7bda5090af95d6e0794410034393985729d392f50fa132178fcd
 
 nextflow.enable.dsl = 1
 
@@ -14,7 +14,7 @@ fip_to_aind_fiberphotometry_base_nwb_capsule_5 = channel.fromPath(params.fip_url
 // capsule - NWB-Packaging-Subject-Capsule
 process capsule_nwb_packaging_subject_capsule_1 {
 	tag 'capsule-1748641'
-	container "$REGISTRY_HOST/capsule/dde17e00-2bad-4ceb-a00e-699ec25aca64"
+	container "$REGISTRY_HOST/capsule/dde17e00-2bad-4ceb-a00e-699ec25aca64:cfac593fe3228c6ee40d14cd2f3509e0"
 
 	cpus 1
 	memory '8 GB'
