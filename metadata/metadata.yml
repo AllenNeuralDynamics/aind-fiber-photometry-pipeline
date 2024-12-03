@@ -1,5 +1,8 @@
 metadata_version: 1
 name: FiberPhotometry NWB Packaging Pipeline
+description: Fiber NWB Packaging pipeline
 tags:
 - FIP
 - NWB
+authors:
+- name: Ahad Bawany
