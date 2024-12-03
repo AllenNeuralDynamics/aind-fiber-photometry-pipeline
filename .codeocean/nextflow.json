@@ -4,11 +4,10 @@
 		{
 			"name": "capsule_nwb_packaging_subject_capsule_1",
 			"capsule": {
-				"id": "dde17e00-2bad-4ceb-a00e-699ec25aca64",
+				"id": "bdc9f09f-0005-4d09-aaf9-7e82abd93f19",
 				"name": "NWB-Packaging-Subject-Capsule",
-				"slug": "1748641",
-				"commit": "0817b7aa432c788d00c49aab0fa5da19a5199d07",
-				"image_tag": "cfac593fe3228c6ee40d14cd2f3509e0",
+				"slug": "8198603",
+				"version": 2,
 				"app_panel": true
 			},
 			"resources": {

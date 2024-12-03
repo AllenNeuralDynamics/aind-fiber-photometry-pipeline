@@ -22,6 +22,7 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_nwb_packaging_subject_capsule_1-capsule_aind_fiber_photometry_base_nwb_capsule_10",
+			"selected": false,
 			"source": "capsule_nwb_packaging_subject_capsule_1",
 			"target": "capsule_aind_fiber_photometry_base_nwb_capsule_10"
 		},
@@ -43,7 +44,7 @@
 		},
 		{
 			"data": {
-				"capsule_id": "dde17e00-2bad-4ceb-a00e-699ec25aca64"
+				"capsule_id": "bdc9f09f-0005-4d09-aaf9-7e82abd93f19"
 			},
 			"id": "capsule_nwb_packaging_subject_capsule_1",
 			"position": {
@@ -82,9 +83,14 @@
 				"x": 346.75462184816047,
 				"y": 215.02257885904305
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1732312722956
+	"timestamp": 1733252202511,
+	"viewport": {
+		"x": 107.12766879003672,
+		"y": 467.4746457435232,
+		"zoom": 0.3823046653717918
+	}
 }

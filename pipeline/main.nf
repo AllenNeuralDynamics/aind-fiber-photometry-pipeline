@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:c3bb2c7dfe8d7bda5090af95d6e0794410034393985729d392f50fa132178fcd
+// hash:sha256:0e20cdcd15cd81bbceee66034cd3bc5725d322b48f329a3c2287db3c67b97eca
 
 nextflow.enable.dsl = 1
 
@@ -13,8 +13,8 @@ fip_to_aind_fiberphotometry_base_nwb_capsule_5 = channel.fromPath(params.fip_url
 
 // capsule - NWB-Packaging-Subject-Capsule
 process capsule_nwb_packaging_subject_capsule_1 {
-	tag 'capsule-1748641'
-	container "$REGISTRY_HOST/capsule/dde17e00-2bad-4ceb-a00e-699ec25aca64:cfac593fe3228c6ee40d14cd2f3509e0"
+	tag 'capsule-8198603'
+	container "$REGISTRY_HOST/published/bdc9f09f-0005-4d09-aaf9-7e82abd93f19:v2"
 
 	cpus 1
 	memory '8 GB'
@@ -30,7 +30,7 @@ process capsule_nwb_packaging_subject_capsule_1 {
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=dde17e00-2bad-4ceb-a00e-699ec25aca64
+	export CO_CAPSULE_ID=bdc9f09f-0005-4d09-aaf9-7e82abd93f19
 	export CO_CPUS=1
 	export CO_MEMORY=8589934592
 
@@ -40,8 +40,7 @@ process capsule_nwb_packaging_subject_capsule_1 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1748641.git" capsule-repo
-	git -C capsule-repo checkout 0817b7aa432c788d00c49aab0fa5da19a5199d07 --quiet
+	git clone --branch v2.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8198603.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
