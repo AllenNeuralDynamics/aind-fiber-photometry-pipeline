@@ -32,7 +32,7 @@
 				"id": "603a2149-6281-4a7b-bbd6-ff50ca0e064e",
 				"name": "aind-fip-dff",
 				"slug": "1001867",
-				"version": 3
+				"version": 6
 			},
 			"resources": {
 				"cpus": 1,
@@ -41,9 +41,9 @@
 			"inputs": [
 				{
 					"id": "4xi4xliOnCsyNxWr",
-					"source_id": "capsule_aind_fiber_photometry_base_nwb_capsule_10",
+					"source_id": "capsule_aind_fip_nwb_base_capsule_10",
 					"type": "capsule",
-					"name": "aind-FiberPhotometry-Base-NWB-Capsule"
+					"name": "aind-fip-nwb-base-capsule"
 				},
 				{
 					"id": "igacaEDRzylO5BS6",
@@ -60,12 +60,12 @@
 			}
 		},
 		{
-			"name": "capsule_aind_fiber_photometry_base_nwb_capsule_10",
+			"name": "capsule_aind_fip_nwb_base_capsule_10",
 			"capsule": {
 				"id": "e45742e4-7920-4985-ba36-262bc891377a",
-				"name": "aind-FiberPhotometry-Base-NWB-Capsule",
+				"name": "aind-fip-nwb-base-capsule",
 				"slug": "0550370",
-				"version": 6
+				"version": 10
 			},
 			"resources": {
 				"cpus": 1,

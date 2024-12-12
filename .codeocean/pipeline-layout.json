@@ -16,20 +16,19 @@
 			"target": "capsule_aind_fip_dff_9"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_fiber_photometry_base_nwb_capsule_10-capsule_aind_fip_dff_9",
-			"source": "capsule_aind_fiber_photometry_base_nwb_capsule_10",
+			"id": "reactflow__edge-capsule_aind_fip_nwb_base_capsule_10-capsule_aind_fip_dff_9",
+			"source": "capsule_aind_fip_nwb_base_capsule_10",
 			"target": "capsule_aind_fip_dff_9"
 		},
 		{
-			"id": "reactflow__edge-capsule_nwb_packaging_subject_capsule_1-capsule_aind_fiber_photometry_base_nwb_capsule_10",
-			"selected": false,
+			"id": "reactflow__edge-capsule_nwb_packaging_subject_capsule_1-capsule_aind_fip_nwb_base_capsule_10",
 			"source": "capsule_nwb_packaging_subject_capsule_1",
-			"target": "capsule_aind_fiber_photometry_base_nwb_capsule_10"
+			"target": "capsule_aind_fip_nwb_base_capsule_10"
 		},
 		{
-			"id": "reactflow__edge-d46f8f0e-b8fe-41e1-8048-5d36d7460612-capsule_aind_fiber_photometry_base_nwb_capsule_10",
+			"id": "reactflow__edge-d46f8f0e-b8fe-41e1-8048-5d36d7460612-capsule_aind_fip_nwb_base_capsule_10",
 			"source": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
-			"target": "capsule_aind_fiber_photometry_base_nwb_capsule_10"
+			"target": "capsule_aind_fip_nwb_base_capsule_10"
 		}
 	],
 	"nodes": [
@@ -41,6 +40,26 @@
 			},
 			"selected": false,
 			"type": "results"
+		},
+		{
+			"id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
+			"position": {
+				"x": 714.37172252176,
+				"y": -608.8586896534448
+			},
+			"type": "dataset"
+		},
+		{
+			"data": {
+				"capsule_id": "603a2149-6281-4a7b-bbd6-ff50ca0e064e"
+			},
+			"id": "capsule_aind_fip_dff_9",
+			"position": {
+				"x": 346.75462184816047,
+				"y": 215.02257885904305
+			},
+			"selected": false,
+			"type": "capsule"
 		},
 		{
 			"data": {
@@ -55,42 +74,17 @@
 			"type": "capsule"
 		},
 		{
-			"id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
-			"position": {
-				"x": 714.37172252176,
-				"y": -608.8586896534448
-			},
-			"type": "dataset"
-		},
-		{
 			"data": {
 				"capsule_id": "e45742e4-7920-4985-ba36-262bc891377a"
 			},
-			"id": "capsule_aind_fiber_photometry_base_nwb_capsule_10",
+			"id": "capsule_aind_fip_nwb_base_capsule_10",
 			"position": {
 				"x": 236.35555013020848,
 				"y": -137.15555826822916
 			},
-			"selected": false,
-			"type": "capsule"
-		},
-		{
-			"data": {
-				"capsule_id": "603a2149-6281-4a7b-bbd6-ff50ca0e064e"
-			},
-			"id": "capsule_aind_fip_dff_9",
-			"position": {
-				"x": 346.75462184816047,
-				"y": 215.02257885904305
-			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1733252202511,
-	"viewport": {
-		"x": 107.12766879003672,
-		"y": 467.4746457435232,
-		"zoom": 0.3823046653717918
-	}
+	"timestamp": 1733773276246
 }

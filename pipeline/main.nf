@@ -1,15 +1,15 @@
 #!/usr/bin/env nextflow
-// hash:sha256:0e20cdcd15cd81bbceee66034cd3bc5725d322b48f329a3c2287db3c67b97eca
+// hash:sha256:97839ee332f8afd4c72bf1351b80b2351214c621d5f6c083e92fe3630c127692
 
 nextflow.enable.dsl = 1
 
 params.fip_url = 's3://aind-private-data-prod-o5171v/behavior_752703_2024-11-20_13-01-14'
 
 fip_to_nwb_packaging_subject_capsule_1 = channel.fromPath(params.fip_url + "/", type: 'any')
-capsule_aind_fiber_photometry_base_nwb_capsule_10_to_capsule_aind_fip_dff_9_2 = channel.create()
+capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_fip_dff_9_2 = channel.create()
 fip_to_aind_fip_dff_3 = channel.fromPath(params.fip_url + "/", type: 'any')
-capsule_nwb_packaging_subject_capsule_1_to_capsule_aind_fiber_photometry_base_nwb_capsule_10_4 = channel.create()
-fip_to_aind_fiberphotometry_base_nwb_capsule_5 = channel.fromPath(params.fip_url + "/", type: 'any')
+capsule_nwb_packaging_subject_capsule_1_to_capsule_aind_fip_nwb_base_capsule_10_4 = channel.create()
+fip_to_aind_fip_nwb_base_capsule_5 = channel.fromPath(params.fip_url + "/", type: 'any')
 
 // capsule - NWB-Packaging-Subject-Capsule
 process capsule_nwb_packaging_subject_capsule_1 {
@@ -23,7 +23,7 @@ process capsule_nwb_packaging_subject_capsule_1 {
 	path 'capsule/data/fiber_session' from fip_to_nwb_packaging_subject_capsule_1.collect()
 
 	output:
-	path 'capsule/results/*' into capsule_nwb_packaging_subject_capsule_1_to_capsule_aind_fiber_photometry_base_nwb_capsule_10_4
+	path 'capsule/results/*' into capsule_nwb_packaging_subject_capsule_1_to_capsule_aind_fip_nwb_base_capsule_10_4
 
 	script:
 	"""
@@ -56,7 +56,7 @@ process capsule_nwb_packaging_subject_capsule_1 {
 // capsule - aind-fip-dff
 process capsule_aind_fip_dff_9 {
 	tag 'capsule-1001867'
-	container "$REGISTRY_HOST/published/603a2149-6281-4a7b-bbd6-ff50ca0e064e:v3"
+	container "$REGISTRY_HOST/published/603a2149-6281-4a7b-bbd6-ff50ca0e064e:v6"
 
 	cpus 1
 	memory '8 GB'
@@ -64,7 +64,7 @@ process capsule_aind_fip_dff_9 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from capsule_aind_fiber_photometry_base_nwb_capsule_10_to_capsule_aind_fip_dff_9_2
+	path 'capsule/data/' from capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_fip_dff_9_2
 	path 'capsule/data/fiber_raw_data' from fip_to_aind_fip_dff_3.collect()
 
 	output:
@@ -85,7 +85,7 @@ process capsule_aind_fip_dff_9 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v3.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1001867.git" capsule-repo
+	git clone --branch v6.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1001867.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -98,20 +98,20 @@ process capsule_aind_fip_dff_9 {
 	"""
 }
 
-// capsule - aind-FiberPhotometry-Base-NWB-Capsule
-process capsule_aind_fiber_photometry_base_nwb_capsule_10 {
+// capsule - aind-fip-nwb-base-capsule
+process capsule_aind_fip_nwb_base_capsule_10 {
 	tag 'capsule-0550370'
-	container "$REGISTRY_HOST/published/e45742e4-7920-4985-ba36-262bc891377a:v6"
+	container "$REGISTRY_HOST/published/e45742e4-7920-4985-ba36-262bc891377a:v10"
 
 	cpus 1
 	memory '8 GB'
 
 	input:
-	path 'capsule/data/nwb/' from capsule_nwb_packaging_subject_capsule_1_to_capsule_aind_fiber_photometry_base_nwb_capsule_10_4.collect()
-	path 'capsule/data/fiber_raw_data' from fip_to_aind_fiberphotometry_base_nwb_capsule_5.collect()
+	path 'capsule/data/nwb/' from capsule_nwb_packaging_subject_capsule_1_to_capsule_aind_fip_nwb_base_capsule_10_4.collect()
+	path 'capsule/data/fiber_raw_data' from fip_to_aind_fip_nwb_base_capsule_5.collect()
 
 	output:
-	path 'capsule/results/*' into capsule_aind_fiber_photometry_base_nwb_capsule_10_to_capsule_aind_fip_dff_9_2
+	path 'capsule/results/*' into capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_fip_dff_9_2
 
 	script:
 	"""
@@ -128,7 +128,7 @@ process capsule_aind_fiber_photometry_base_nwb_capsule_10 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v6.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0550370.git" capsule-repo
+	git clone --branch v10.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0550370.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
