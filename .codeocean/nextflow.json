@@ -90,6 +90,34 @@
 					"collect": true
 				}
 			]
+		},
+		{
+			"name": "capsule_aind_fip_qc_raw_11",
+			"capsule": {
+				"id": "3ae91e80-10b6-4659-814a-8afee9359a40",
+				"name": "aind-fip-qc-raw",
+				"slug": "8999280",
+				"version": 1
+			},
+			"resources": {
+				"cpus": 1,
+				"memory": 8
+			},
+			"inputs": [
+				{
+					"id": "5YoLyCJQBb81zX2Z",
+					"source_id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
+					"type": "dataset",
+					"name": "FIP",
+					"source_path": "FIP/",
+					"target_path": "fiber_raw_data/",
+					"collect": true
+				}
+			],
+			"results": {
+				"id": "3ae91e80-10b6-4659-814a-8afee9359a40",
+				"target_path": "aind-fip-qc-raw"
+			}
 		}
 	]
 }

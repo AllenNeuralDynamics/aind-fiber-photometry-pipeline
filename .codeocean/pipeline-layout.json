@@ -29,6 +29,18 @@
 			"id": "reactflow__edge-d46f8f0e-b8fe-41e1-8048-5d36d7460612-capsule_aind_fip_nwb_base_capsule_10",
 			"source": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
 			"target": "capsule_aind_fip_nwb_base_capsule_10"
+		},
+		{
+			"id": "reactflow__edge-d46f8f0e-b8fe-41e1-8048-5d36d7460612-capsule_aind_fip_qc_raw_11",
+			"selected": false,
+			"source": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
+			"target": "capsule_aind_fip_qc_raw_11"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_fip_qc_raw_11-results",
+			"selected": true,
+			"source": "capsule_aind_fip_qc_raw_11",
+			"target": "results"
 		}
 	],
 	"nodes": [
@@ -44,9 +56,10 @@
 		{
 			"id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
 			"position": {
-				"x": 714.37172252176,
-				"y": -608.8586896534448
+				"x": 682.8088327601455,
+				"y": -803.0918574172267
 			},
+			"selected": false,
 			"type": "dataset"
 		},
 		{
@@ -84,12 +97,24 @@
 			},
 			"selected": false,
 			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "3ae91e80-10b6-4659-814a-8afee9359a40"
+			},
+			"id": "capsule_aind_fip_qc_raw_11",
+			"position": {
+				"x": -17.746394060971852,
+				"y": -519.2661886625133
+			},
+			"selected": false,
+			"type": "capsule"
 		}
 	],
-	"timestamp": 1734131420272,
+	"timestamp": 1736788549362,
 	"viewport": {
-		"x": 173.5759782064319,
-		"y": 388.54000539243367,
-		"zoom": 0.41187610190908597
+		"x": 264.2219822991028,
+		"y": 247.23565774775912,
+		"zoom": 0.31135098442741227
 	}
 }
