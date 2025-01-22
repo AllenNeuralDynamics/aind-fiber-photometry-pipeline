@@ -38,7 +38,7 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_fip_qc_raw_11-results",
-			"selected": true,
+			"selected": false,
 			"source": "capsule_aind_fip_qc_raw_11",
 			"target": "results"
 		}
@@ -95,7 +95,7 @@
 				"x": 236.35555013020848,
 				"y": -137.15555826822916
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -111,10 +111,10 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1736788549362,
+	"timestamp": 1736983255983,
 	"viewport": {
-		"x": 264.2219822991028,
-		"y": 247.23565774775912,
-		"zoom": 0.31135098442741227
+		"x": 163.44396459820564,
+		"y": 257.47131549551824,
+		"zoom": 0.6227019688548245
 	}
 }
