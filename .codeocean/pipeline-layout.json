@@ -17,6 +17,7 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_fip_nwb_base_capsule_10-capsule_aind_fip_dff_9",
+			"selected": false,
 			"source": "capsule_aind_fip_nwb_base_capsule_10",
 			"target": "capsule_aind_fip_dff_9"
 		},
@@ -38,7 +39,7 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_fip_qc_raw_11-results",
-			"selected": false,
+			"selected": true,
 			"source": "capsule_aind_fip_qc_raw_11",
 			"target": "results"
 		}
@@ -95,7 +96,7 @@
 				"x": 236.35555013020848,
 				"y": -137.15555826822916
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -111,10 +112,10 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1736983255983,
+	"timestamp": 1738106924489,
 	"viewport": {
 		"x": 163.44396459820564,
-		"y": 257.47131549551824,
+		"y": 87.19626437857488,
 		"zoom": 0.6227019688548245
 	}
 }

@@ -97,7 +97,7 @@
 				"id": "3ae91e80-10b6-4659-814a-8afee9359a40",
 				"name": "aind-fip-qc-raw",
 				"slug": "8999280",
-				"version": 3
+				"version": 5
 			},
 			"resources": {
 				"cpus": 1,
