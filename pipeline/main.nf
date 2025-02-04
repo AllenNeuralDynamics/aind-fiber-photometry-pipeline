@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:19cb978700529824b4545913fd4b312838f26395ccc1f432ad80e640155edd5e
+// hash:sha256:fd673f8fa96e41b50cc82b8aabcb3f3807e22da9ef2af14c55f93de4e369dba6
 
 nextflow.enable.dsl = 1
 
@@ -150,7 +150,7 @@ process capsule_aind_fip_qc_raw_11 {
 	cpus 1
 	memory '8 GB'
 
-	publishDir "$RESULTS_PATH/aind-fip-qc-raw", saveAs: { filename -> new File(filename).getName() }
+	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
 	path 'capsule/data/fiber_raw_data' from fip_to_aind_fip_qc_raw_6.collect()
