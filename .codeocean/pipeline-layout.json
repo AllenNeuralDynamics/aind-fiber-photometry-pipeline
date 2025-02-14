@@ -7,6 +7,7 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_fip_dff_9-results",
+			"selected": false,
 			"source": "capsule_aind_fip_dff_9",
 			"target": "results"
 		},
@@ -38,10 +39,32 @@
 			"target": "capsule_aind_fip_qc_raw_11"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_fip_qc_raw_11-results",
-			"selected": true,
+			"id": "xy-edge__d46f8f0e-b8fe-41e1-8048-5d36d7460612-capsule_aind_dynamic_foraging_qc_12",
+			"selected": false,
+			"source": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
+			"target": "capsule_aind_dynamic_foraging_qc_12"
+		},
+		{
+			"id": "xy-edge__capsule_aind_dynamic_foraging_qc_12-capsule_aind_generic_quality_control_evaluation_aggregator_13",
+			"selected": false,
+			"source": "capsule_aind_dynamic_foraging_qc_12",
+			"target": "capsule_aind_generic_quality_control_evaluation_aggregator_13"
+		},
+		{
+			"id": "xy-edge__capsule_aind_fip_qc_raw_11-capsule_aind_generic_quality_control_evaluation_aggregator_13",
+			"selected": false,
 			"source": "capsule_aind_fip_qc_raw_11",
+			"target": "capsule_aind_generic_quality_control_evaluation_aggregator_13"
+		},
+		{
+			"id": "xy-edge__capsule_aind_generic_quality_control_evaluation_aggregator_13-results",
+			"source": "capsule_aind_generic_quality_control_evaluation_aggregator_13",
 			"target": "results"
+		},
+		{
+			"id": "xy-edge__capsule_aind_fip_dff_9-capsule_aind_generic_quality_control_evaluation_aggregator_13",
+			"source": "capsule_aind_fip_dff_9",
+			"target": "capsule_aind_generic_quality_control_evaluation_aggregator_13"
 		}
 	],
 	"nodes": [
@@ -69,8 +92,8 @@
 			},
 			"id": "capsule_aind_fip_dff_9",
 			"position": {
-				"x": 346.75462184816047,
-				"y": 215.02257885904305
+				"x": 468.59044155706965,
+				"y": 141.27984587733488
 			},
 			"selected": false,
 			"type": "capsule"
@@ -110,12 +133,36 @@
 			},
 			"selected": false,
 			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "9110d5cb-2dd4-405d-b6e9-725dd04097f5"
+			},
+			"id": "capsule_aind_dynamic_foraging_qc_12",
+			"position": {
+				"x": -286.39630090801427,
+				"y": -550.5235697823397
+			},
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "03b3acfd-fdef-46b0-ad80-50e9d4e00827"
+			},
+			"id": "capsule_aind_generic_quality_control_evaluation_aggregator_13",
+			"position": {
+				"x": -130.9147566163972,
+				"y": 159.63157476299523
+			},
+			"selected": true,
+			"type": "capsule"
 		}
 	],
-	"timestamp": 1738106924489,
+	"timestamp": 1739498395056,
 	"viewport": {
-		"x": 163.44396459820564,
-		"y": 87.19626437857488,
-		"zoom": 0.6227019688548245
+		"x": 286.6448679425747,
+		"y": 359.5381429333009,
+		"zoom": 0.31189513962962484
 	}
 }

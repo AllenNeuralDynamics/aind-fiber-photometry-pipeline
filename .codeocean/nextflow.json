@@ -32,7 +32,7 @@
 				"id": "603a2149-6281-4a7b-bbd6-ff50ca0e064e",
 				"name": "aind-fip-dff",
 				"slug": "1001867",
-				"version": 7
+				"version": 9
 			},
 			"resources": {
 				"cpus": 1,
@@ -56,7 +56,8 @@
 				}
 			],
 			"results": {
-				"id": "603a2149-6281-4a7b-bbd6-ff50ca0e064e"
+				"id": "603a2149-6281-4a7b-bbd6-ff50ca0e064e",
+				"source_path": "nwb"
 			}
 		},
 		{
@@ -113,9 +114,79 @@
 					"target_path": "fiber_raw_data/",
 					"collect": true
 				}
+			]
+		},
+		{
+			"name": "capsule_aind_dynamic_foraging_qc_12",
+			"capsule": {
+				"id": "9110d5cb-2dd4-405d-b6e9-725dd04097f5",
+				"name": "aind-dynamic-foraging-qc",
+				"slug": "6533380",
+				"version": 1
+			},
+			"resources": {
+				"cpus": 1,
+				"memory": 8
+			},
+			"inputs": [
+				{
+					"id": "RqSqPZAqU3WB1FcN",
+					"source_id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
+					"type": "dataset",
+					"name": "FIP",
+					"source_path": "FIP/",
+					"target_path": "fiber_raw_data/",
+					"collect": true
+				}
+			]
+		},
+		{
+			"name": "capsule_aind_generic_quality_control_evaluation_aggregator_13",
+			"capsule": {
+				"id": "03b3acfd-fdef-46b0-ad80-50e9d4e00827",
+				"name": "aind-generic-quality-control-evaluation-aggregator",
+				"slug": "5290719",
+				"version": 1
+			},
+			"resources": {
+				"cpus": 1,
+				"memory": 8
+			},
+			"inputs": [
+				{
+					"id": "VPeVNJeFgGQb9nOJ",
+					"source_id": "capsule_aind_fip_dff_9",
+					"type": "capsule",
+					"name": "aind-fip-dff",
+					"source_path": "*.json",
+					"collect": true
+				},
+				{
+					"id": "HifpmZ2Bq2y1Wv8N",
+					"source_id": "capsule_aind_fip_dff_9",
+					"type": "capsule",
+					"name": "aind-fip-dff",
+					"source_path": "dff-qc",
+					"target_path": "dff-qc"
+				},
+				{
+					"id": "W0n1Mc6pYgmHqCkQ",
+					"source_id": "capsule_aind_dynamic_foraging_qc_12",
+					"type": "capsule",
+					"name": "aind-dynamic-foraging-qc",
+					"target_path": "aind-dynamic-foraging-qc",
+					"collect": true
+				},
+				{
+					"id": "z0sxi9aEjrc4xl36",
+					"source_id": "capsule_aind_fip_qc_raw_11",
+					"type": "capsule",
+					"name": "aind-fip-qc-raw",
+					"collect": true
+				}
 			],
 			"results": {
-				"id": "3ae91e80-10b6-4659-814a-8afee9359a40"
+				"id": "03b3acfd-fdef-46b0-ad80-50e9d4e00827"
 			}
 		}
 	]
