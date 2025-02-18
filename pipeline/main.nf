@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:9dc26b8043c05c59df5553c4d5aa44be980f4c6904529e167267a909eb868422
+// hash:sha256:512c67acef306e764a001b1a110ece1bfad6ec1cee401a2b2a96cd58fcdbfe7c
 
 nextflow.enable.dsl = 1
 
@@ -155,7 +155,7 @@ process capsule_aind_fip_qc_raw_11 {
 	container "$REGISTRY_HOST/published/3ae91e80-10b6-4659-814a-8afee9359a40:v6"
 
 	cpus 1
-	memory '8 GB'
+	memory '12 GB'
 
 	input:
 	path 'capsule/data/fiber_raw_data' from fip_to_aind_fip_qc_raw_6.collect()
@@ -170,7 +170,7 @@ process capsule_aind_fip_qc_raw_11 {
 
 	export CO_CAPSULE_ID=3ae91e80-10b6-4659-814a-8afee9359a40
 	export CO_CPUS=1
-	export CO_MEMORY=8589934592
+	export CO_MEMORY=12884901888
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -197,7 +197,7 @@ process capsule_aind_dynamic_foraging_qc_12 {
 	container "$REGISTRY_HOST/published/9110d5cb-2dd4-405d-b6e9-725dd04097f5:v1"
 
 	cpus 1
-	memory '8 GB'
+	memory '12 GB'
 
 	input:
 	path 'capsule/data/fiber_raw_data' from fip_to_aind_dynamic_foraging_qc_7.collect()
@@ -212,7 +212,7 @@ process capsule_aind_dynamic_foraging_qc_12 {
 
 	export CO_CAPSULE_ID=9110d5cb-2dd4-405d-b6e9-725dd04097f5
 	export CO_CPUS=1
-	export CO_MEMORY=8589934592
+	export CO_MEMORY=12884901888
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
