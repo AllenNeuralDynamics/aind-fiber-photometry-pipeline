@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:512c67acef306e764a001b1a110ece1bfad6ec1cee401a2b2a96cd58fcdbfe7c
+// hash:sha256:c34547b29855cd26c0606b710beb7685f65d6320771dae197b640b1268bde618
 
 nextflow.enable.dsl = 1
 
@@ -239,7 +239,7 @@ process capsule_aind_generic_quality_control_evaluation_aggregator_13 {
 	container "$REGISTRY_HOST/published/03b3acfd-fdef-46b0-ad80-50e9d4e00827:v1"
 
 	cpus 1
-	memory '8 GB'
+	memory '12 GB'
 
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
@@ -259,7 +259,7 @@ process capsule_aind_generic_quality_control_evaluation_aggregator_13 {
 
 	export CO_CAPSULE_ID=03b3acfd-fdef-46b0-ad80-50e9d4e00827
 	export CO_CPUS=1
-	export CO_MEMORY=8589934592
+	export CO_MEMORY=12884901888
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
