@@ -122,7 +122,7 @@
 				"id": "9110d5cb-2dd4-405d-b6e9-725dd04097f5",
 				"name": "aind-dynamic-foraging-qc",
 				"slug": "6533380",
-				"version": 1
+				"version": 2
 			},
 			"resources": {
 				"cpus": 1,
