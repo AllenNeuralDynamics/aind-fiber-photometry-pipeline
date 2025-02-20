@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:602fd05768a5d980fd45d7e6db18a1c820d7e6a5ed2961cc0f10028dd64ffa13
+// hash:sha256:130fa03e8fd9fcb9252f5edd946b173cc408a5034759ee4644701bab55283dcc
 
 nextflow.enable.dsl = 1
 
@@ -23,7 +23,7 @@ process capsule_nwb_packaging_subject_capsule_1 {
 	container "$REGISTRY_HOST/published/bdc9f09f-0005-4d09-aaf9-7e82abd93f19:v2"
 
 	cpus 1
-	memory '8 GB'
+	memory '16 GB'
 
 	input:
 	path 'capsule/data/fiber_session' from fip_to_nwb_packaging_subject_capsule_1.collect()
@@ -38,7 +38,7 @@ process capsule_nwb_packaging_subject_capsule_1 {
 
 	export CO_CAPSULE_ID=bdc9f09f-0005-4d09-aaf9-7e82abd93f19
 	export CO_CPUS=1
-	export CO_MEMORY=8589934592
+	export CO_MEMORY=17179869184
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data

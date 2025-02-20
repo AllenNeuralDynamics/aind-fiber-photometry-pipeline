@@ -12,7 +12,7 @@
 			},
 			"resources": {
 				"cpus": 1,
-				"memory": 8
+				"memory": 16
 			},
 			"inputs": [
 				{
