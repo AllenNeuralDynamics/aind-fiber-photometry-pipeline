@@ -122,7 +122,7 @@
 				"id": "9110d5cb-2dd4-405d-b6e9-725dd04097f5",
 				"name": "aind-dynamic-foraging-qc",
 				"slug": "6533380",
-				"version": 3
+				"version": 4
 			},
 			"resources": {
 				"cpus": 1,
@@ -154,6 +154,13 @@
 			},
 			"inputs": [
 				{
+					"id": "W0n1Mc6pYgmHqCkQ",
+					"source_id": "capsule_aind_dynamic_foraging_qc_12",
+					"type": "capsule",
+					"name": "aind-dynamic-foraging-qc",
+					"collect": true
+				},
+				{
 					"id": "VPeVNJeFgGQb9nOJ",
 					"source_id": "capsule_aind_fip_dff_9",
 					"type": "capsule",
@@ -168,14 +175,6 @@
 					"name": "aind-fip-dff",
 					"source_path": "dff-qc",
 					"target_path": "dff-qc"
-				},
-				{
-					"id": "W0n1Mc6pYgmHqCkQ",
-					"source_id": "capsule_aind_dynamic_foraging_qc_12",
-					"type": "capsule",
-					"name": "aind-dynamic-foraging-qc",
-					"target_path": "aind-dynamic-foraging-qc",
-					"collect": true
 				},
 				{
 					"id": "z0sxi9aEjrc4xl36",
