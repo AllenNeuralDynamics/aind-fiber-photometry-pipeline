@@ -40,13 +40,11 @@
 		},
 		{
 			"id": "xy-edge__d46f8f0e-b8fe-41e1-8048-5d36d7460612-capsule_aind_dynamic_foraging_qc_12",
-			"selected": false,
 			"source": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
 			"target": "capsule_aind_dynamic_foraging_qc_12"
 		},
 		{
 			"id": "xy-edge__capsule_aind_dynamic_foraging_qc_12-capsule_aind_generic_quality_control_evaluation_aggregator_13",
-			"selected": false,
 			"source": "capsule_aind_dynamic_foraging_qc_12",
 			"target": "capsule_aind_generic_quality_control_evaluation_aggregator_13"
 		},
@@ -136,6 +134,18 @@
 		},
 		{
 			"data": {
+				"capsule_id": "03b3acfd-fdef-46b0-ad80-50e9d4e00827"
+			},
+			"id": "capsule_aind_generic_quality_control_evaluation_aggregator_13",
+			"position": {
+				"x": -142.87512011226053,
+				"y": 288.20548234352617
+			},
+			"selected": true,
+			"type": "capsule"
+		},
+		{
+			"data": {
 				"capsule_id": "9110d5cb-2dd4-405d-b6e9-725dd04097f5"
 			},
 			"id": "capsule_aind_dynamic_foraging_qc_12",
@@ -143,26 +153,9 @@
 				"x": -286.39630090801427,
 				"y": -550.5235697823397
 			},
-			"selected": false,
-			"type": "capsule"
-		},
-		{
-			"data": {
-				"capsule_id": "03b3acfd-fdef-46b0-ad80-50e9d4e00827"
-			},
-			"id": "capsule_aind_generic_quality_control_evaluation_aggregator_13",
-			"position": {
-				"x": -130.9147566163972,
-				"y": 159.63157476299523
-			},
 			"selected": true,
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1739498395056,
-	"viewport": {
-		"x": 286.6448679425747,
-		"y": 359.5381429333009,
-		"zoom": 0.31189513962962484
-	}
+	"timestamp": 1741884294185
 }
