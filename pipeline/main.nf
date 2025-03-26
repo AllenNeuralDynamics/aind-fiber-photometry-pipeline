@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:2e76670d15b735bc2f36f773630ab9996a6d0f6f39fb960d32e7cfd9bc328f96
+// hash:sha256:19838b528c7583e835872724f13a5177f9014374adc26eb0c0abeb3b1f0a6150
 
 nextflow.enable.dsl = 1
 
@@ -194,7 +194,7 @@ process capsule_aind_fip_qc_raw_11 {
 // capsule - aind-dynamic-foraging-qc
 process capsule_aind_dynamic_foraging_qc_12 {
 	tag 'capsule-6533380'
-	container "$REGISTRY_HOST/published/9110d5cb-2dd4-405d-b6e9-725dd04097f5:v5"
+	container "$REGISTRY_HOST/published/9110d5cb-2dd4-405d-b6e9-725dd04097f5:v6"
 
 	cpus 1
 	memory '12 GB'
@@ -220,7 +220,7 @@ process capsule_aind_dynamic_foraging_qc_12 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v5.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-6533380.git" capsule-repo
+	git clone --branch v6.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-6533380.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
