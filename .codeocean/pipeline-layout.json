@@ -146,7 +146,7 @@
 		},
 		{
 			"data": {
-				"capsule_id": "9110d5cb-2dd4-405d-b6e9-725dd04097f5"
+				"capsule_id": "6caad7bc-11e2-4f37-84f1-c89467ddb5ea"
 			},
 			"id": "capsule_aind_dynamic_foraging_qc_12",
 			"position": {
@@ -157,5 +157,5 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1742847382901
+	"timestamp": 1743013745362
 }

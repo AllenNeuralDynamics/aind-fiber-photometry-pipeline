@@ -119,10 +119,11 @@
 		{
 			"name": "capsule_aind_dynamic_foraging_qc_12",
 			"capsule": {
-				"id": "9110d5cb-2dd4-405d-b6e9-725dd04097f5",
+				"id": "6caad7bc-11e2-4f37-84f1-c89467ddb5ea",
 				"name": "aind-dynamic-foraging-qc",
-				"slug": "6533380",
-				"version": 5
+				"slug": "3334731",
+				"commit": "962c4fe02c7c1aa1127691adb57518b2235dbdb4",
+				"image_tag": "eb2eb3cea39866d858a32db01146807f"
 			},
 			"resources": {
 				"cpus": 1,
