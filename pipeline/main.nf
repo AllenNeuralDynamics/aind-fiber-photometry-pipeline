@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:19838b528c7583e835872724f13a5177f9014374adc26eb0c0abeb3b1f0a6150
+// hash:sha256:8538f81cc2a0874a079f6afdb01169c30893e5efd1b37d696950d06b7912b0a9
 
 nextflow.enable.dsl = 1
 
@@ -65,7 +65,7 @@ process capsule_aind_fip_dff_9 {
 	container "$REGISTRY_HOST/published/603a2149-6281-4a7b-bbd6-ff50ca0e064e:v10"
 
 	cpus 1
-	memory '8 GB'
+	memory '32 GB'
 
 	publishDir "$RESULTS_PATH", saveAs: { filename -> filename.matches("capsule/results/nwb") ? new File(filename).getName() : null }
 
@@ -85,7 +85,7 @@ process capsule_aind_fip_dff_9 {
 
 	export CO_CAPSULE_ID=603a2149-6281-4a7b-bbd6-ff50ca0e064e
 	export CO_CPUS=1
-	export CO_MEMORY=8589934592
+	export CO_MEMORY=34359738368
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -112,7 +112,7 @@ process capsule_aind_fip_nwb_base_capsule_10 {
 	container "$REGISTRY_HOST/published/e45742e4-7920-4985-ba36-262bc891377a:v13"
 
 	cpus 1
-	memory '8 GB'
+	memory '24 GB'
 
 	input:
 	path 'capsule/data/nwb/' from capsule_nwb_packaging_subject_capsule_1_to_capsule_aind_fip_nwb_base_capsule_10_4.collect()
@@ -128,7 +128,7 @@ process capsule_aind_fip_nwb_base_capsule_10 {
 
 	export CO_CAPSULE_ID=e45742e4-7920-4985-ba36-262bc891377a
 	export CO_CPUS=1
-	export CO_MEMORY=8589934592
+	export CO_MEMORY=25769803776
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -152,7 +152,7 @@ process capsule_aind_fip_nwb_base_capsule_10 {
 // capsule - aind-fip-qc-raw
 process capsule_aind_fip_qc_raw_11 {
 	tag 'capsule-8999280'
-	container "$REGISTRY_HOST/published/3ae91e80-10b6-4659-814a-8afee9359a40:v7"
+	container "$REGISTRY_HOST/published/3ae91e80-10b6-4659-814a-8afee9359a40:v8"
 
 	cpus 1
 	memory '12 GB'
@@ -178,7 +178,7 @@ process capsule_aind_fip_qc_raw_11 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v7.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8999280.git" capsule-repo
+	git clone --branch v8.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8999280.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
