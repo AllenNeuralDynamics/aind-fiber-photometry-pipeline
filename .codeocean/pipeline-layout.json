@@ -90,10 +90,10 @@
 			},
 			"id": "capsule_aind_fip_dff_9",
 			"position": {
-				"x": 468.59044155706965,
-				"y": 141.27984587733488
+				"x": 420.59044155706954,
+				"y": 123.94651254400156
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -141,7 +141,7 @@
 				"x": -142.87512011226053,
 				"y": 288.20548234352617
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -153,9 +153,14 @@
 				"x": -286.39630090801427,
 				"y": -550.5235697823397
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1743017703259
+	"timestamp": 1744927242340,
+	"viewport": {
+		"x": 0,
+		"y": 0,
+		"zoom": 0.75
+	}
 }
