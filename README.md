@@ -63,6 +63,8 @@ The following files will be under the 'dff-qc' directory within the `results` fo
  ┣ 📜ROI3_exp.png
  ┣ 📜ROI3_poly.png
  ```
+*Note: Prior to pipeline version 7, these files are indexed starting from 1, rather than 0. The version of the pipeline used to process each asset is present in the processing.json*
+
 The following files will be under the 'dynamic-foraging-qc' directory within the `results` folder (if there is fiber data to qc):
 
 **`dynamic-foraging-qc`**
