@@ -1,6 +1,6 @@
 # Fiber Photometry processing pipeline
 
-The fiber photometry pipeline runs on [Nextflow](https://www.nextflow.io/) and contains the following steps:
+The [fiber photometry pipeline](https://codeocean.allenneuraldynamics.org/capsule/5712553/tree) runs on [Nextflow](https://www.nextflow.io/) and contains the following steps:
 
 * [nwb-subject-capsule](https://github.com/AllenNeuralDynamics/aind-subject-nwb): This simple capsule is designed to create an NWB file with basic subject and session information.
 
@@ -14,6 +14,9 @@ The fiber photometry pipeline runs on [Nextflow](https://www.nextflow.io/) and c
 
 * [aind-generic-quality-control-evaluation-aggregator](https://github.com/AllenNeuralDynamics/aind-generic-quality-control-evaluation-aggregator): Combines QC outputs into one QC JSON
 
+It currently handles both behavior processing and fiber photometry processing for Pavlovian and Dynamic Foraging tasks but will eventually be split into dedicated pipelines for each.
+
+The (work in progress) Dynamic Foraging task pipeline can be seen here: [dynamic foraging pipeline](https://codeocean.allenneuraldynamics.org/capsule/2034050/tree)
 # Input
 
 Currently, the pipeline supports the following input data types:
