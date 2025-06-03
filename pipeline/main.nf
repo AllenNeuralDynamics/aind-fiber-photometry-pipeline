@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:be813403c35919aec32d03b6192a83c47e00b18d1ba4b6b250f00d62842b5f32
+// hash:sha256:4926bc76616ef992e7161f4638a17fd5a22abfb8cc42ad33bde7c142a2073d30
 
 nextflow.enable.dsl = 1
 
@@ -23,7 +23,7 @@ process capsule_nwb_packaging_subject_capsule_1 {
 	container "$REGISTRY_HOST/published/bdc9f09f-0005-4d09-aaf9-7e82abd93f19:v3"
 
 	cpus 1
-	memory '16 GB'
+	memory '15 GB'
 
 	input:
 	path 'capsule/data/fiber_session' from fip_to_nwb_packaging_subject_1.collect()
@@ -38,7 +38,7 @@ process capsule_nwb_packaging_subject_capsule_1 {
 
 	export CO_CAPSULE_ID=bdc9f09f-0005-4d09-aaf9-7e82abd93f19
 	export CO_CPUS=1
-	export CO_MEMORY=17179869184
+	export CO_MEMORY=16106127360
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -46,7 +46,11 @@ process capsule_nwb_packaging_subject_capsule_1 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v3.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8198603.git" capsule-repo
+	if [[ "\$(printf '%s\n' "2.20.0" "\$(git version | awk '{print \$3}')" | sort -V | head -n1)" = "2.20.0" ]]; then
+		git clone --filter=tree:0 --branch v3.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8198603.git" capsule-repo
+	else
+		git clone --branch v3.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8198603.git" capsule-repo
+	fi
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -65,7 +69,7 @@ process capsule_aind_fip_dff_9 {
 	container "$REGISTRY_HOST/published/603a2149-6281-4a7b-bbd6-ff50ca0e064e:v11"
 
 	cpus 1
-	memory '32 GB'
+	memory '30 GB'
 
 	publishDir "$RESULTS_PATH", saveAs: { filename -> filename.matches("capsule/results/nwb") ? new File(filename).getName() : null }
 
@@ -85,7 +89,7 @@ process capsule_aind_fip_dff_9 {
 
 	export CO_CAPSULE_ID=603a2149-6281-4a7b-bbd6-ff50ca0e064e
 	export CO_CPUS=1
-	export CO_MEMORY=34359738368
+	export CO_MEMORY=32212254720
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -93,7 +97,11 @@ process capsule_aind_fip_dff_9 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v11.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1001867.git" capsule-repo
+	if [[ "\$(printf '%s\n' "2.20.0" "\$(git version | awk '{print \$3}')" | sort -V | head -n1)" = "2.20.0" ]]; then
+		git clone --filter=tree:0 --branch v11.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1001867.git" capsule-repo
+	else
+		git clone --branch v11.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1001867.git" capsule-repo
+	fi
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -136,7 +144,11 @@ process capsule_aind_fip_nwb_base_capsule_10 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v15.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0550370.git" capsule-repo
+	if [[ "\$(printf '%s\n' "2.20.0" "\$(git version | awk '{print \$3}')" | sort -V | head -n1)" = "2.20.0" ]]; then
+		git clone --filter=tree:0 --branch v15.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0550370.git" capsule-repo
+	else
+		git clone --branch v15.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0550370.git" capsule-repo
+	fi
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -155,7 +167,7 @@ process capsule_aind_fip_qc_raw_11 {
 	container "$REGISTRY_HOST/published/3ae91e80-10b6-4659-814a-8afee9359a40:v8"
 
 	cpus 1
-	memory '12 GB'
+	memory '24 GB'
 
 	input:
 	path 'capsule/data/fiber_raw_data' from fip_to_aind_fip_qc_raw_6.collect()
@@ -170,7 +182,7 @@ process capsule_aind_fip_qc_raw_11 {
 
 	export CO_CAPSULE_ID=3ae91e80-10b6-4659-814a-8afee9359a40
 	export CO_CPUS=1
-	export CO_MEMORY=12884901888
+	export CO_MEMORY=25769803776
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -178,7 +190,11 @@ process capsule_aind_fip_qc_raw_11 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v8.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8999280.git" capsule-repo
+	if [[ "\$(printf '%s\n' "2.20.0" "\$(git version | awk '{print \$3}')" | sort -V | head -n1)" = "2.20.0" ]]; then
+		git clone --filter=tree:0 --branch v8.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8999280.git" capsule-repo
+	else
+		git clone --branch v8.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8999280.git" capsule-repo
+	fi
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -197,7 +213,7 @@ process capsule_aind_dynamic_foraging_qc_12 {
 	container "$REGISTRY_HOST/published/9110d5cb-2dd4-405d-b6e9-725dd04097f5:v6"
 
 	cpus 1
-	memory '12 GB'
+	memory '50 GB'
 
 	input:
 	path 'capsule/data/fiber_raw_data' from fip_to_aind_dynamic_foraging_qc_7.collect()
@@ -212,7 +228,7 @@ process capsule_aind_dynamic_foraging_qc_12 {
 
 	export CO_CAPSULE_ID=9110d5cb-2dd4-405d-b6e9-725dd04097f5
 	export CO_CPUS=1
-	export CO_MEMORY=12884901888
+	export CO_MEMORY=53687091200
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -220,7 +236,11 @@ process capsule_aind_dynamic_foraging_qc_12 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v6.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-6533380.git" capsule-repo
+	if [[ "\$(printf '%s\n' "2.20.0" "\$(git version | awk '{print \$3}')" | sort -V | head -n1)" = "2.20.0" ]]; then
+		git clone --filter=tree:0 --branch v6.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-6533380.git" capsule-repo
+	else
+		git clone --branch v6.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-6533380.git" capsule-repo
+	fi
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -267,7 +287,11 @@ process capsule_aind_generic_quality_control_evaluation_aggregator_13 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v1.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-5290719.git" capsule-repo
+	if [[ "\$(printf '%s\n' "2.20.0" "\$(git version | awk '{print \$3}')" | sort -V | head -n1)" = "2.20.0" ]]; then
+		git clone --filter=tree:0 --branch v1.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-5290719.git" capsule-repo
+	else
+		git clone --branch v1.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-5290719.git" capsule-repo
+	fi
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
