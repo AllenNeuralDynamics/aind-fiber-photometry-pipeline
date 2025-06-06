@@ -1,32 +1,29 @@
 # Fiber Photometry processing pipeline
+This is a pipeline in development to process Fiber Photometry data adapted to a fiber acquisition standard defined here: [Fiber Photometry Acquisition Standard](https://github.com/AllenNeuralDynamics/aind-file-standards/blob/main/file_formats/fip.md) (note this is subject to change depending on feedback). NOTE: The data currently attached to the pipeline is a subset of the standard defined, and is only meant for testing purposes, and thus, only contains a subset of the standard file acquisition defined for Fiber Photometry.
 
-The [fiber photometry pipeline](https://codeocean.allenneuraldynamics.org/capsule/5712553/tree) runs on [Nextflow](https://www.nextflow.io/) and contains the following steps:
+The [fiber photometry pipeline](https://codeocean.allenneuraldynamics.org/capsule/7378248/tree) runs on [Nextflow](https://www.nextflow.io/) and contains the following steps:
 
 * [nwb-subject-capsule](https://github.com/AllenNeuralDynamics/aind-subject-nwb): This simple capsule is designed to create an NWB file with basic subject and session information.
 
-* [aind-fip-nwb-base-capsule](https://github.com/AllenNeuralDynamics/aind-fip-nwb-base-capsule): FiberPhotometry Capsule which appends to an NWB subject file. Adds behavior and FiberPhotometry information if present.
+* [aind-fip-nwb-base-capsule](https://github.com/AllenNeuralDynamics/aind-fip-nwb-base-capsule/tree/feat-add-new-file-standard): FiberPhotometry Capsule which appends to an NWB subject file. Currently in development for new standard
 
 * [aind-fip-dff](https://github.com/AllenNeuralDynamics/aind-fip-dff): Processes input NWB files containing raw fiber photometry data by generating baseline-corrected (ΔF/F) and motion-corrected traces, which are then appended back to the NWB file.
 
-* [aind-dynamic-foraging-qc](https://github.com/AllenNeuralDynamics/aind-dynamic-foraging-qc): QC capsule for dynamic foraging behavior (modality:behavior) raw data acquired together with HARP/Bonsai-based behavior
-
-* [aind-fip-qc-raw](https://github.com/AllenNeuralDynamics/aind-fip-qc-raw): QC capsule for fiber photometry (modality:fib, device:fip) raw data acquired together with HARP/Bonsai-based behavior (e.g. Dynamic Foraging)
+* [aind-fip-qc-raw]([https://github.com/AllenNeuralDynamics/aind-fip-qc-raw](https://github.com/AllenNeuralDynamics/aind-fip-qc-raw/tree/feat-add-new-file-standard)): QC capsule for fiber photometry. Currently in development for new standard.
 
 * [aind-generic-quality-control-evaluation-aggregator](https://github.com/AllenNeuralDynamics/aind-generic-quality-control-evaluation-aggregator): Combines QC outputs into one QC JSON
 
-It currently handles both behavior processing and fiber photometry processing for Pavlovian and Dynamic Foraging tasks but will eventually be split into dedicated pipelines for each.
-
-The (work in progress) Dynamic Foraging task pipeline can be seen here: [dynamic foraging pipeline](https://codeocean.allenneuraldynamics.org/capsule/2034050/tree)
 # Input
 
 Currently, the pipeline supports the following input data types:
 
-* `aind`: data ingestion used at AIND. The input folder must contain a subdirectory called `behavior` (for planar-ophys) which contains the json including behavior timestamps. If an "fib" folder is included, fiber data will also be packaged. The root directory must contain JSON files following [aind-data-schema](https://github.com/AllenNeuralDynamics/aind-data-schema).
+* `aind`: data ingestion used at AIND. If an "fib" folder is included, fiber data will be packaged. The root directory must contain JSON files following [aind-data-schema](https://github.com/AllenNeuralDynamics/aind-data-schema).
+
+Under the `fib` folder, the data will be stored as defined in the file standard linked above.
 
 ```plaintext
 📦data
- ┣ 📂behavior_MouseID_YYYY-MM-DD_HH-M-S
- ┃ ┣ 📂behavior
+ ┣ 📂MouseID_YYYY-MM-DD_HH-M-S
  ┃ ┣ 📂fib
  ┣ 📜data_description.json
  ┣ 📜session.json
@@ -42,7 +39,7 @@ Tools used to read files in python are [h5py](https://pypi.org/project/h5py/), j
 📦results
  ┣ 📂behavior_MouseID_YYYY-MM-DD_HH-M-S
  ┃ ┣ 📂dff-qc
- ┃ ┣ 📂dynamic-foraging-qc
+ ┃ ┣ 📂qc-raw
  ┃ ┣ 📂nwb
  ┗ 📜processing.json
  ```
@@ -68,16 +65,6 @@ The following files will be under the 'dff-qc' directory within the `results` fo
  ```
 *Note: Prior to pipeline version 7, these files are indexed starting from 1, rather than 0. The version of the pipeline used to process each asset is present in the processing.json*
 
-The following files will be under the 'dynamic-foraging-qc' directory within the `results` folder (if there is fiber data to qc):
-
-**`dynamic-foraging-qc`**
-
-```plaintext
-📦dynamic-foraging-qc
- ┣ 📜lick_intervals.png
- ┣ 📜side_bias.png
- ```
-
 The following files will be under the 'qc-raw' directory within the `results` folder (if there is fiber data to qc):
 
 **`qc-raw`**
@@ -86,11 +73,12 @@ The following files will be under the 'qc-raw' directory within the `results` fo
 📦qc-raw
 ┣ 📜CMOS_Floor.pdf
 ┣ 📜CMOS_Floor.png
-┣ 📜SyncPulseDiff.pdf
-┣ 📜SyncPulseDiff.png
 ┣ 📜raw_traces.pdf
 ┣ 📜raw_traces.png
 ```
+
+**`nwb**
+The NWB output has both raw and processed data. The raw data can be found under the `acquisition` field in the NWB. It contains timerseries for each channel-fiber. Under the `processing` field, there will be a `fiber_photometry` module that will contain timeseries for different combinations of channel-fiber connection, dff, and motion-correction.
 
 # Parameters
 
