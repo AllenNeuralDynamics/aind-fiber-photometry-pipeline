@@ -77,7 +77,8 @@ The following files will be under the 'qc-raw' directory within the `results` fo
 ┣ 📜raw_traces.png
 ```
 
-**`nwb**
+**`nwb`**
+
 The NWB output has both raw and processed data. The raw data can be found under the `acquisition` field in the NWB. It contains timerseries for each channel-fiber. Under the `processing` field, there will be a `fiber_photometry` module that will contain timeseries for different combinations of channel-fiber connection, dff, and motion-correction.
 
 # Parameters
