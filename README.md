@@ -1,5 +1,5 @@
 # Fiber Photometry processing pipeline
-This is a pipeline in development to process Fiber Photometry data adapted to a fiber acquisition standard defined here: [Fiber Photometry Acquisition Standard](https://github.com/AllenNeuralDynamics/aind-file-standards/blob/main/file_formats/fip.md) (note this is subject to change depending on feedback). NOTE: The data currently attached to the pipeline is a subset of the standard defined, and is only meant for testing purposes, and thus, only contains a subset of the standard file acquisition defined for Fiber Photometry.
+This is a pipeline in development to process Fiber Photometry data adapted to a fiber acquisition standard defined here: [Fiber Photometry Acquisition Standard](https://github.com/AllenNeuralDynamics/aind-file-standards/blob/main/file_formats/fip.md) (note this is subject to change depending on feedback). NOTE: The data currently attached to the pipeline is a subset of the standard defined, and is only meant for testing purposes, and thus, only contains a subset of the standard file acquisition defined for Fiber Photometry. Currently is `fiber_standard`.
 
 The [fiber photometry pipeline](https://codeocean.allenneuraldynamics.org/capsule/7378248/tree) runs on [Nextflow](https://www.nextflow.io/) and contains the following steps:
 
@@ -37,10 +37,9 @@ Tools used to read files in python are [h5py](https://pypi.org/project/h5py/), j
 
 ```plaintext
 📦results
- ┣ 📂behavior_MouseID_YYYY-MM-DD_HH-M-S
- ┃ ┣ 📂dff-qc
- ┃ ┣ 📂qc-raw
- ┃ ┣ 📂nwb
+ ┃ 📂dff-qc
+ ┃ 📂qc-raw
+ ┃ 📂nwb
  ┗ 📜processing.json
  ```
 
@@ -80,6 +79,97 @@ The following files will be under the 'qc-raw' directory within the `results` fo
 **`nwb`**
 
 The NWB output has both raw and processed data. The raw data can be found under the `acquisition` field in the NWB. It contains timerseries for each channel-fiber. Under the `processing` field, there will be a `fiber_photometry` module that will contain timeseries for different combinations of channel-fiber connection, dff, and motion-correction.
+
+```plaintext
+📦nwb
+┣ 📜acquisition
+┃ ┣ 📂G_0
+┃ ┣ 📂G_1
+┃ ┣ 📂G_2
+┃ ┣ 📂G_3
+┃ ┣ 📂Iso_0
+┃ ┣ 📂Iso_1
+┃ ┣ 📂Iso_2
+┃ ┣ 📂Iso_3
+┃ ┣ 📂Red_0
+┃ ┣ 📂Red_1
+┃ ┣ 📂Red_2
+┃ ┣ 📂Red_3
+┣ 📜processing
+┃ ┣ 📂fiber_photometry
+┃ ┃ ┣ 📂G_0_dff-bright
+┃ ┃ ┣ 📂G_0_dff-bright_mc-ISO-IRLS
+┃ ┃ ┣ 📂G_0_dff-exp
+┃ ┃ ┣ 📂G_0_dff-exp_mc-ISO-IRLS
+┃ ┃ ┣ 📂G_0_dff-poly
+┃ ┃ ┣ 📂G_0_dff-poly_mc-ISO-IRLS
+┃ ┃ ┣ 📂G_1_dff-bright
+┃ ┃ ┣ 📂G_1_dff-bright_mc-ISO-IRLS
+┃ ┃ ┣ 📂G_1_dff-exp
+┃ ┃ ┣ 📂G_1_dff-exp_mc-ISO-IRLS
+┃ ┃ ┣ 📂G_1_dff-poly
+┃ ┃ ┣ 📂G_1_dff-poly_mc-ISO-IRLS
+┃ ┃ ┣ 📂G_2_dff-bright
+┃ ┃ ┣ 📂G_2_dff-bright_mc-ISO-IRLS
+┃ ┃ ┣ 📂G_2_dff-exp
+┃ ┃ ┣ 📂G_2_dff-exp_mc-ISO-IRLS
+┃ ┃ ┣ 📂G_2_dff-poly
+┃ ┃ ┣ 📂G_2_dff-poly_mc-ISO-IRLS
+┃ ┃ ┣ 📂G_3_dff-bright
+┃ ┃ ┣ 📂G_3_dff-bright_mc-ISO-IRLS
+┃ ┃ ┣ 📂G_3_dff-exp
+┃ ┃ ┣ 📂G_3_dff-exp_mc-ISO-IRLS
+┃ ┃ ┣ 📂G_3_dff-poly
+┃ ┃ ┣ 📂G_3_dff-poly_mc-ISO-IRLS
+┃ ┃ ┣ 📂Iso_0_dff-bright
+┃ ┃ ┣ 📂Iso_0_dff-bright_mc-ISO-IRLS
+┃ ┃ ┣ 📂Iso_0_dff-exp
+┃ ┃ ┣ 📂Iso_0_dff-exp_mc-ISO-IRLS
+┃ ┃ ┣ 📂Iso_0_dff-poly
+┃ ┃ ┣ 📂Iso_0_dff-poly_mc-ISO-IRLS
+┃ ┃ ┣ 📂Iso_1_dff-bright
+┃ ┃ ┣ 📂Iso_1_dff-bright_mc-ISO-IRLS
+┃ ┃ ┣ 📂Iso_1_dff-exp
+┃ ┃ ┣ 📂Iso_1_dff-exp_mc-ISO-IRLS
+┃ ┃ ┣ 📂Iso_1_dff-poly
+┃ ┃ ┣ 📂Iso_1_dff-poly_mc-ISO-IRLS
+┃ ┃ ┣ 📂Iso_2_dff-bright
+┃ ┃ ┣ 📂Iso_2_dff-bright_mc-ISO-IRLS
+┃ ┃ ┣ 📂Iso_2_dff-exp
+┃ ┃ ┣ 📂Iso_2_dff-exp_mc-ISO-IRLS
+┃ ┃ ┣ 📂Iso_2_dff-poly
+┃ ┃ ┣ 📂Iso_2_dff-poly_mc-ISO-IRLS
+┃ ┃ ┣ 📂Iso_3_dff-bright
+┃ ┃ ┣ 📂Iso_3_dff-bright_mc-ISO-IRLS
+┃ ┃ ┣ 📂Iso_3_dff-exp
+┃ ┃ ┣ 📂Iso_3_dff-exp_mc-ISO-IRLS
+┃ ┃ ┣ 📂Iso_3_dff-poly
+┃ ┃ ┣ 📂Iso_3_dff-poly_mc-ISO-IRLS
+┃ ┃ ┣ 📂R_0_dff-bright
+┃ ┃ ┣ 📂R_0_dff-bright_mc-ISO-IRLS
+┃ ┃ ┣ 📂R_0_dff-exp
+┃ ┃ ┣ 📂R_0_dff-exp_mc-ISO-IRLS
+┃ ┃ ┣ 📂R_0_dff-poly
+┃ ┃ ┣ 📂R_0_dff-poly_mc-ISO-IRLS
+┃ ┃ ┣ 📂R_1_dff-bright
+┃ ┃ ┣ 📂R_1_dff-bright_mc-ISO-IRLS
+┃ ┃ ┣ 📂R_1_dff-exp
+┃ ┃ ┣ 📂R_1_dff-exp_mc-ISO-IRLS
+┃ ┃ ┣ 📂R_1_dff-poly
+┃ ┃ ┣ 📂R_1_dff-poly_mc-ISO-IRLS
+┃ ┃ ┣ 📂R_2_dff-bright
+┃ ┃ ┣ 📂R_2_dff-bright_mc-ISO-IRLS
+┃ ┃ ┣ 📂R_2_dff-exp
+┃ ┃ ┣ 📂R_2_dff-exp_mc-ISO-IRLS
+┃ ┃ ┣ 📂R_2_dff-poly
+┃ ┃ ┣ 📂R_2_dff-poly_mc-ISO-IRLS
+┃ ┃ ┣ 📂R_3_dff-bright
+┃ ┃ ┣ 📂R_3_dff-bright_mc-ISO-IRLS
+┃ ┃ ┣ 📂R_3_dff-exp
+┃ ┃ ┣ 📂R_3_dff-exp_mc-ISO-IRLS
+┃ ┃ ┣ 📂R_3_dff-poly
+┃ ┃ ┣ 📂R_3_dff-poly_mc-ISO-IRLS
+```
 
 # Parameters
 
