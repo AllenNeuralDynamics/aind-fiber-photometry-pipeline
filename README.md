@@ -9,7 +9,7 @@ The [fiber photometry pipeline](https://codeocean.allenneuraldynamics.org/capsul
 
 * [aind-fip-dff](https://github.com/AllenNeuralDynamics/aind-fip-dff): Processes input NWB files containing raw fiber photometry data by generating baseline-corrected (ΔF/F) and motion-corrected traces, which are then appended back to the NWB file.
 
-* [aind-fip-qc-raw]([https://github.com/AllenNeuralDynamics/aind-fip-qc-raw](https://github.com/AllenNeuralDynamics/aind-fip-qc-raw/tree/feat-add-new-file-standard)): QC capsule for fiber photometry. Currently in development for new standard.
+* [aind-fip-qc-raw](https://github.com/AllenNeuralDynamics/aind-fip-qc-raw/tree/feat-add-new-file-standard): QC capsule for fiber photometry. Currently in development for new standard.
 
 * [aind-generic-quality-control-evaluation-aggregator](https://github.com/AllenNeuralDynamics/aind-generic-quality-control-evaluation-aggregator): Combines QC outputs into one QC JSON
 
