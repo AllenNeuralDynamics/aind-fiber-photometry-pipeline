@@ -1,57 +1,24 @@
 {
 	"edges": [
 		{
-			"id": "reactflow__edge-d46f8f0e-b8fe-41e1-8048-5d36d7460612-capsule_nwb_packaging_subject_capsule_1",
-			"source": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
-			"target": "capsule_nwb_packaging_subject_capsule_1"
-		},
-		{
 			"id": "reactflow__edge-capsule_aind_fip_dff_9-results",
 			"selected": false,
 			"source": "capsule_aind_fip_dff_9",
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-d46f8f0e-b8fe-41e1-8048-5d36d7460612-capsule_aind_fip_dff_9",
-			"source": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
+			"id": "reactflow__edge-capsule_standard_fiber_only_aind_fip_nwb_base_capsule_10-capsule_aind_fip_dff_9",
+			"source": "capsule_standard_fiber_only_aind_fip_nwb_base_capsule_10",
 			"target": "capsule_aind_fip_dff_9"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_fip_nwb_base_capsule_10-capsule_aind_fip_dff_9",
-			"selected": false,
-			"source": "capsule_aind_fip_nwb_base_capsule_10",
-			"target": "capsule_aind_fip_dff_9"
-		},
-		{
-			"id": "reactflow__edge-capsule_nwb_packaging_subject_capsule_1-capsule_aind_fip_nwb_base_capsule_10",
+			"id": "reactflow__edge-capsule_nwb_packaging_subject_capsule_1-capsule_standard_fiber_only_aind_fip_nwb_base_capsule_10",
 			"source": "capsule_nwb_packaging_subject_capsule_1",
-			"target": "capsule_aind_fip_nwb_base_capsule_10"
+			"target": "capsule_standard_fiber_only_aind_fip_nwb_base_capsule_10"
 		},
 		{
-			"id": "reactflow__edge-d46f8f0e-b8fe-41e1-8048-5d36d7460612-capsule_aind_fip_nwb_base_capsule_10",
-			"source": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
-			"target": "capsule_aind_fip_nwb_base_capsule_10"
-		},
-		{
-			"id": "reactflow__edge-d46f8f0e-b8fe-41e1-8048-5d36d7460612-capsule_aind_fip_qc_raw_11",
-			"selected": false,
-			"source": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
-			"target": "capsule_aind_fip_qc_raw_11"
-		},
-		{
-			"id": "xy-edge__d46f8f0e-b8fe-41e1-8048-5d36d7460612-capsule_aind_dynamic_foraging_qc_12",
-			"source": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
-			"target": "capsule_aind_dynamic_foraging_qc_12"
-		},
-		{
-			"id": "xy-edge__capsule_aind_dynamic_foraging_qc_12-capsule_aind_generic_quality_control_evaluation_aggregator_13",
-			"source": "capsule_aind_dynamic_foraging_qc_12",
-			"target": "capsule_aind_generic_quality_control_evaluation_aggregator_13"
-		},
-		{
-			"id": "xy-edge__capsule_aind_fip_qc_raw_11-capsule_aind_generic_quality_control_evaluation_aggregator_13",
-			"selected": false,
-			"source": "capsule_aind_fip_qc_raw_11",
+			"id": "xy-edge__capsule_standard_fiber_only_aind_fip_qc_raw_11-capsule_aind_generic_quality_control_evaluation_aggregator_13",
+			"source": "capsule_standard_fiber_only_aind_fip_qc_raw_11",
 			"target": "capsule_aind_generic_quality_control_evaluation_aggregator_13"
 		},
 		{
@@ -63,6 +30,30 @@
 			"id": "xy-edge__capsule_aind_fip_dff_9-capsule_aind_generic_quality_control_evaluation_aggregator_13",
 			"source": "capsule_aind_fip_dff_9",
 			"target": "capsule_aind_generic_quality_control_evaluation_aggregator_13"
+		},
+		{
+			"id": "xy-edge__data/fiber_standard-capsule_standard_fiber_only_aind_fip_qc_raw_11",
+			"selected": false,
+			"source": "data/fiber_standard",
+			"target": "capsule_standard_fiber_only_aind_fip_qc_raw_11"
+		},
+		{
+			"id": "xy-edge__data/fiber_standard-capsule_nwb_packaging_subject_capsule_1",
+			"selected": false,
+			"source": "data/fiber_standard",
+			"target": "capsule_nwb_packaging_subject_capsule_1"
+		},
+		{
+			"id": "xy-edge__data/fiber_standard-capsule_standard_fiber_only_aind_fip_nwb_base_capsule_10",
+			"selected": false,
+			"source": "data/fiber_standard",
+			"target": "capsule_standard_fiber_only_aind_fip_nwb_base_capsule_10"
+		},
+		{
+			"id": "xy-edge__data/fiber_standard-capsule_aind_fip_dff_9",
+			"selected": false,
+			"source": "data/fiber_standard",
+			"target": "capsule_aind_fip_dff_9"
 		}
 	],
 	"nodes": [
@@ -78,8 +69,8 @@
 		{
 			"id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
 			"position": {
-				"x": 682.8088327601455,
-				"y": -803.0918574172267
+				"x": 1226.8088327601456,
+				"y": -625.7585240838933
 			},
 			"selected": false,
 			"type": "dataset"
@@ -93,7 +84,7 @@
 				"x": 420.59044155706954,
 				"y": 123.94651254400156
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -104,30 +95,6 @@
 			"position": {
 				"x": 189.86396488192054,
 				"y": -389.1433078531437
-			},
-			"selected": false,
-			"type": "capsule"
-		},
-		{
-			"data": {
-				"capsule_id": "e45742e4-7920-4985-ba36-262bc891377a"
-			},
-			"id": "capsule_aind_fip_nwb_base_capsule_10",
-			"position": {
-				"x": 236.35555013020848,
-				"y": -137.15555826822916
-			},
-			"selected": false,
-			"type": "capsule"
-		},
-		{
-			"data": {
-				"capsule_id": "3ae91e80-10b6-4659-814a-8afee9359a40"
-			},
-			"id": "capsule_aind_fip_qc_raw_11",
-			"position": {
-				"x": -17.746394060971852,
-				"y": -519.2661886625133
 			},
 			"selected": false,
 			"type": "capsule"
@@ -146,21 +113,42 @@
 		},
 		{
 			"data": {
-				"capsule_id": "9110d5cb-2dd4-405d-b6e9-725dd04097f5"
+				"capsule_id": "85c81ec9-d55c-43c2-8004-8fb86537d23e"
 			},
-			"id": "capsule_aind_dynamic_foraging_qc_12",
+			"id": "capsule_standard_fiber_only_aind_fip_qc_raw_11",
 			"position": {
-				"x": -286.39630090801427,
-				"y": -550.5235697823397
+				"x": -137.74639406097185,
+				"y": -468.59952199584666
 			},
 			"selected": false,
 			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "fd449b5c-c054-4397-a447-3e5d214da68a"
+			},
+			"id": "capsule_standard_fiber_only_aind_fip_nwb_base_capsule_10",
+			"position": {
+				"x": 268.3555501302085,
+				"y": -103.82222493489583
+			},
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"id": "data/fiber_standard",
+			"position": {
+				"x": 932,
+				"y": -861.3333333333334
+			},
+			"selected": true,
+			"type": "pipeline"
 		}
 	],
-	"timestamp": 1744927242340,
+	"timestamp": 1749164947261,
 	"viewport": {
-		"x": 0,
-		"y": 0,
+		"x": 487,
+		"y": 710,
 		"zoom": 0.75
 	}
 }
