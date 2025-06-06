@@ -1,5 +1,5 @@
 # Fiber Photometry processing pipeline
-This is a pipeline in development to process Fiber Photometry data adapted to a fiber acquisition standard defined here: [Fiber Photometry Acquisition Standard](https://github.com/AllenNeuralDynamics/aind-file-standards/blob/main/file_formats/fip.md). NOTE: The data currently attached to the pipeline is a subset of the standard defined, and is only meant for testing purposes, and thus, only contains a subset of the standard file acquisition defined for Fiber Photometry. Currently is `fiber_standard`.
+This is a pipeline in development to process Fiber Photometry data adapted to a fiber acquisition standard defined here: [Fiber Photometry Acquisition Standard](https://github.com/AllenNeuralDynamics/aind-file-standards/blob/main/file_formats/fip.md). NOTE: The data currently attached to the pipeline is a subset of the standard defined, and is only meant for testing purposes. Currently is `fiber_standard` folder in the pipeline.
 
 The [fiber photometry pipeline](https://codeocean.allenneuraldynamics.org/capsule/7378248/tree) runs on [Nextflow](https://www.nextflow.io/) and contains the following steps:
 
