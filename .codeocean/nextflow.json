@@ -12,7 +12,7 @@
 			},
 			"resources": {
 				"cpus": 1,
-				"memory": 16
+				"memory": 24
 			},
 			"inputs": [
 				{
@@ -66,11 +66,11 @@
 				"id": "e45742e4-7920-4985-ba36-262bc891377a",
 				"name": "aind-fip-nwb-base-capsule",
 				"slug": "0550370",
-				"version": 15
+				"version": 16
 			},
 			"resources": {
 				"cpus": 1,
-				"memory": 24
+				"memory": 8
 			},
 			"inputs": [
 				{

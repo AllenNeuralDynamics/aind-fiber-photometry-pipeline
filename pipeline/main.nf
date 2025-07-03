@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:4926bc76616ef992e7161f4638a17fd5a22abfb8cc42ad33bde7c142a2073d30
+// hash:sha256:fcf6313bcd19a586458168b70a79d4d63ca9615f7f7befea9bae896b9238dbd8
 
 nextflow.enable.dsl = 1
 
@@ -23,7 +23,7 @@ process capsule_nwb_packaging_subject_capsule_1 {
 	container "$REGISTRY_HOST/published/bdc9f09f-0005-4d09-aaf9-7e82abd93f19:v3"
 
 	cpus 1
-	memory '15 GB'
+	memory '24 GB'
 
 	input:
 	path 'capsule/data/fiber_session' from fip_to_nwb_packaging_subject_1.collect()
@@ -38,7 +38,7 @@ process capsule_nwb_packaging_subject_capsule_1 {
 
 	export CO_CAPSULE_ID=bdc9f09f-0005-4d09-aaf9-7e82abd93f19
 	export CO_CPUS=1
-	export CO_MEMORY=16106127360
+	export CO_MEMORY=25769803776
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -117,10 +117,10 @@ process capsule_aind_fip_dff_9 {
 // capsule - aind-fip-nwb-base-capsule
 process capsule_aind_fip_nwb_base_capsule_10 {
 	tag 'capsule-0550370'
-	container "$REGISTRY_HOST/published/e45742e4-7920-4985-ba36-262bc891377a:v15"
+	container "$REGISTRY_HOST/published/e45742e4-7920-4985-ba36-262bc891377a:v16"
 
 	cpus 1
-	memory '24 GB'
+	memory '7.5 GB'
 
 	input:
 	path 'capsule/data/nwb/' from capsule_nwb_packaging_subject_capsule_1_to_capsule_aind_fip_nwb_base_capsule_10_4.collect()
@@ -136,7 +136,7 @@ process capsule_aind_fip_nwb_base_capsule_10 {
 
 	export CO_CAPSULE_ID=e45742e4-7920-4985-ba36-262bc891377a
 	export CO_CPUS=1
-	export CO_MEMORY=25769803776
+	export CO_MEMORY=8053063680
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -145,9 +145,9 @@ process capsule_aind_fip_nwb_base_capsule_10 {
 
 	echo "[${task.tag}] cloning git repo..."
 	if [[ "\$(printf '%s\n' "2.20.0" "\$(git version | awk '{print \$3}')" | sort -V | head -n1)" = "2.20.0" ]]; then
-		git clone --filter=tree:0 --branch v15.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0550370.git" capsule-repo
+		git clone --filter=tree:0 --branch v16.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0550370.git" capsule-repo
 	else
-		git clone --branch v15.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0550370.git" capsule-repo
+		git clone --branch v16.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0550370.git" capsule-repo
 	fi
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
