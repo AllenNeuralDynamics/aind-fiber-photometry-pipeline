@@ -2,31 +2,6 @@
 	"version": 1,
 	"processes": [
 		{
-			"name": "capsule_nwb_packaging_subject_capsule_1",
-			"capsule": {
-				"id": "bdc9f09f-0005-4d09-aaf9-7e82abd93f19",
-				"name": "NWB Packaging Subject",
-				"slug": "8198603",
-				"version": 3,
-				"app_panel": true
-			},
-			"resources": {
-				"cpus": 1,
-				"memory": 16
-			},
-			"inputs": [
-				{
-					"id": "mDcI0T7PzU1TZt60",
-					"source_id": "data/fiber_standard",
-					"type": "pipeline",
-					"name": "fiber_standard",
-					"source_path": "fiber_standard/",
-					"target_path": "fiber_session",
-					"collect": true
-				}
-			]
-		},
-		{
 			"name": "capsule_aind_fip_dff_9",
 			"capsule": {
 				"id": "603a2149-6281-4a7b-bbd6-ff50ca0e064e",
@@ -40,19 +15,20 @@
 			},
 			"inputs": [
 				{
-					"id": "Kmw4y6tywKRLZwjR",
-					"source_id": "data/fiber_standard",
-					"type": "pipeline",
-					"name": "fiber_standard",
-					"source_path": "fiber_standard/",
-					"target_path": "fiber_raw_data",
-					"collect": true
-				},
-				{
 					"id": "4xi4xliOnCsyNxWr",
 					"source_id": "capsule_standard_fiber_only_aind_fip_nwb_base_capsule_10",
 					"type": "capsule",
-					"name": "Standard Fiber Only - aind-fip-nwb-base-capsule"
+					"name": "Standard Fiber Only - aind-fip-nwb-base-capsule",
+					"collect": true
+				},
+				{
+					"id": "98Le8l9PIoMBCISe",
+					"source_id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
+					"type": "dataset",
+					"name": "FIP",
+					"source_path": "FIP/",
+					"target_path": "fiber_raw_data",
+					"collect": true
 				}
 			],
 			"results": {
@@ -66,8 +42,8 @@
 				"id": "fd449b5c-c054-4397-a447-3e5d214da68a",
 				"name": "Standard Fiber Only - aind-fip-nwb-base-capsule",
 				"slug": "3598308",
-				"commit": "1ccf098fdf3b36b5f209be4c8440005dc014c6c4",
-				"image_tag": "ec5622d3035d3ce118065ba4eaef95dc"
+				"commit": "837e6c2350eb53d1201b6f220357f7d6c396ca9b",
+				"image_tag": "44a4598d0c9de825c735e6e2950962a0"
 			},
 			"resources": {
 				"cpus": 1,
@@ -75,20 +51,12 @@
 			},
 			"inputs": [
 				{
-					"id": "W8JBmiyaZnOxXOjV",
-					"source_id": "data/fiber_standard",
-					"type": "pipeline",
-					"name": "fiber_standard",
-					"source_path": "fiber_standard/",
+					"id": "kTgL8vR7CFaJ9Kpa",
+					"source_id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
+					"type": "dataset",
+					"name": "FIP",
+					"source_path": "FIP/",
 					"target_path": "fiber_raw_data",
-					"collect": true
-				},
-				{
-					"id": "6fXBc26LcMT5gcIN",
-					"source_id": "capsule_nwb_packaging_subject_capsule_1",
-					"type": "capsule",
-					"name": "NWB-Packaging-Subject-Capsule",
-					"target_path": "nwb",
 					"collect": true
 				}
 			]
@@ -108,11 +76,11 @@
 			},
 			"inputs": [
 				{
-					"id": "a98d8GjmXwiKCRBH",
-					"source_id": "data/fiber_standard",
-					"type": "pipeline",
-					"name": "fiber_standard",
-					"source_path": "fiber_standard/",
+					"id": "XweSgG5yIjXazL8f",
+					"source_id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
+					"type": "dataset",
+					"name": "FIP",
+					"source_path": "FIP/",
 					"target_path": "fiber_raw_data",
 					"collect": true
 				}

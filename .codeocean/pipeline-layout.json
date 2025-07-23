@@ -12,11 +12,6 @@
 			"target": "capsule_aind_fip_dff_9"
 		},
 		{
-			"id": "reactflow__edge-capsule_nwb_packaging_subject_capsule_1-capsule_standard_fiber_only_aind_fip_nwb_base_capsule_10",
-			"source": "capsule_nwb_packaging_subject_capsule_1",
-			"target": "capsule_standard_fiber_only_aind_fip_nwb_base_capsule_10"
-		},
-		{
 			"id": "xy-edge__capsule_standard_fiber_only_aind_fip_qc_raw_11-capsule_aind_generic_quality_control_evaluation_aggregator_13",
 			"source": "capsule_standard_fiber_only_aind_fip_qc_raw_11",
 			"target": "capsule_aind_generic_quality_control_evaluation_aggregator_13"
@@ -32,27 +27,20 @@
 			"target": "capsule_aind_generic_quality_control_evaluation_aggregator_13"
 		},
 		{
-			"id": "xy-edge__data/fiber_standard-capsule_standard_fiber_only_aind_fip_qc_raw_11",
+			"id": "xy-edge__d46f8f0e-b8fe-41e1-8048-5d36d7460612-capsule_standard_fiber_only_aind_fip_qc_raw_11",
 			"selected": false,
-			"source": "data/fiber_standard",
+			"source": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
 			"target": "capsule_standard_fiber_only_aind_fip_qc_raw_11"
 		},
 		{
-			"id": "xy-edge__data/fiber_standard-capsule_nwb_packaging_subject_capsule_1",
+			"id": "xy-edge__d46f8f0e-b8fe-41e1-8048-5d36d7460612-capsule_standard_fiber_only_aind_fip_nwb_base_capsule_10",
 			"selected": false,
-			"source": "data/fiber_standard",
-			"target": "capsule_nwb_packaging_subject_capsule_1"
-		},
-		{
-			"id": "xy-edge__data/fiber_standard-capsule_standard_fiber_only_aind_fip_nwb_base_capsule_10",
-			"selected": false,
-			"source": "data/fiber_standard",
+			"source": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
 			"target": "capsule_standard_fiber_only_aind_fip_nwb_base_capsule_10"
 		},
 		{
-			"id": "xy-edge__data/fiber_standard-capsule_aind_fip_dff_9",
-			"selected": false,
-			"source": "data/fiber_standard",
+			"id": "xy-edge__d46f8f0e-b8fe-41e1-8048-5d36d7460612-capsule_aind_fip_dff_9",
+			"source": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
 			"target": "capsule_aind_fip_dff_9"
 		}
 	],
@@ -69,8 +57,8 @@
 		{
 			"id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
 			"position": {
-				"x": 1226.8088327601456,
-				"y": -625.7585240838933
+				"x": 637.1917350287198,
+				"y": -904.8944129294962
 			},
 			"selected": false,
 			"type": "dataset"
@@ -83,18 +71,6 @@
 			"position": {
 				"x": 420.59044155706954,
 				"y": 123.94651254400156
-			},
-			"selected": false,
-			"type": "capsule"
-		},
-		{
-			"data": {
-				"capsule_id": "bdc9f09f-0005-4d09-aaf9-7e82abd93f19"
-			},
-			"id": "capsule_nwb_packaging_subject_capsule_1",
-			"position": {
-				"x": 189.86396488192054,
-				"y": -389.1433078531437
 			},
 			"selected": false,
 			"type": "capsule"
@@ -141,14 +117,14 @@
 				"x": 932,
 				"y": -861.3333333333334
 			},
-			"selected": true,
+			"selected": false,
 			"type": "pipeline"
 		}
 	],
-	"timestamp": 1749164947261,
+	"timestamp": 1753202527045,
 	"viewport": {
-		"x": 487,
-		"y": 710,
-		"zoom": 0.75
+		"x": 351.97513783973193,
+		"y": 649.7608791046503,
+		"zoom": 0.6665808465507739
 	}
 }
