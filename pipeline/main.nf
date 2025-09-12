@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:384153adc405e1915c02284bd01122b62189f26d4581ef9521396cf2271a7c10
+// hash:sha256:f82a8f0a6f2b9ba4e35cce02e5f22763ad558c41883cb11c39ff52874477d8e4
 
 nextflow.enable.dsl = 1
 
@@ -16,10 +16,10 @@ capsule_standard_fiber_only_aind_fip_qc_raw_11_to_capsule_aind_generic_quality_c
 // capsule - aind-fip-dff
 process capsule_aind_fip_dff_9 {
 	tag 'capsule-1001867'
-	container "$REGISTRY_HOST/published/603a2149-6281-4a7b-bbd6-ff50ca0e064e:v11"
+	container "$REGISTRY_HOST/published/603a2149-6281-4a7b-bbd6-ff50ca0e064e:v12"
 
 	cpus 1
-	memory '30 GB'
+	memory '7.5 GB'
 
 	publishDir "$RESULTS_PATH", saveAs: { filename -> filename.matches("capsule/results/nwb") ? new File(filename).getName() : null }
 
@@ -39,7 +39,7 @@ process capsule_aind_fip_dff_9 {
 
 	export CO_CAPSULE_ID=603a2149-6281-4a7b-bbd6-ff50ca0e064e
 	export CO_CPUS=1
-	export CO_MEMORY=32212254720
+	export CO_MEMORY=8053063680
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -48,11 +48,11 @@ process capsule_aind_fip_dff_9 {
 
 	echo "[${task.tag}] cloning git repo..."
 	if [[ "\$(printf '%s\n' "2.20.0" "\$(git version | awk '{print \$3}')" | sort -V | head -n1)" = "2.20.0" ]]; then
-		git clone --filter=tree:0 --branch v11.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1001867.git" capsule-repo
+		git clone --filter=tree:0 --branch v12.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1001867.git" capsule-repo
 	else
-		git clone --branch v11.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1001867.git" capsule-repo
+		git clone --branch v12.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1001867.git" capsule-repo
 	fi
-	mv capsule-repo/code capsule/code
+	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
 	echo "[${task.tag}] running capsule..."
@@ -99,7 +99,7 @@ process capsule_standard_fiber_only_aind_fip_nwb_base_capsule_10 {
 		git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-3598308.git" capsule-repo
 	fi
 	git -C capsule-repo checkout 837e6c2350eb53d1201b6f220357f7d6c396ca9b --quiet
-	mv capsule-repo/code capsule/code
+	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
 	echo "[${task.tag}] running capsule..."
@@ -146,7 +146,7 @@ process capsule_standard_fiber_only_aind_fip_qc_raw_11 {
 		git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8112489.git" capsule-repo
 	fi
 	git -C capsule-repo checkout 01da8e4e45a759c78dbed5ab58dc341b1eaf08cb --quiet
-	mv capsule-repo/code capsule/code
+	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
 	echo "[${task.tag}] running capsule..."
@@ -196,7 +196,7 @@ process capsule_aind_generic_quality_control_evaluation_aggregator_13 {
 	else
 		git clone --branch v1.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-5290719.git" capsule-repo
 	fi
-	mv capsule-repo/code capsule/code
+	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
 	echo "[${task.tag}] running capsule..."

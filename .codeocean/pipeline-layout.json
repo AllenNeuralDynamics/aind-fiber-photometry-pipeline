@@ -2,7 +2,6 @@
 	"edges": [
 		{
 			"id": "reactflow__edge-capsule_aind_fip_dff_9-results",
-			"selected": false,
 			"source": "capsule_aind_fip_dff_9",
 			"target": "results"
 		},
@@ -65,18 +64,6 @@
 		},
 		{
 			"data": {
-				"capsule_id": "603a2149-6281-4a7b-bbd6-ff50ca0e064e"
-			},
-			"id": "capsule_aind_fip_dff_9",
-			"position": {
-				"x": 420.59044155706954,
-				"y": 123.94651254400156
-			},
-			"selected": false,
-			"type": "capsule"
-		},
-		{
-			"data": {
 				"capsule_id": "03b3acfd-fdef-46b0-ad80-50e9d4e00827"
 			},
 			"id": "capsule_aind_generic_quality_control_evaluation_aggregator_13",
@@ -110,12 +97,19 @@
 			},
 			"selected": false,
 			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "603a2149-6281-4a7b-bbd6-ff50ca0e064e"
+			},
+			"id": "capsule_aind_fip_dff_9",
+			"position": {
+				"x": 420.59044155706954,
+				"y": 123.94651254400156
+			},
+			"selected": true,
+			"type": "capsule"
 		}
 	],
-	"timestamp": 1757010578537,
-	"viewport": {
-		"x": 111.15889918369953,
-		"y": 811.2027733545153,
-		"zoom": 0.8795587001934393
-	}
+	"timestamp": 1757704239679
 }

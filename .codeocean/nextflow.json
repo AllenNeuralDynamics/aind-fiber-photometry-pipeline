@@ -7,11 +7,11 @@
 				"id": "603a2149-6281-4a7b-bbd6-ff50ca0e064e",
 				"name": "aind-fip-dff",
 				"slug": "1001867",
-				"version": 11
+				"version": 12
 			},
 			"resources": {
 				"cpus": 1,
-				"memory": 32
+				"memory": 8
 			},
 			"inputs": [
 				{
