@@ -31,7 +31,9 @@
 			"capsule": {
 				"id": "19cc4e50-5aa5-4ee0-847b-0c313b44a0b8",
 				"name": "aind-fip-dff",
-				"slug": "9409763"
+				"slug": "9409763",
+				"commit": "06d577c1ab93f0c5d16e48ce07e7c743cf74ceb9",
+				"image_tag": "47ad36844f14a93933118cf075daad74"
 			},
 			"resources": {
 				"cpus": 2,
@@ -64,7 +66,9 @@
 			"capsule": {
 				"id": "566973ae-bc6d-4dba-9f4a-c6fd33151883",
 				"name": "aind-fip-nwb-base-capsule",
-				"slug": "6929204"
+				"slug": "6929204",
+				"commit": "5346a12ae4cf87933830a3e4d907a5bae26878cf",
+				"image_tag": "dd3dc6be736816934d60ad2b16ef07d9"
 			},
 			"resources": {
 				"cpus": 1,
@@ -100,7 +104,7 @@
 			},
 			"resources": {
 				"cpus": 1,
-				"memory": 24
+				"memory": 8
 			},
 			"inputs": [
 				{
@@ -124,7 +128,7 @@
 			},
 			"resources": {
 				"cpus": 1,
-				"memory": 50
+				"memory": 8
 			},
 			"inputs": [
 				{
@@ -148,7 +152,7 @@
 			},
 			"resources": {
 				"cpus": 1,
-				"memory": 12
+				"memory": 8
 			},
 			"inputs": [
 				{

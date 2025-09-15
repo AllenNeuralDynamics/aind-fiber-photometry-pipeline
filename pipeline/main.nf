@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:92ffa5a7f387ed12ae303356de52739396616c3086a40cbe7c0a1118bbd88706
+// hash:sha256:93bb5d7aeecb98b34a24ce2e7cd1c643a7f3a1ebf8f9864c6a4bc0a8c251367a
 
 nextflow.enable.dsl = 1
 
@@ -67,7 +67,7 @@ process capsule_nwb_packaging_subject_1 {
 // capsule - aind-fip-dff
 process capsule_aind_fip_dff_9 {
 	tag 'capsule-9409763'
-	container "$REGISTRY_HOST/capsule/19cc4e50-5aa5-4ee0-847b-0c313b44a0b8"
+	container "$REGISTRY_HOST/capsule/19cc4e50-5aa5-4ee0-847b-0c313b44a0b8:47ad36844f14a93933118cf075daad74"
 
 	cpus 2
 	memory '15 GB'
@@ -103,6 +103,7 @@ process capsule_aind_fip_dff_9 {
 	else
 		git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9409763.git" capsule-repo
 	fi
+	git -C capsule-repo checkout 06d577c1ab93f0c5d16e48ce07e7c743cf74ceb9 --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
@@ -118,7 +119,7 @@ process capsule_aind_fip_dff_9 {
 // capsule - aind-fip-nwb-base-capsule
 process capsule_aind_fip_nwb_base_capsule_10 {
 	tag 'capsule-6929204'
-	container "$REGISTRY_HOST/capsule/566973ae-bc6d-4dba-9f4a-c6fd33151883"
+	container "$REGISTRY_HOST/capsule/566973ae-bc6d-4dba-9f4a-c6fd33151883:dd3dc6be736816934d60ad2b16ef07d9"
 
 	cpus 1
 	memory '7.5 GB'
@@ -151,6 +152,7 @@ process capsule_aind_fip_nwb_base_capsule_10 {
 	else
 		git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-6929204.git" capsule-repo
 	fi
+	git -C capsule-repo checkout 5346a12ae4cf87933830a3e4d907a5bae26878cf --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
@@ -169,7 +171,7 @@ process capsule_aind_fip_qc_raw_11 {
 	container "$REGISTRY_HOST/published/3ae91e80-10b6-4659-814a-8afee9359a40:v8"
 
 	cpus 1
-	memory '24 GB'
+	memory '7.5 GB'
 
 	input:
 	path 'capsule/data/fiber_raw_data' from fip_to_aind_fip_qc_raw_6.collect()
@@ -184,7 +186,7 @@ process capsule_aind_fip_qc_raw_11 {
 
 	export CO_CAPSULE_ID=3ae91e80-10b6-4659-814a-8afee9359a40
 	export CO_CPUS=1
-	export CO_MEMORY=25769803776
+	export CO_MEMORY=8053063680
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -215,7 +217,7 @@ process capsule_aind_dynamic_foraging_qc_12 {
 	container "$REGISTRY_HOST/published/9110d5cb-2dd4-405d-b6e9-725dd04097f5:v6"
 
 	cpus 1
-	memory '50 GB'
+	memory '7.5 GB'
 
 	input:
 	path 'capsule/data/fiber_raw_data' from fip_to_aind_dynamic_foraging_qc_7.collect()
@@ -230,7 +232,7 @@ process capsule_aind_dynamic_foraging_qc_12 {
 
 	export CO_CAPSULE_ID=9110d5cb-2dd4-405d-b6e9-725dd04097f5
 	export CO_CPUS=1
-	export CO_MEMORY=53687091200
+	export CO_MEMORY=8053063680
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -261,7 +263,7 @@ process capsule_aind_generic_quality_control_evaluation_aggregator_13 {
 	container "$REGISTRY_HOST/published/03b3acfd-fdef-46b0-ad80-50e9d4e00827:v1"
 
 	cpus 1
-	memory '12 GB'
+	memory '7.5 GB'
 
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
@@ -282,7 +284,7 @@ process capsule_aind_generic_quality_control_evaluation_aggregator_13 {
 
 	export CO_CAPSULE_ID=03b3acfd-fdef-46b0-ad80-50e9d4e00827
 	export CO_CPUS=1
-	export CO_MEMORY=12884901888
+	export CO_MEMORY=8053063680
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
