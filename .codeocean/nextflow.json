@@ -2,7 +2,7 @@
 	"version": 1,
 	"processes": [
 		{
-			"name": "capsule_nwb_packaging_subject_capsule_1",
+			"name": "capsule_nwb_packaging_subject_1",
 			"capsule": {
 				"id": "bdc9f09f-0005-4d09-aaf9-7e82abd93f19",
 				"name": "NWB Packaging Subject",
@@ -12,7 +12,7 @@
 			},
 			"resources": {
 				"cpus": 1,
-				"memory": 24
+				"memory": 8
 			},
 			"inputs": [
 				{
@@ -29,14 +29,13 @@
 		{
 			"name": "capsule_aind_fip_dff_9",
 			"capsule": {
-				"id": "603a2149-6281-4a7b-bbd6-ff50ca0e064e",
+				"id": "19cc4e50-5aa5-4ee0-847b-0c313b44a0b8",
 				"name": "aind-fip-dff",
-				"slug": "1001867",
-				"version": 12
+				"slug": "9409763"
 			},
 			"resources": {
-				"cpus": 1,
-				"memory": 8
+				"cpus": 2,
+				"memory": 16
 			},
 			"inputs": [
 				{
@@ -56,17 +55,16 @@
 				}
 			],
 			"results": {
-				"id": "603a2149-6281-4a7b-bbd6-ff50ca0e064e",
+				"id": "19cc4e50-5aa5-4ee0-847b-0c313b44a0b8",
 				"source_path": "nwb"
 			}
 		},
 		{
 			"name": "capsule_aind_fip_nwb_base_capsule_10",
 			"capsule": {
-				"id": "e45742e4-7920-4985-ba36-262bc891377a",
+				"id": "566973ae-bc6d-4dba-9f4a-c6fd33151883",
 				"name": "aind-fip-nwb-base-capsule",
-				"slug": "0550370",
-				"version": 17
+				"slug": "6929204"
 			},
 			"resources": {
 				"cpus": 1,
@@ -75,9 +73,9 @@
 			"inputs": [
 				{
 					"id": "6fXBc26LcMT5gcIN",
-					"source_id": "capsule_nwb_packaging_subject_capsule_1",
+					"source_id": "capsule_nwb_packaging_subject_1",
 					"type": "capsule",
-					"name": "NWB-Packaging-Subject-Capsule",
+					"name": "NWB Packaging Subject",
 					"target_path": "nwb",
 					"collect": true
 				},
@@ -153,6 +151,14 @@
 				"memory": 12
 			},
 			"inputs": [
+				{
+					"id": "r8Fd8uzeHH4X1WG8",
+					"source_id": "capsule_aind_fip_nwb_base_capsule_10",
+					"type": "capsule",
+					"name": "aind-fip-nwb-base-capsule",
+					"source_path": "alignment-qc",
+					"target_path": "alignment-qc"
+				},
 				{
 					"id": "W0n1Mc6pYgmHqCkQ",
 					"source_id": "capsule_aind_dynamic_foraging_qc_12",

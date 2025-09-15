@@ -1,13 +1,12 @@
 {
 	"edges": [
 		{
-			"id": "reactflow__edge-d46f8f0e-b8fe-41e1-8048-5d36d7460612-capsule_nwb_packaging_subject_capsule_1",
+			"id": "reactflow__edge-d46f8f0e-b8fe-41e1-8048-5d36d7460612-capsule_nwb_packaging_subject_1",
 			"source": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
-			"target": "capsule_nwb_packaging_subject_capsule_1"
+			"target": "capsule_nwb_packaging_subject_1"
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_fip_dff_9-results",
-			"selected": false,
 			"source": "capsule_aind_fip_dff_9",
 			"target": "results"
 		},
@@ -18,13 +17,12 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_fip_nwb_base_capsule_10-capsule_aind_fip_dff_9",
-			"selected": false,
 			"source": "capsule_aind_fip_nwb_base_capsule_10",
 			"target": "capsule_aind_fip_dff_9"
 		},
 		{
-			"id": "reactflow__edge-capsule_nwb_packaging_subject_capsule_1-capsule_aind_fip_nwb_base_capsule_10",
-			"source": "capsule_nwb_packaging_subject_capsule_1",
+			"id": "reactflow__edge-capsule_nwb_packaging_subject_1-capsule_aind_fip_nwb_base_capsule_10",
+			"source": "capsule_nwb_packaging_subject_1",
 			"target": "capsule_aind_fip_nwb_base_capsule_10"
 		},
 		{
@@ -63,6 +61,11 @@
 			"id": "xy-edge__capsule_aind_fip_dff_9-capsule_aind_generic_quality_control_evaluation_aggregator_13",
 			"source": "capsule_aind_fip_dff_9",
 			"target": "capsule_aind_generic_quality_control_evaluation_aggregator_13"
+		},
+		{
+			"id": "xy-edge__capsule_aind_fip_nwb_base_capsule_10-capsule_aind_generic_quality_control_evaluation_aggregator_13",
+			"source": "capsule_aind_fip_nwb_base_capsule_10",
+			"target": "capsule_aind_generic_quality_control_evaluation_aggregator_13"
 		}
 	],
 	"nodes": [
@@ -83,42 +86,6 @@
 			},
 			"selected": false,
 			"type": "dataset"
-		},
-		{
-			"data": {
-				"capsule_id": "603a2149-6281-4a7b-bbd6-ff50ca0e064e"
-			},
-			"id": "capsule_aind_fip_dff_9",
-			"position": {
-				"x": 420.59044155706954,
-				"y": 123.94651254400156
-			},
-			"selected": true,
-			"type": "capsule"
-		},
-		{
-			"data": {
-				"capsule_id": "bdc9f09f-0005-4d09-aaf9-7e82abd93f19"
-			},
-			"id": "capsule_nwb_packaging_subject_capsule_1",
-			"position": {
-				"x": 189.86396488192054,
-				"y": -389.1433078531437
-			},
-			"selected": false,
-			"type": "capsule"
-		},
-		{
-			"data": {
-				"capsule_id": "e45742e4-7920-4985-ba36-262bc891377a"
-			},
-			"id": "capsule_aind_fip_nwb_base_capsule_10",
-			"position": {
-				"x": 236.35555013020848,
-				"y": -137.15555826822916
-			},
-			"selected": false,
-			"type": "capsule"
 		},
 		{
 			"data": {
@@ -155,12 +122,43 @@
 			},
 			"selected": false,
 			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "bdc9f09f-0005-4d09-aaf9-7e82abd93f19"
+			},
+			"id": "capsule_nwb_packaging_subject_1",
+			"position": {
+				"x": 189.86396488192054,
+				"y": -389.1433078531437
+			},
+			"selected": true,
+			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "19cc4e50-5aa5-4ee0-847b-0c313b44a0b8"
+			},
+			"id": "capsule_aind_fip_dff_9",
+			"position": {
+				"x": 420.59044155706954,
+				"y": 123.94651254400156
+			},
+			"selected": true,
+			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "566973ae-bc6d-4dba-9f4a-c6fd33151883"
+			},
+			"id": "capsule_aind_fip_nwb_base_capsule_10",
+			"position": {
+				"x": 236.35555013020848,
+				"y": -137.15555826822916
+			},
+			"selected": true,
+			"type": "capsule"
 		}
 	],
-	"timestamp": 1744927242340,
-	"viewport": {
-		"x": 0,
-		"y": 0,
-		"zoom": 0.75
-	}
+	"timestamp": 1757955265028
 }
