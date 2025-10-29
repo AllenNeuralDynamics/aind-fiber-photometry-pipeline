@@ -63,11 +63,10 @@
 		{
 			"name": "capsule_aind_fip_nwb_base_capsule_10",
 			"capsule": {
-				"id": "627316a5-c2e7-4d58-be69-a54569bdc51c",
+				"id": "e45742e4-7920-4985-ba36-262bc891377a",
 				"name": "aind-fip-nwb-base-capsule",
-				"slug": "4494799",
-				"commit": "8b0ce2c6457fc8c6304c4a42e167eadda2c9e582",
-				"image_tag": "dd3dc6be736816934d60ad2b16ef07d9"
+				"slug": "0550370",
+				"version": 19
 			},
 			"resources": {
 				"cpus": 1,

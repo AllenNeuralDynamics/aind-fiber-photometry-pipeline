@@ -134,8 +134,16 @@
 			"type": "capsule"
 		},
 		{
+			"id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
+			"position": {
+				"x": 682.8088327601455,
+				"y": -803.0918574172267
+			},
+			"type": "dataset"
+		},
+		{
 			"data": {
-				"capsule_id": "627316a5-c2e7-4d58-be69-a54569bdc51c"
+				"capsule_id": "e45742e4-7920-4985-ba36-262bc891377a"
 			},
 			"id": "capsule_aind_fip_nwb_base_capsule_10",
 			"position": {
@@ -144,15 +152,7 @@
 			},
 			"selected": true,
 			"type": "capsule"
-		},
-		{
-			"id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
-			"position": {
-				"x": 682.8088327601455,
-				"y": -803.0918574172267
-			},
-			"type": "dataset"
 		}
 	],
-	"timestamp": 1761745801101
+	"timestamp": 1761745880995
 }
