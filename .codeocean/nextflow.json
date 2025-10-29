@@ -154,6 +154,14 @@
 			},
 			"inputs": [
 				{
+					"id": "rG0Ud0c8mLq7sKaz",
+					"source_id": "capsule_aind_fip_nwb_base_capsule_10",
+					"type": "capsule",
+					"name": "aind-fip-nwb-base-capsule",
+					"source_path": "alignment-qc",
+					"target_path": "alignment-qc"
+				},
+				{
 					"id": "W0n1Mc6pYgmHqCkQ",
 					"source_id": "capsule_aind_dynamic_foraging_qc_12",
 					"type": "capsule",

@@ -61,6 +61,11 @@
 			"id": "xy-edge__capsule_aind_fip_dff_9-capsule_aind_generic_quality_control_evaluation_aggregator_13",
 			"source": "capsule_aind_fip_dff_9",
 			"target": "capsule_aind_generic_quality_control_evaluation_aggregator_13"
+		},
+		{
+			"id": "xy-edge__capsule_aind_fip_nwb_base_capsule_10-capsule_aind_generic_quality_control_evaluation_aggregator_13",
+			"source": "capsule_aind_fip_nwb_base_capsule_10",
+			"target": "capsule_aind_generic_quality_control_evaluation_aggregator_13"
 		}
 	],
 	"nodes": [
@@ -154,5 +159,10 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1761745880995
+	"timestamp": 1761745916658,
+	"viewport": {
+		"x": 197.7232230859327,
+		"y": 261.2373541231953,
+		"zoom": 0.30116494319526577
+	}
 }
