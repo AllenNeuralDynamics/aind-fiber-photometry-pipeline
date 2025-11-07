@@ -1,17 +1,17 @@
 #!/usr/bin/env nextflow
-// hash:sha256:6d39d92e612a989c00d99a424518448d1a5fc1762d88ca590568bf1968be04e8
+// hash:sha256:9741c1c19b6dac2d0eb98f4bd90089f91216c75a56fa37bb160801b5f473f847
 
 nextflow.enable.dsl = 1
 
-params.behavior_812241_2025_11_03_08_55_13_url = 's3://aind-open-data/behavior_812241_2025-11-03_08-55-13'
+params.fip_url = 's3://aind-private-data-prod-o5171v/behavior_752703_2024-11-20_13-01-14'
 
-behavior_812241_2025_11_03_08_55_13_to_nwb_packaging_subject_1 = channel.fromPath(params.behavior_812241_2025_11_03_08_55_13_url + "/", type: 'any')
+fip_to_nwb_packaging_subject_1 = channel.fromPath(params.fip_url + "/", type: 'any')
 capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_fip_dff_9_2 = channel.create()
-behavior_812241_2025_11_03_08_55_13_to_aind_fip_dff_3 = channel.fromPath(params.behavior_812241_2025_11_03_08_55_13_url + "/", type: 'any')
+fip_to_aind_fip_dff_3 = channel.fromPath(params.fip_url + "/", type: 'any')
 capsule_nwb_packaging_subject_capsule_1_to_capsule_aind_fip_nwb_base_capsule_10_4 = channel.create()
-behavior_812241_2025_11_03_08_55_13_to_aind_fip_nwb_base_capsule_5 = channel.fromPath(params.behavior_812241_2025_11_03_08_55_13_url + "/", type: 'any')
-behavior_812241_2025_11_03_08_55_13_to_aind_fip_qc_raw_6 = channel.fromPath(params.behavior_812241_2025_11_03_08_55_13_url + "/", type: 'any')
-behavior_812241_2025_11_03_08_55_13_to_aind_dynamic_foraging_qc_7 = channel.fromPath(params.behavior_812241_2025_11_03_08_55_13_url + "/", type: 'any')
+fip_to_aind_fip_nwb_base_capsule_5 = channel.fromPath(params.fip_url + "/", type: 'any')
+fip_to_aind_fip_qc_raw_6 = channel.fromPath(params.fip_url + "/", type: 'any')
+fip_to_aind_dynamic_foraging_qc_7 = channel.fromPath(params.fip_url + "/", type: 'any')
 capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_8 = channel.create()
 capsule_aind_dynamic_foraging_qc_12_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_9 = channel.create()
 capsule_aind_fip_dff_9_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_10 = channel.create()
@@ -27,7 +27,7 @@ process capsule_nwb_packaging_subject_capsule_1 {
 	memory '24 GB'
 
 	input:
-	path 'capsule/data/fiber_session' from behavior_812241_2025_11_03_08_55_13_to_nwb_packaging_subject_1.collect()
+	path 'capsule/data/fiber_session' from fip_to_nwb_packaging_subject_1.collect()
 
 	output:
 	path 'capsule/results/*' into capsule_nwb_packaging_subject_capsule_1_to_capsule_aind_fip_nwb_base_capsule_10_4
@@ -76,7 +76,7 @@ process capsule_aind_fip_dff_9 {
 
 	input:
 	path 'capsule/data/' from capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_fip_dff_9_2
-	path 'capsule/data/fiber_raw_data' from behavior_812241_2025_11_03_08_55_13_to_aind_fip_dff_3.collect()
+	path 'capsule/data/fiber_raw_data' from fip_to_aind_fip_dff_3.collect()
 
 	output:
 	path 'capsule/results/nwb'
@@ -125,7 +125,7 @@ process capsule_aind_fip_nwb_base_capsule_10 {
 
 	input:
 	path 'capsule/data/nwb/' from capsule_nwb_packaging_subject_capsule_1_to_capsule_aind_fip_nwb_base_capsule_10_4.collect()
-	path 'capsule/data/fiber_raw_data' from behavior_812241_2025_11_03_08_55_13_to_aind_fip_nwb_base_capsule_5.collect()
+	path 'capsule/data/fiber_raw_data' from fip_to_aind_fip_nwb_base_capsule_5.collect()
 
 	output:
 	path 'capsule/results/*' into capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_fip_dff_9_2
@@ -172,7 +172,7 @@ process capsule_aind_fip_qc_raw_11 {
 	memory '24 GB'
 
 	input:
-	path 'capsule/data/fiber_raw_data' from behavior_812241_2025_11_03_08_55_13_to_aind_fip_qc_raw_6.collect()
+	path 'capsule/data/fiber_raw_data' from fip_to_aind_fip_qc_raw_6.collect()
 
 	output:
 	path 'capsule/results/*' into capsule_aind_fip_qc_raw_11_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_12
@@ -218,7 +218,7 @@ process capsule_aind_dynamic_foraging_qc_12 {
 	memory '50 GB'
 
 	input:
-	path 'capsule/data/fiber_raw_data' from behavior_812241_2025_11_03_08_55_13_to_aind_dynamic_foraging_qc_7.collect()
+	path 'capsule/data/fiber_raw_data' from fip_to_aind_dynamic_foraging_qc_7.collect()
 
 	output:
 	path 'capsule/results/*' into capsule_aind_dynamic_foraging_qc_12_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_9
