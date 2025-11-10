@@ -17,10 +17,10 @@
 			"inputs": [
 				{
 					"id": "rJWWSVOqDEYWnnyr",
-					"source_id": "cf8342a0-c218-4b93-92c4-bb60ef99f1d8",
+					"source_id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
 					"type": "dataset",
-					"name": "behavior_812241_2025-11-03_08-55-13",
-					"source_path": "behavior_812241_2025-11-03_08-55-13/",
+					"name": "FIP",
+					"source_path": "FIP/",
 					"target_path": "fiber_session",
 					"collect": true
 				}
@@ -47,10 +47,10 @@
 				},
 				{
 					"id": "igacaEDRzylO5BS6",
-					"source_id": "cf8342a0-c218-4b93-92c4-bb60ef99f1d8",
+					"source_id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
 					"type": "dataset",
-					"name": "behavior_812241_2025-11-03_08-55-13",
-					"source_path": "behavior_812241_2025-11-03_08-55-13/",
+					"name": "FIP",
+					"source_path": "FIP/",
 					"target_path": "fiber_raw_data/",
 					"collect": true
 				}
@@ -83,10 +83,10 @@
 				},
 				{
 					"id": "djG6gHrBuu8yAY60",
-					"source_id": "cf8342a0-c218-4b93-92c4-bb60ef99f1d8",
+					"source_id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
 					"type": "dataset",
-					"name": "behavior_812241_2025-11-03_08-55-13",
-					"source_path": "behavior_812241_2025-11-03_08-55-13/",
+					"name": "FIP",
+					"source_path": "FIP/",
 					"target_path": "fiber_raw_data/",
 					"collect": true
 				}
@@ -107,10 +107,10 @@
 			"inputs": [
 				{
 					"id": "5YoLyCJQBb81zX2Z",
-					"source_id": "cf8342a0-c218-4b93-92c4-bb60ef99f1d8",
+					"source_id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
 					"type": "dataset",
-					"name": "behavior_812241_2025-11-03_08-55-13",
-					"source_path": "behavior_812241_2025-11-03_08-55-13/",
+					"name": "FIP",
+					"source_path": "FIP/",
 					"target_path": "fiber_raw_data/",
 					"collect": true
 				}
@@ -131,10 +131,10 @@
 			"inputs": [
 				{
 					"id": "RqSqPZAqU3WB1FcN",
-					"source_id": "cf8342a0-c218-4b93-92c4-bb60ef99f1d8",
+					"source_id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
 					"type": "dataset",
-					"name": "behavior_812241_2025-11-03_08-55-13",
-					"source_path": "behavior_812241_2025-11-03_08-55-13/",
+					"name": "FIP",
+					"source_path": "FIP/",
 					"target_path": "fiber_raw_data/",
 					"collect": true
 				}

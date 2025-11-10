@@ -2,10 +2,6 @@
 	"version": 1,
 	"attached_datasets": [
 		{
-			"id": "cf8342a0-c218-4b93-92c4-bb60ef99f1d8",
-			"mount": "behavior_812241_2025-11-03_08-55-13"
-		},
-		{
 			"id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
 			"mount": "FIP"
 		}
