@@ -147,7 +147,7 @@
 		},
 		{
 			"data": {
-				"capsule_id": "c2459c48-d891-4b9b-961b-488bfe5fcb8f"
+				"capsule_id": "603a2149-6281-4a7b-bbd6-ff50ca0e064e"
 			},
 			"id": "capsule_aind_fip_dff_9",
 			"position": {
@@ -158,5 +158,5 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1762546871959
+	"timestamp": 1762767285312
 }
