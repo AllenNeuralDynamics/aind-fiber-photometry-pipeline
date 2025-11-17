@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:9741c1c19b6dac2d0eb98f4bd90089f91216c75a56fa37bb160801b5f473f847
+// hash:sha256:3e7d9f045524c41d3a0b26bfd2427c1568737e2340dd1c9f2465197dd8b5fe90
 
 nextflow.enable.dsl = 1
 
@@ -67,10 +67,10 @@ process capsule_nwb_packaging_subject_capsule_1 {
 // capsule - aind-fip-dff
 process capsule_aind_fip_dff_9 {
 	tag 'capsule-1001867'
-	container "$REGISTRY_HOST/published/603a2149-6281-4a7b-bbd6-ff50ca0e064e:v13"
+	container "$REGISTRY_HOST/published/603a2149-6281-4a7b-bbd6-ff50ca0e064e:v14"
 
-	cpus 1
-	memory '7.5 GB'
+	cpus 2
+	memory '15 GB'
 
 	publishDir "$RESULTS_PATH", saveAs: { filename -> filename.matches("capsule/results/nwb") ? new File(filename).getName() : null }
 
@@ -89,8 +89,8 @@ process capsule_aind_fip_dff_9 {
 	set -e
 
 	export CO_CAPSULE_ID=603a2149-6281-4a7b-bbd6-ff50ca0e064e
-	export CO_CPUS=1
-	export CO_MEMORY=8053063680
+	export CO_CPUS=2
+	export CO_MEMORY=16106127360
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -99,9 +99,9 @@ process capsule_aind_fip_dff_9 {
 
 	echo "[${task.tag}] cloning git repo..."
 	if [[ "\$(printf '%s\n' "2.20.0" "\$(git version | awk '{print \$3}')" | sort -V | head -n1)" = "2.20.0" ]]; then
-		git clone --filter=tree:0 --branch v13.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1001867.git" capsule-repo
+		git clone --filter=tree:0 --branch v14.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1001867.git" capsule-repo
 	else
-		git clone --branch v13.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1001867.git" capsule-repo
+		git clone --branch v14.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1001867.git" capsule-repo
 	fi
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
