@@ -122,11 +122,11 @@
 				"id": "9110d5cb-2dd4-405d-b6e9-725dd04097f5",
 				"name": "aind-dynamic-foraging-qc",
 				"slug": "6533380",
-				"version": 6
+				"version": 7
 			},
 			"resources": {
 				"cpus": 1,
-				"memory": 50
+				"memory": 8
 			},
 			"inputs": [
 				{
