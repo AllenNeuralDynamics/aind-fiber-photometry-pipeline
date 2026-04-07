@@ -124,14 +124,6 @@
 			},
 			"inputs": [
 				{
-					"id": "VPeVNJeFgGQb9nOJ",
-					"source_id": "capsule_aind_fip_dff_9",
-					"type": "capsule",
-					"name": "aind-fip-dff",
-					"source_path": "*.json",
-					"collect": true
-				},
-				{
 					"id": "HifpmZ2Bq2y1Wv8N",
 					"source_id": "capsule_aind_fip_dff_9",
 					"type": "capsule",
@@ -140,11 +132,11 @@
 					"target_path": "dff-qc"
 				},
 				{
-					"id": "iuR8gmLYOewvbHZw",
-					"source_id": "4ce6f32c-0f13-45fa-b448-e3047a58e2c2",
-					"type": "dataset",
-					"name": "FIP",
-					"source_path": "FIP/data_description.json",
+					"id": "e2VVHPPZr08h4psI",
+					"source_id": "capsule_aind_fip_dff_9",
+					"type": "capsule",
+					"name": "aind-fip-dff",
+					"source_path": "*.json",
 					"collect": true
 				},
 				{

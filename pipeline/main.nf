@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:0411c4bbb60d4d898dd1de7582f7a70f791ca45c300e57b222284ef97421a953
+// hash:sha256:b4ccfe0bcca3a7637d1b09963efb48826ce51ef37207fc5c4d1ed151e39c9be2
 
 nextflow.enable.dsl = 1
 
@@ -12,10 +12,9 @@ fip_to_aind_fip_qc_raw_4 = channel.fromPath(params.fip_url + "/", type: 'any')
 fip_to_aind_dynamic_foraging_qc_5 = channel.fromPath(params.fip_url + "/", type: 'any')
 capsule_aind_fip_dff_9_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_6 = channel.create()
 capsule_aind_fip_dff_9_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_7 = channel.create()
-fip_to_aind_generic_quality_control_evaluation_aggregator_8 = channel.fromPath(params.fip_url + "/data_description.json", type: 'any')
-capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_9 = channel.create()
-capsule_aind_dynamic_foraging_qc_12_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_10 = channel.create()
-capsule_aind_fip_qc_raw_11_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_11 = channel.create()
+capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_8 = channel.create()
+capsule_aind_dynamic_foraging_qc_12_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_9 = channel.create()
+capsule_aind_fip_qc_raw_11_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_10 = channel.create()
 
 // capsule - aind-fip-dff
 process capsule_aind_fip_dff_9 {
@@ -33,8 +32,8 @@ process capsule_aind_fip_dff_9 {
 
 	output:
 	path 'capsule/results/*'
-	path 'capsule/results/*.json' into capsule_aind_fip_dff_9_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_6
-	path 'capsule/results/dff-qc' into capsule_aind_fip_dff_9_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_7
+	path 'capsule/results/dff-qc' into capsule_aind_fip_dff_9_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_6
+	path 'capsule/results/*.json' into capsule_aind_fip_dff_9_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_7
 
 	script:
 	"""
@@ -82,7 +81,7 @@ process capsule_aind_fip_nwb_base_capsule_10 {
 
 	output:
 	path 'capsule/results/*' into capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_fip_dff_9_2
-	path 'capsule/results/alignment-qc' into capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_9
+	path 'capsule/results/alignment-qc' into capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_8
 
 	script:
 	"""
@@ -129,7 +128,7 @@ process capsule_aind_fip_qc_raw_11 {
 	path 'capsule/data/fiber_raw_data' from fip_to_aind_fip_qc_raw_4.collect()
 
 	output:
-	path 'capsule/results/*' into capsule_aind_fip_qc_raw_11_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_11
+	path 'capsule/results/*' into capsule_aind_fip_qc_raw_11_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_10
 
 	script:
 	"""
@@ -176,7 +175,7 @@ process capsule_aind_dynamic_foraging_qc_12 {
 	path 'capsule/data/fiber_raw_data' from fip_to_aind_dynamic_foraging_qc_5.collect()
 
 	output:
-	path 'capsule/results/*' into capsule_aind_dynamic_foraging_qc_12_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_10
+	path 'capsule/results/*' into capsule_aind_dynamic_foraging_qc_12_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_9
 
 	script:
 	"""
@@ -222,12 +221,11 @@ process capsule_aind_generic_quality_control_evaluation_aggregator_13 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from capsule_aind_fip_dff_9_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_6.collect()
-	path 'capsule/data/dff-qc' from capsule_aind_fip_dff_9_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_7
-	path 'capsule/data/' from fip_to_aind_generic_quality_control_evaluation_aggregator_8.collect()
-	path 'capsule/data/alignment-qc' from capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_9
-	path 'capsule/data/' from capsule_aind_dynamic_foraging_qc_12_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_10.collect()
-	path 'capsule/data/' from capsule_aind_fip_qc_raw_11_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_11.collect()
+	path 'capsule/data/dff-qc' from capsule_aind_fip_dff_9_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_6
+	path 'capsule/data/' from capsule_aind_fip_dff_9_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_7.collect()
+	path 'capsule/data/alignment-qc' from capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_8
+	path 'capsule/data/' from capsule_aind_dynamic_foraging_qc_12_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_9.collect()
+	path 'capsule/data/' from capsule_aind_fip_qc_raw_11_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_10.collect()
 
 	output:
 	path 'capsule/results/*'

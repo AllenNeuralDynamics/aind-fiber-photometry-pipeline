@@ -51,6 +51,7 @@
 		},
 		{
 			"id": "xy-edge__capsule_aind_fip_dff_9-capsule_aind_generic_quality_control_evaluation_aggregator_13",
+			"selected": false,
 			"source": "capsule_aind_fip_dff_9",
 			"target": "capsule_aind_generic_quality_control_evaluation_aggregator_13"
 		},
@@ -58,11 +59,6 @@
 			"id": "xy-edge__capsule_aind_fip_nwb_base_capsule_10-capsule_aind_generic_quality_control_evaluation_aggregator_13",
 			"selected": false,
 			"source": "capsule_aind_fip_nwb_base_capsule_10",
-			"target": "capsule_aind_generic_quality_control_evaluation_aggregator_13"
-		},
-		{
-			"id": "xy-edge__4ce6f32c-0f13-45fa-b448-e3047a58e2c2-capsule_aind_generic_quality_control_evaluation_aggregator_13",
-			"source": "4ce6f32c-0f13-45fa-b448-e3047a58e2c2",
 			"target": "capsule_aind_generic_quality_control_evaluation_aggregator_13"
 		}
 	],
@@ -121,7 +117,7 @@
 				"x": 188.64373217121707,
 				"y": -206.4146488538619
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -145,7 +141,7 @@
 			"type": "dataset"
 		}
 	],
-	"timestamp": 1775509747674,
+	"timestamp": 1775589030259,
 	"viewport": {
 		"x": 291.77738115390093,
 		"y": 610.7962476578055,
