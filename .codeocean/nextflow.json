@@ -2,71 +2,13 @@
 	"version": 1,
 	"processes": [
 		{
-			"name": "capsule_nwb_packaging_subject_capsule_1",
-			"capsule": {
-				"id": "bdc9f09f-0005-4d09-aaf9-7e82abd93f19",
-				"name": "NWB Packaging Subject",
-				"slug": "8198603",
-				"version": 3,
-				"app_panel": true
-			},
-			"resources": {
-				"cpus": 1,
-				"memory": 24
-			},
-			"inputs": [
-				{
-					"id": "rJWWSVOqDEYWnnyr",
-					"source_id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
-					"type": "dataset",
-					"name": "FIP",
-					"source_path": "FIP/",
-					"target_path": "fiber_session",
-					"collect": true
-				}
-			]
-		},
-		{
 			"name": "capsule_aind_fip_dff_9",
 			"capsule": {
-				"id": "603a2149-6281-4a7b-bbd6-ff50ca0e064e",
+				"id": "9fce9387-1dd4-43b3-a35a-e4dee3871934",
 				"name": "aind-fip-dff",
-				"slug": "1001867",
-				"version": 14
-			},
-			"resources": {
-				"cpus": 2,
-				"memory": 16
-			},
-			"inputs": [
-				{
-					"id": "4xi4xliOnCsyNxWr",
-					"source_id": "capsule_aind_fip_nwb_base_capsule_10",
-					"type": "capsule",
-					"name": "aind-fip-nwb-base-capsule"
-				},
-				{
-					"id": "igacaEDRzylO5BS6",
-					"source_id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
-					"type": "dataset",
-					"name": "FIP",
-					"source_path": "FIP/",
-					"target_path": "fiber_raw_data/",
-					"collect": true
-				}
-			],
-			"results": {
-				"id": "603a2149-6281-4a7b-bbd6-ff50ca0e064e",
-				"source_path": "nwb"
-			}
-		},
-		{
-			"name": "capsule_aind_fip_nwb_base_capsule_10",
-			"capsule": {
-				"id": "e45742e4-7920-4985-ba36-262bc891377a",
-				"name": "aind-fip-nwb-base-capsule",
-				"slug": "0550370",
-				"version": 20
+				"slug": "3531698",
+				"commit": "78ed04ab5209a207dacb110a58a95e1e05ea9a6f",
+				"image_tag": "082d15501851b62c1c203bf5e9cbea39"
 			},
 			"resources": {
 				"cpus": 1,
@@ -74,16 +16,42 @@
 			},
 			"inputs": [
 				{
-					"id": "6fXBc26LcMT5gcIN",
-					"source_id": "capsule_nwb_packaging_subject_capsule_1",
-					"type": "capsule",
-					"name": "NWB-Packaging-Subject-Capsule",
-					"target_path": "nwb",
+					"id": "igacaEDRzylO5BS6",
+					"source_id": "4ce6f32c-0f13-45fa-b448-e3047a58e2c2",
+					"type": "dataset",
+					"name": "FIP",
+					"source_path": "FIP/",
+					"target_path": "fiber_raw_data/",
 					"collect": true
 				},
 				{
+					"id": "4xi4xliOnCsyNxWr",
+					"source_id": "capsule_aind_fip_nwb_base_capsule_10",
+					"type": "capsule",
+					"name": "aind-fip-nwb-base-capsule"
+				}
+			],
+			"results": {
+				"id": "9fce9387-1dd4-43b3-a35a-e4dee3871934"
+			}
+		},
+		{
+			"name": "capsule_aind_fip_nwb_base_capsule_10",
+			"capsule": {
+				"id": "1117b9cd-46d6-4804-95bd-7349051dc910",
+				"name": "aind-fip-nwb-base-capsule",
+				"slug": "9216710",
+				"commit": "428166de8a7e4c0fe418029eac7ec12e7967edf8",
+				"image_tag": "b5e14c880c106e5f145acda593fbb93f"
+			},
+			"resources": {
+				"cpus": 1,
+				"memory": 8
+			},
+			"inputs": [
+				{
 					"id": "djG6gHrBuu8yAY60",
-					"source_id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
+					"source_id": "4ce6f32c-0f13-45fa-b448-e3047a58e2c2",
 					"type": "dataset",
 					"name": "FIP",
 					"source_path": "FIP/",
@@ -95,19 +63,20 @@
 		{
 			"name": "capsule_aind_fip_qc_raw_11",
 			"capsule": {
-				"id": "3ae91e80-10b6-4659-814a-8afee9359a40",
+				"id": "5de81c3c-ba08-4afa-ba36-396c4a4bb644",
 				"name": "aind-fip-qc-raw",
-				"slug": "8999280",
-				"version": 8
+				"slug": "5044779",
+				"commit": "cbc953cba68c7c78b436a31b38f6b4910a738ddf",
+				"image_tag": "e5d07d3a556cffbdbbf17263e5b7de2b"
 			},
 			"resources": {
 				"cpus": 1,
-				"memory": 24
+				"memory": 8
 			},
 			"inputs": [
 				{
 					"id": "5YoLyCJQBb81zX2Z",
-					"source_id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
+					"source_id": "4ce6f32c-0f13-45fa-b448-e3047a58e2c2",
 					"type": "dataset",
 					"name": "FIP",
 					"source_path": "FIP/",
@@ -119,10 +88,11 @@
 		{
 			"name": "capsule_aind_dynamic_foraging_qc_12",
 			"capsule": {
-				"id": "9110d5cb-2dd4-405d-b6e9-725dd04097f5",
+				"id": "fa63119e-d5d1-426f-bbff-49123437decc",
 				"name": "aind-dynamic-foraging-qc",
-				"slug": "6533380",
-				"version": 7
+				"slug": "7721561",
+				"commit": "5079574cc94d766927373e3297b74d0fed03eee3",
+				"image_tag": "ccf35f4239b55c13a58573451f221c24"
 			},
 			"resources": {
 				"cpus": 1,
@@ -131,7 +101,7 @@
 			"inputs": [
 				{
 					"id": "RqSqPZAqU3WB1FcN",
-					"source_id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
+					"source_id": "4ce6f32c-0f13-45fa-b448-e3047a58e2c2",
 					"type": "dataset",
 					"name": "FIP",
 					"source_path": "FIP/",
@@ -154,21 +124,6 @@
 			},
 			"inputs": [
 				{
-					"id": "rG0Ud0c8mLq7sKaz",
-					"source_id": "capsule_aind_fip_nwb_base_capsule_10",
-					"type": "capsule",
-					"name": "aind-fip-nwb-base-capsule",
-					"source_path": "alignment-qc",
-					"target_path": "alignment-qc"
-				},
-				{
-					"id": "W0n1Mc6pYgmHqCkQ",
-					"source_id": "capsule_aind_dynamic_foraging_qc_12",
-					"type": "capsule",
-					"name": "aind-dynamic-foraging-qc",
-					"collect": true
-				},
-				{
 					"id": "VPeVNJeFgGQb9nOJ",
 					"source_id": "capsule_aind_fip_dff_9",
 					"type": "capsule",
@@ -183,6 +138,29 @@
 					"name": "aind-fip-dff",
 					"source_path": "dff-qc",
 					"target_path": "dff-qc"
+				},
+				{
+					"id": "iuR8gmLYOewvbHZw",
+					"source_id": "4ce6f32c-0f13-45fa-b448-e3047a58e2c2",
+					"type": "dataset",
+					"name": "FIP",
+					"source_path": "FIP/data_description.json",
+					"collect": true
+				},
+				{
+					"id": "rG0Ud0c8mLq7sKaz",
+					"source_id": "capsule_aind_fip_nwb_base_capsule_10",
+					"type": "capsule",
+					"name": "aind-fip-nwb-base-capsule",
+					"source_path": "alignment-qc",
+					"target_path": "alignment-qc"
+				},
+				{
+					"id": "W0n1Mc6pYgmHqCkQ",
+					"source_id": "capsule_aind_dynamic_foraging_qc_12",
+					"type": "capsule",
+					"name": "aind-dynamic-foraging-qc",
+					"collect": true
 				},
 				{
 					"id": "z0sxi9aEjrc4xl36",

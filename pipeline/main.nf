@@ -1,96 +1,49 @@
 #!/usr/bin/env nextflow
-// hash:sha256:a9630f88435ee10167a52697cc8642947f81a7e180fa8a04006c31f3d24ea252
+// hash:sha256:0411c4bbb60d4d898dd1de7582f7a70f791ca45c300e57b222284ef97421a953
 
 nextflow.enable.dsl = 1
 
-params.fip_url = 's3://aind-private-data-prod-o5171v/behavior_752703_2024-11-20_13-01-14'
+params.fip_url = 's3://aind-open-data/behavior_819169_2026-03-24_09-29-29'
 
-fip_to_nwb_packaging_subject_1 = channel.fromPath(params.fip_url + "/", type: 'any')
+fip_to_aind_fip_dff_1 = channel.fromPath(params.fip_url + "/", type: 'any')
 capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_fip_dff_9_2 = channel.create()
-fip_to_aind_fip_dff_3 = channel.fromPath(params.fip_url + "/", type: 'any')
-capsule_nwb_packaging_subject_capsule_1_to_capsule_aind_fip_nwb_base_capsule_10_4 = channel.create()
-fip_to_aind_fip_nwb_base_capsule_5 = channel.fromPath(params.fip_url + "/", type: 'any')
-fip_to_aind_fip_qc_raw_6 = channel.fromPath(params.fip_url + "/", type: 'any')
-fip_to_aind_dynamic_foraging_qc_7 = channel.fromPath(params.fip_url + "/", type: 'any')
-capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_8 = channel.create()
-capsule_aind_dynamic_foraging_qc_12_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_9 = channel.create()
-capsule_aind_fip_dff_9_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_10 = channel.create()
-capsule_aind_fip_dff_9_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_11 = channel.create()
-capsule_aind_fip_qc_raw_11_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_12 = channel.create()
-
-// capsule - NWB Packaging Subject
-process capsule_nwb_packaging_subject_capsule_1 {
-	tag 'capsule-8198603'
-	container "$REGISTRY_HOST/published/bdc9f09f-0005-4d09-aaf9-7e82abd93f19:v3"
-
-	cpus 1
-	memory '24 GB'
-
-	input:
-	path 'capsule/data/fiber_session' from fip_to_nwb_packaging_subject_1.collect()
-
-	output:
-	path 'capsule/results/*' into capsule_nwb_packaging_subject_capsule_1_to_capsule_aind_fip_nwb_base_capsule_10_4
-
-	script:
-	"""
-	#!/usr/bin/env bash
-	set -e
-
-	export CO_CAPSULE_ID=bdc9f09f-0005-4d09-aaf9-7e82abd93f19
-	export CO_CPUS=1
-	export CO_MEMORY=25769803776
-
-	mkdir -p capsule
-	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
-	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
-	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
-
-	echo "[${task.tag}] cloning git repo..."
-	if [[ "\$(printf '%s\n' "2.20.0" "\$(git version | awk '{print \$3}')" | sort -V | head -n1)" = "2.20.0" ]]; then
-		git -c credential.helper= clone --filter=tree:0 --branch v3.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8198603.git" capsule-repo
-	else
-		git -c credential.helper= clone --branch v3.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8198603.git" capsule-repo
-	fi
-	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
-	rm -rf capsule-repo
-
-	echo "[${task.tag}] running capsule..."
-	cd capsule/code
-	chmod +x run
-	./run ${params.capsule_nwb_packaging_subject_capsule_1_args}
-
-	echo "[${task.tag}] completed!"
-	"""
-}
+fip_to_aind_fip_nwb_base_capsule_3 = channel.fromPath(params.fip_url + "/", type: 'any')
+fip_to_aind_fip_qc_raw_4 = channel.fromPath(params.fip_url + "/", type: 'any')
+fip_to_aind_dynamic_foraging_qc_5 = channel.fromPath(params.fip_url + "/", type: 'any')
+capsule_aind_fip_dff_9_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_6 = channel.create()
+capsule_aind_fip_dff_9_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_7 = channel.create()
+fip_to_aind_generic_quality_control_evaluation_aggregator_8 = channel.fromPath(params.fip_url + "/data_description.json", type: 'any')
+capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_9 = channel.create()
+capsule_aind_dynamic_foraging_qc_12_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_10 = channel.create()
+capsule_aind_fip_qc_raw_11_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_11 = channel.create()
 
 // capsule - aind-fip-dff
 process capsule_aind_fip_dff_9 {
-	tag 'capsule-1001867'
-	container "$REGISTRY_HOST/published/603a2149-6281-4a7b-bbd6-ff50ca0e064e:v14"
+	tag 'capsule-3531698'
+	container "$REGISTRY_HOST/capsule/9fce9387-1dd4-43b3-a35a-e4dee3871934:082d15501851b62c1c203bf5e9cbea39"
 
-	cpus 2
-	memory '15 GB'
+	cpus 1
+	memory '7.5 GB'
 
-	publishDir "$RESULTS_PATH", saveAs: { filename -> filename.matches("capsule/results/nwb") ? new File(filename).getName() : null }
+	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
+	path 'capsule/data/fiber_raw_data' from fip_to_aind_fip_dff_1.collect()
 	path 'capsule/data/' from capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_fip_dff_9_2
-	path 'capsule/data/fiber_raw_data' from fip_to_aind_fip_dff_3.collect()
 
 	output:
-	path 'capsule/results/nwb'
-	path 'capsule/results/*.json' into capsule_aind_fip_dff_9_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_10
-	path 'capsule/results/dff-qc' into capsule_aind_fip_dff_9_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_11
+	path 'capsule/results/*'
+	path 'capsule/results/*.json' into capsule_aind_fip_dff_9_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_6
+	path 'capsule/results/dff-qc' into capsule_aind_fip_dff_9_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_7
 
 	script:
 	"""
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=603a2149-6281-4a7b-bbd6-ff50ca0e064e
-	export CO_CPUS=2
-	export CO_MEMORY=16106127360
+	export CO_CAPSULE_ID=9fce9387-1dd4-43b3-a35a-e4dee3871934
+	export CO_CPUS=1
+	export CO_MEMORY=8053063680
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -99,10 +52,11 @@ process capsule_aind_fip_dff_9 {
 
 	echo "[${task.tag}] cloning git repo..."
 	if [[ "\$(printf '%s\n' "2.20.0" "\$(git version | awk '{print \$3}')" | sort -V | head -n1)" = "2.20.0" ]]; then
-		git -c credential.helper= clone --filter=tree:0 --branch v14.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1001867.git" capsule-repo
+		git -c credential.helper= clone --filter=tree:0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-3531698.git" capsule-repo
 	else
-		git -c credential.helper= clone --branch v14.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1001867.git" capsule-repo
+		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-3531698.git" capsule-repo
 	fi
+	git -C capsule-repo checkout 78ed04ab5209a207dacb110a58a95e1e05ea9a6f --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
@@ -117,26 +71,25 @@ process capsule_aind_fip_dff_9 {
 
 // capsule - aind-fip-nwb-base-capsule
 process capsule_aind_fip_nwb_base_capsule_10 {
-	tag 'capsule-0550370'
-	container "$REGISTRY_HOST/published/e45742e4-7920-4985-ba36-262bc891377a:v20"
+	tag 'capsule-9216710'
+	container "$REGISTRY_HOST/capsule/1117b9cd-46d6-4804-95bd-7349051dc910:b5e14c880c106e5f145acda593fbb93f"
 
 	cpus 1
 	memory '7.5 GB'
 
 	input:
-	path 'capsule/data/nwb/' from capsule_nwb_packaging_subject_capsule_1_to_capsule_aind_fip_nwb_base_capsule_10_4.collect()
-	path 'capsule/data/fiber_raw_data' from fip_to_aind_fip_nwb_base_capsule_5.collect()
+	path 'capsule/data/fiber_raw_data' from fip_to_aind_fip_nwb_base_capsule_3.collect()
 
 	output:
 	path 'capsule/results/*' into capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_fip_dff_9_2
-	path 'capsule/results/alignment-qc' into capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_8
+	path 'capsule/results/alignment-qc' into capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_9
 
 	script:
 	"""
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=e45742e4-7920-4985-ba36-262bc891377a
+	export CO_CAPSULE_ID=1117b9cd-46d6-4804-95bd-7349051dc910
 	export CO_CPUS=1
 	export CO_MEMORY=8053063680
 
@@ -147,10 +100,11 @@ process capsule_aind_fip_nwb_base_capsule_10 {
 
 	echo "[${task.tag}] cloning git repo..."
 	if [[ "\$(printf '%s\n' "2.20.0" "\$(git version | awk '{print \$3}')" | sort -V | head -n1)" = "2.20.0" ]]; then
-		git -c credential.helper= clone --filter=tree:0 --branch v20.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0550370.git" capsule-repo
+		git -c credential.helper= clone --filter=tree:0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9216710.git" capsule-repo
 	else
-		git -c credential.helper= clone --branch v20.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0550370.git" capsule-repo
+		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9216710.git" capsule-repo
 	fi
+	git -C capsule-repo checkout 428166de8a7e4c0fe418029eac7ec12e7967edf8 --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
@@ -165,26 +119,26 @@ process capsule_aind_fip_nwb_base_capsule_10 {
 
 // capsule - aind-fip-qc-raw
 process capsule_aind_fip_qc_raw_11 {
-	tag 'capsule-8999280'
-	container "$REGISTRY_HOST/published/3ae91e80-10b6-4659-814a-8afee9359a40:v8"
+	tag 'capsule-5044779'
+	container "$REGISTRY_HOST/capsule/5de81c3c-ba08-4afa-ba36-396c4a4bb644:e5d07d3a556cffbdbbf17263e5b7de2b"
 
 	cpus 1
-	memory '24 GB'
+	memory '7.5 GB'
 
 	input:
-	path 'capsule/data/fiber_raw_data' from fip_to_aind_fip_qc_raw_6.collect()
+	path 'capsule/data/fiber_raw_data' from fip_to_aind_fip_qc_raw_4.collect()
 
 	output:
-	path 'capsule/results/*' into capsule_aind_fip_qc_raw_11_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_12
+	path 'capsule/results/*' into capsule_aind_fip_qc_raw_11_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_11
 
 	script:
 	"""
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=3ae91e80-10b6-4659-814a-8afee9359a40
+	export CO_CAPSULE_ID=5de81c3c-ba08-4afa-ba36-396c4a4bb644
 	export CO_CPUS=1
-	export CO_MEMORY=25769803776
+	export CO_MEMORY=8053063680
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -193,10 +147,11 @@ process capsule_aind_fip_qc_raw_11 {
 
 	echo "[${task.tag}] cloning git repo..."
 	if [[ "\$(printf '%s\n' "2.20.0" "\$(git version | awk '{print \$3}')" | sort -V | head -n1)" = "2.20.0" ]]; then
-		git -c credential.helper= clone --filter=tree:0 --branch v8.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8999280.git" capsule-repo
+		git -c credential.helper= clone --filter=tree:0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-5044779.git" capsule-repo
 	else
-		git -c credential.helper= clone --branch v8.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8999280.git" capsule-repo
+		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-5044779.git" capsule-repo
 	fi
+	git -C capsule-repo checkout cbc953cba68c7c78b436a31b38f6b4910a738ddf --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
@@ -211,24 +166,24 @@ process capsule_aind_fip_qc_raw_11 {
 
 // capsule - aind-dynamic-foraging-qc
 process capsule_aind_dynamic_foraging_qc_12 {
-	tag 'capsule-6533380'
-	container "$REGISTRY_HOST/published/9110d5cb-2dd4-405d-b6e9-725dd04097f5:v7"
+	tag 'capsule-7721561'
+	container "$REGISTRY_HOST/capsule/fa63119e-d5d1-426f-bbff-49123437decc:ccf35f4239b55c13a58573451f221c24"
 
 	cpus 1
 	memory '7.5 GB'
 
 	input:
-	path 'capsule/data/fiber_raw_data' from fip_to_aind_dynamic_foraging_qc_7.collect()
+	path 'capsule/data/fiber_raw_data' from fip_to_aind_dynamic_foraging_qc_5.collect()
 
 	output:
-	path 'capsule/results/*' into capsule_aind_dynamic_foraging_qc_12_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_9
+	path 'capsule/results/*' into capsule_aind_dynamic_foraging_qc_12_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_10
 
 	script:
 	"""
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=9110d5cb-2dd4-405d-b6e9-725dd04097f5
+	export CO_CAPSULE_ID=fa63119e-d5d1-426f-bbff-49123437decc
 	export CO_CPUS=1
 	export CO_MEMORY=8053063680
 
@@ -239,10 +194,11 @@ process capsule_aind_dynamic_foraging_qc_12 {
 
 	echo "[${task.tag}] cloning git repo..."
 	if [[ "\$(printf '%s\n' "2.20.0" "\$(git version | awk '{print \$3}')" | sort -V | head -n1)" = "2.20.0" ]]; then
-		git -c credential.helper= clone --filter=tree:0 --branch v7.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-6533380.git" capsule-repo
+		git -c credential.helper= clone --filter=tree:0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-7721561.git" capsule-repo
 	else
-		git -c credential.helper= clone --branch v7.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-6533380.git" capsule-repo
+		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-7721561.git" capsule-repo
 	fi
+	git -C capsule-repo checkout 5079574cc94d766927373e3297b74d0fed03eee3 --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
@@ -266,11 +222,12 @@ process capsule_aind_generic_quality_control_evaluation_aggregator_13 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/alignment-qc' from capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_8
-	path 'capsule/data/' from capsule_aind_dynamic_foraging_qc_12_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_9.collect()
-	path 'capsule/data/' from capsule_aind_fip_dff_9_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_10.collect()
-	path 'capsule/data/dff-qc' from capsule_aind_fip_dff_9_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_11
-	path 'capsule/data/' from capsule_aind_fip_qc_raw_11_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_12.collect()
+	path 'capsule/data/' from capsule_aind_fip_dff_9_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_6.collect()
+	path 'capsule/data/dff-qc' from capsule_aind_fip_dff_9_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_7
+	path 'capsule/data/' from fip_to_aind_generic_quality_control_evaluation_aggregator_8.collect()
+	path 'capsule/data/alignment-qc' from capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_9
+	path 'capsule/data/' from capsule_aind_dynamic_foraging_qc_12_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_10.collect()
+	path 'capsule/data/' from capsule_aind_fip_qc_raw_11_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_11.collect()
 
 	output:
 	path 'capsule/results/*'
