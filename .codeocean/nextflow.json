@@ -6,7 +6,9 @@
 			"capsule": {
 				"id": "51d5201d-147c-478c-862e-2328510bd6ed",
 				"name": "aind-fip-dff",
-				"slug": "8344439"
+				"slug": "8344439",
+				"commit": "110b8cd92baeca7a75928da7b8aa9924f143e219",
+				"image_tag": "082d15501851b62c1c203bf5e9cbea39"
 			},
 			"resources": {
 				"cpus": 1,
@@ -39,7 +41,9 @@
 			"capsule": {
 				"id": "1117b9cd-46d6-4804-95bd-7349051dc910",
 				"name": "aind-fip-nwb-base-capsule",
-				"slug": "9216710"
+				"slug": "9216710",
+				"commit": "f241058b64fc9b66b9e67c5e653b82ce2c6d4ab4",
+				"image_tag": "b5e14c880c106e5f145acda593fbb93f"
 			},
 			"resources": {
 				"cpus": 1,
@@ -62,7 +66,9 @@
 			"capsule": {
 				"id": "5de81c3c-ba08-4afa-ba36-396c4a4bb644",
 				"name": "aind-fip-qc-raw",
-				"slug": "5044779"
+				"slug": "5044779",
+				"commit": "d7d282b9d06ece29477d97930756b4858bdc2125",
+				"image_tag": "483798a38e4b1b10b36f46e98191d680"
 			},
 			"resources": {
 				"cpus": 1,
@@ -85,7 +91,9 @@
 			"capsule": {
 				"id": "fa63119e-d5d1-426f-bbff-49123437decc",
 				"name": "aind-dynamic-foraging-qc",
-				"slug": "7721561"
+				"slug": "7721561",
+				"commit": "9284c383b2cb2c3e886b6c5e78d85c99225da708",
+				"image_tag": "8e18b66a686b8ea2a6f20808a9eb7a3d"
 			},
 			"resources": {
 				"cpus": 1,

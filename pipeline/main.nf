@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:0da0bbaac6ebb53ab82aa85f7093f79de8296157036f6ac1d28578050fdc4682
+// hash:sha256:f578ed0ca7be5653cb2dc1d1a6bdbcd35cefdff823cd6d4db3f0e98146b93f45
 
 nextflow.enable.dsl = 1
 
@@ -19,7 +19,7 @@ capsule_aind_fip_qc_raw_11_to_capsule_aind_generic_quality_control_evaluation_ag
 // capsule - aind-fip-dff
 process capsule_aind_fip_dff_9 {
 	tag 'capsule-8344439'
-	container "$REGISTRY_HOST/capsule/51d5201d-147c-478c-862e-2328510bd6ed"
+	container "$REGISTRY_HOST/capsule/51d5201d-147c-478c-862e-2328510bd6ed:082d15501851b62c1c203bf5e9cbea39"
 
 	cpus 1
 	memory '7.5 GB'
@@ -55,6 +55,7 @@ process capsule_aind_fip_dff_9 {
 	else
 		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8344439.git" capsule-repo
 	fi
+	git -C capsule-repo checkout 110b8cd92baeca7a75928da7b8aa9924f143e219 --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
@@ -70,7 +71,7 @@ process capsule_aind_fip_dff_9 {
 // capsule - aind-fip-nwb-base-capsule
 process capsule_aind_fip_nwb_base_capsule_10 {
 	tag 'capsule-9216710'
-	container "$REGISTRY_HOST/capsule/1117b9cd-46d6-4804-95bd-7349051dc910"
+	container "$REGISTRY_HOST/capsule/1117b9cd-46d6-4804-95bd-7349051dc910:b5e14c880c106e5f145acda593fbb93f"
 
 	cpus 1
 	memory '7.5 GB'
@@ -102,6 +103,7 @@ process capsule_aind_fip_nwb_base_capsule_10 {
 	else
 		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9216710.git" capsule-repo
 	fi
+	git -C capsule-repo checkout f241058b64fc9b66b9e67c5e653b82ce2c6d4ab4 --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
@@ -117,7 +119,7 @@ process capsule_aind_fip_nwb_base_capsule_10 {
 // capsule - aind-fip-qc-raw
 process capsule_aind_fip_qc_raw_11 {
 	tag 'capsule-5044779'
-	container "$REGISTRY_HOST/capsule/5de81c3c-ba08-4afa-ba36-396c4a4bb644"
+	container "$REGISTRY_HOST/capsule/5de81c3c-ba08-4afa-ba36-396c4a4bb644:483798a38e4b1b10b36f46e98191d680"
 
 	cpus 1
 	memory '7.5 GB'
@@ -148,6 +150,7 @@ process capsule_aind_fip_qc_raw_11 {
 	else
 		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-5044779.git" capsule-repo
 	fi
+	git -C capsule-repo checkout d7d282b9d06ece29477d97930756b4858bdc2125 --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
@@ -163,7 +166,7 @@ process capsule_aind_fip_qc_raw_11 {
 // capsule - aind-dynamic-foraging-qc
 process capsule_aind_dynamic_foraging_qc_12 {
 	tag 'capsule-7721561'
-	container "$REGISTRY_HOST/capsule/fa63119e-d5d1-426f-bbff-49123437decc"
+	container "$REGISTRY_HOST/capsule/fa63119e-d5d1-426f-bbff-49123437decc:8e18b66a686b8ea2a6f20808a9eb7a3d"
 
 	cpus 1
 	memory '7.5 GB'
@@ -194,6 +197,7 @@ process capsule_aind_dynamic_foraging_qc_12 {
 	else
 		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-7721561.git" capsule-repo
 	fi
+	git -C capsule-repo checkout 9284c383b2cb2c3e886b6c5e78d85c99225da708 --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
