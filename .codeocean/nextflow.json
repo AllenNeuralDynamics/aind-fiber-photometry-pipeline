@@ -2,37 +2,11 @@
 	"version": 1,
 	"processes": [
 		{
-			"name": "capsule_nwb_packaging_subject_capsule_1",
-			"capsule": {
-				"id": "bdc9f09f-0005-4d09-aaf9-7e82abd93f19",
-				"name": "NWB Packaging Subject",
-				"slug": "8198603",
-				"version": 3,
-				"app_panel": true
-			},
-			"resources": {
-				"cpus": 1,
-				"memory": 24
-			},
-			"inputs": [
-				{
-					"id": "rJWWSVOqDEYWnnyr",
-					"source_id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
-					"type": "dataset",
-					"name": "FIP",
-					"source_path": "FIP/",
-					"target_path": "fiber_session",
-					"collect": true
-				}
-			]
-		},
-		{
 			"name": "capsule_aind_fip_dff_9",
 			"capsule": {
-				"id": "603a2149-6281-4a7b-bbd6-ff50ca0e064e",
+				"id": "26792844-1b2c-400d-8514-42d58028e5e5",
 				"name": "aind-fip-dff",
-				"slug": "1001867",
-				"version": 14
+				"slug": "3526719"
 			},
 			"resources": {
 				"cpus": 2,
@@ -63,24 +37,15 @@
 		{
 			"name": "capsule_aind_fip_nwb_base_capsule_10",
 			"capsule": {
-				"id": "e45742e4-7920-4985-ba36-262bc891377a",
+				"id": "1117b9cd-46d6-4804-95bd-7349051dc910",
 				"name": "aind-fip-nwb-base-capsule",
-				"slug": "0550370",
-				"version": 20
+				"slug": "9216710"
 			},
 			"resources": {
 				"cpus": 1,
 				"memory": 8
 			},
 			"inputs": [
-				{
-					"id": "6fXBc26LcMT5gcIN",
-					"source_id": "capsule_nwb_packaging_subject_capsule_1",
-					"type": "capsule",
-					"name": "NWB-Packaging-Subject-Capsule",
-					"target_path": "nwb",
-					"collect": true
-				},
 				{
 					"id": "djG6gHrBuu8yAY60",
 					"source_id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
@@ -95,14 +60,13 @@
 		{
 			"name": "capsule_aind_fip_qc_raw_11",
 			"capsule": {
-				"id": "3ae91e80-10b6-4659-814a-8afee9359a40",
+				"id": "5de81c3c-ba08-4afa-ba36-396c4a4bb644",
 				"name": "aind-fip-qc-raw",
-				"slug": "8999280",
-				"version": 8
+				"slug": "5044779"
 			},
 			"resources": {
 				"cpus": 1,
-				"memory": 24
+				"memory": 8
 			},
 			"inputs": [
 				{
@@ -119,10 +83,9 @@
 		{
 			"name": "capsule_aind_dynamic_foraging_qc_12",
 			"capsule": {
-				"id": "9110d5cb-2dd4-405d-b6e9-725dd04097f5",
+				"id": "fa63119e-d5d1-426f-bbff-49123437decc",
 				"name": "aind-dynamic-foraging-qc",
-				"slug": "6533380",
-				"version": 7
+				"slug": "7721561"
 			},
 			"resources": {
 				"cpus": 1,
