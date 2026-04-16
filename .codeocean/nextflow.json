@@ -4,13 +4,13 @@
 		{
 			"name": "capsule_aind_fip_dff_9",
 			"capsule": {
-				"id": "26792844-1b2c-400d-8514-42d58028e5e5",
+				"id": "51d5201d-147c-478c-862e-2328510bd6ed",
 				"name": "aind-fip-dff",
-				"slug": "3526719"
+				"slug": "8344439"
 			},
 			"resources": {
-				"cpus": 2,
-				"memory": 16
+				"cpus": 1,
+				"memory": 8
 			},
 			"inputs": [
 				{
@@ -30,7 +30,7 @@
 				}
 			],
 			"results": {
-				"id": "603a2149-6281-4a7b-bbd6-ff50ca0e064e",
+				"id": "51d5201d-147c-478c-862e-2328510bd6ed",
 				"source_path": "nwb"
 			}
 		},
