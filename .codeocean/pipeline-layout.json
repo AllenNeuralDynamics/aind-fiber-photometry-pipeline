@@ -6,8 +6,8 @@
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-d46f8f0e-b8fe-41e1-8048-5d36d7460612-capsule_aind_fip_dff_9",
-			"source": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
+			"id": "reactflow__edge-248f905f-4349-4c85-ae3f-ea0d6fc21093-capsule_aind_fip_dff_9",
+			"source": "248f905f-4349-4c85-ae3f-ea0d6fc21093",
 			"target": "capsule_aind_fip_dff_9"
 		},
 		{
@@ -16,19 +16,18 @@
 			"target": "capsule_aind_fip_dff_9"
 		},
 		{
-			"id": "reactflow__edge-d46f8f0e-b8fe-41e1-8048-5d36d7460612-capsule_aind_fip_nwb_base_capsule_10",
-			"selected": false,
-			"source": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
+			"id": "reactflow__edge-248f905f-4349-4c85-ae3f-ea0d6fc21093-capsule_aind_fip_nwb_base_capsule_10",
+			"source": "248f905f-4349-4c85-ae3f-ea0d6fc21093",
 			"target": "capsule_aind_fip_nwb_base_capsule_10"
 		},
 		{
-			"id": "reactflow__edge-d46f8f0e-b8fe-41e1-8048-5d36d7460612-capsule_aind_fip_qc_raw_11",
-			"source": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
+			"id": "reactflow__edge-248f905f-4349-4c85-ae3f-ea0d6fc21093-capsule_aind_fip_qc_raw_11",
+			"source": "248f905f-4349-4c85-ae3f-ea0d6fc21093",
 			"target": "capsule_aind_fip_qc_raw_11"
 		},
 		{
-			"id": "xy-edge__d46f8f0e-b8fe-41e1-8048-5d36d7460612-capsule_aind_dynamic_foraging_qc_12",
-			"source": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
+			"id": "xy-edge__248f905f-4349-4c85-ae3f-ea0d6fc21093-capsule_aind_dynamic_foraging_qc_12",
+			"source": "248f905f-4349-4c85-ae3f-ea0d6fc21093",
 			"target": "capsule_aind_dynamic_foraging_qc_12"
 		},
 		{
@@ -39,7 +38,6 @@
 		},
 		{
 			"id": "xy-edge__capsule_aind_fip_qc_raw_11-capsule_aind_generic_quality_control_evaluation_aggregator_13",
-			"selected": false,
 			"source": "capsule_aind_fip_qc_raw_11",
 			"target": "capsule_aind_generic_quality_control_evaluation_aggregator_13"
 		},
@@ -55,7 +53,6 @@
 		},
 		{
 			"id": "xy-edge__capsule_aind_fip_nwb_base_capsule_10-capsule_aind_generic_quality_control_evaluation_aggregator_13",
-			"selected": false,
 			"source": "capsule_aind_fip_nwb_base_capsule_10",
 			"target": "capsule_aind_generic_quality_control_evaluation_aggregator_13"
 		}
@@ -69,18 +66,6 @@
 			},
 			"selected": false,
 			"type": "results"
-		},
-		{
-			"data": {
-				"capsule_id": "5de81c3c-ba08-4afa-ba36-396c4a4bb644"
-			},
-			"id": "capsule_aind_fip_qc_raw_11",
-			"position": {
-				"x": -17.746394060971852,
-				"y": -519.2661886625133
-			},
-			"selected": false,
-			"type": "capsule"
 		},
 		{
 			"data": {
@@ -107,12 +92,36 @@
 			"type": "capsule"
 		},
 		{
-			"id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
+			"data": {
+				"capsule_id": "51d5201d-147c-478c-862e-2328510bd6ed"
+			},
+			"id": "capsule_aind_fip_dff_9",
+			"position": {
+				"x": 420.59044155706954,
+				"y": 123.94651254400156
+			},
+			"selected": true,
+			"type": "capsule"
+		},
+		{
+			"id": "248f905f-4349-4c85-ae3f-ea0d6fc21093",
 			"position": {
 				"x": 682.8088327601455,
 				"y": -803.0918574172267
 			},
 			"type": "dataset"
+		},
+		{
+			"data": {
+				"capsule_id": "5de81c3c-ba08-4afa-ba36-396c4a4bb644"
+			},
+			"id": "capsule_aind_fip_qc_raw_11",
+			"position": {
+				"x": -17.746394060971852,
+				"y": -519.2661886625133
+			},
+			"selected": false,
+			"type": "capsule"
 		},
 		{
 			"data": {
@@ -125,19 +134,7 @@
 			},
 			"selected": false,
 			"type": "capsule"
-		},
-		{
-			"data": {
-				"capsule_id": "51d5201d-147c-478c-862e-2328510bd6ed"
-			},
-			"id": "capsule_aind_fip_dff_9",
-			"position": {
-				"x": 420.59044155706954,
-				"y": 123.94651254400156
-			},
-			"selected": true,
-			"type": "capsule"
 		}
 	],
-	"timestamp": 1776363903995
+	"timestamp": 1776989767505
 }

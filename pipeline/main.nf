@@ -1,15 +1,15 @@
 #!/usr/bin/env nextflow
-// hash:sha256:f578ed0ca7be5653cb2dc1d1a6bdbcd35cefdff823cd6d4db3f0e98146b93f45
+// hash:sha256:f7473cf16a5fe4770dbc3e750f2a5258b008c030a4a0da57986d9f9958bd0cac
 
 nextflow.enable.dsl = 1
 
-params.fip_url = 's3://aind-private-data-prod-o5171v/behavior_752703_2024-11-20_13-01-14'
+params.behavior_819169_2026_03_11_09_31_48_url = 's3://aind-open-data/behavior_819169_2026-03-11_09-31-48'
 
 capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_fip_dff_9_1 = channel.create()
-fip_to_aind_fip_dff_2 = channel.fromPath(params.fip_url + "/", type: 'any')
-fip_to_aind_fip_nwb_base_capsule_3 = channel.fromPath(params.fip_url + "/", type: 'any')
-fip_to_aind_fip_qc_raw_4 = channel.fromPath(params.fip_url + "/", type: 'any')
-fip_to_aind_dynamic_foraging_qc_5 = channel.fromPath(params.fip_url + "/", type: 'any')
+behavior_819169_2026_03_11_09_31_48_to_aind_fip_dff_2 = channel.fromPath(params.behavior_819169_2026_03_11_09_31_48_url + "/", type: 'any')
+behavior_819169_2026_03_11_09_31_48_to_aind_fip_nwb_base_capsule_3 = channel.fromPath(params.behavior_819169_2026_03_11_09_31_48_url + "/", type: 'any')
+behavior_819169_2026_03_11_09_31_48_to_aind_fip_qc_raw_4 = channel.fromPath(params.behavior_819169_2026_03_11_09_31_48_url + "/", type: 'any')
+behavior_819169_2026_03_11_09_31_48_to_aind_dynamic_foraging_qc_5 = channel.fromPath(params.behavior_819169_2026_03_11_09_31_48_url + "/", type: 'any')
 capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_6 = channel.create()
 capsule_aind_dynamic_foraging_qc_12_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_7 = channel.create()
 capsule_aind_fip_dff_9_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_8 = channel.create()
@@ -21,14 +21,14 @@ process capsule_aind_fip_dff_9 {
 	tag 'capsule-8344439'
 	container "$REGISTRY_HOST/capsule/51d5201d-147c-478c-862e-2328510bd6ed:082d15501851b62c1c203bf5e9cbea39"
 
-	cpus 1
-	memory '7.5 GB'
+	cpus 2
+	memory '15 GB'
 
 	publishDir "$RESULTS_PATH", saveAs: { filename -> filename.matches("capsule/results/nwb") ? new File(filename).getName() : null }
 
 	input:
-	path 'capsule/data/' from capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_fip_dff_9_1
-	path 'capsule/data/fiber_raw_data' from fip_to_aind_fip_dff_2.collect()
+	path 'capsule/data/fib_raw_nwb/' from capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_fip_dff_9_1.collect()
+	path 'capsule/data/fiber_raw_data' from behavior_819169_2026_03_11_09_31_48_to_aind_fip_dff_2.collect()
 
 	output:
 	path 'capsule/results/nwb'
@@ -41,8 +41,8 @@ process capsule_aind_fip_dff_9 {
 	set -e
 
 	export CO_CAPSULE_ID=51d5201d-147c-478c-862e-2328510bd6ed
-	export CO_CPUS=1
-	export CO_MEMORY=8053063680
+	export CO_CPUS=2
+	export CO_MEMORY=16106127360
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -55,7 +55,7 @@ process capsule_aind_fip_dff_9 {
 	else
 		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8344439.git" capsule-repo
 	fi
-	git -C capsule-repo checkout 110b8cd92baeca7a75928da7b8aa9924f143e219 --quiet
+	git -C capsule-repo checkout 27dca4e08fc71dfea460e53212e000cea5afa6bc --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
@@ -71,13 +71,13 @@ process capsule_aind_fip_dff_9 {
 // capsule - aind-fip-nwb-base-capsule
 process capsule_aind_fip_nwb_base_capsule_10 {
 	tag 'capsule-9216710'
-	container "$REGISTRY_HOST/capsule/1117b9cd-46d6-4804-95bd-7349051dc910:b5e14c880c106e5f145acda593fbb93f"
+	container "$REGISTRY_HOST/capsule/1117b9cd-46d6-4804-95bd-7349051dc910:e41ab74963e526b11be044d3866d3a6a"
 
 	cpus 1
 	memory '7.5 GB'
 
 	input:
-	path 'capsule/data/fiber_raw_data' from fip_to_aind_fip_nwb_base_capsule_3.collect()
+	path 'capsule/data/fiber_raw_data' from behavior_819169_2026_03_11_09_31_48_to_aind_fip_nwb_base_capsule_3.collect()
 
 	output:
 	path 'capsule/results/*' into capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_fip_dff_9_1
@@ -103,7 +103,7 @@ process capsule_aind_fip_nwb_base_capsule_10 {
 	else
 		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9216710.git" capsule-repo
 	fi
-	git -C capsule-repo checkout f241058b64fc9b66b9e67c5e653b82ce2c6d4ab4 --quiet
+	git -C capsule-repo checkout de828444c10278b39556059a1213ce262d14f71d --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
@@ -125,7 +125,7 @@ process capsule_aind_fip_qc_raw_11 {
 	memory '7.5 GB'
 
 	input:
-	path 'capsule/data/fiber_raw_data' from fip_to_aind_fip_qc_raw_4.collect()
+	path 'capsule/data/fiber_raw_data' from behavior_819169_2026_03_11_09_31_48_to_aind_fip_qc_raw_4.collect()
 
 	output:
 	path 'capsule/results/*' into capsule_aind_fip_qc_raw_11_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_10
@@ -172,7 +172,7 @@ process capsule_aind_dynamic_foraging_qc_12 {
 	memory '7.5 GB'
 
 	input:
-	path 'capsule/data/fiber_raw_data' from fip_to_aind_dynamic_foraging_qc_5.collect()
+	path 'capsule/data/fiber_raw_data' from behavior_819169_2026_03_11_09_31_48_to_aind_dynamic_foraging_qc_5.collect()
 
 	output:
 	path 'capsule/results/*' into capsule_aind_dynamic_foraging_qc_12_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_7
