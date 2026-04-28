@@ -6,8 +6,8 @@
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-248f905f-4349-4c85-ae3f-ea0d6fc21093-capsule_aind_fip_dff_9",
-			"source": "248f905f-4349-4c85-ae3f-ea0d6fc21093",
+			"id": "reactflow__edge-d46f8f0e-b8fe-41e1-8048-5d36d7460612-capsule_aind_fip_dff_9",
+			"source": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
 			"target": "capsule_aind_fip_dff_9"
 		},
 		{
@@ -16,18 +16,18 @@
 			"target": "capsule_aind_fip_dff_9"
 		},
 		{
-			"id": "reactflow__edge-248f905f-4349-4c85-ae3f-ea0d6fc21093-capsule_aind_fip_nwb_base_capsule_10",
-			"source": "248f905f-4349-4c85-ae3f-ea0d6fc21093",
+			"id": "reactflow__edge-d46f8f0e-b8fe-41e1-8048-5d36d7460612-capsule_aind_fip_nwb_base_capsule_10",
+			"source": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
 			"target": "capsule_aind_fip_nwb_base_capsule_10"
 		},
 		{
-			"id": "reactflow__edge-248f905f-4349-4c85-ae3f-ea0d6fc21093-capsule_aind_fip_qc_raw_11",
-			"source": "248f905f-4349-4c85-ae3f-ea0d6fc21093",
+			"id": "reactflow__edge-d46f8f0e-b8fe-41e1-8048-5d36d7460612-capsule_aind_fip_qc_raw_11",
+			"source": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
 			"target": "capsule_aind_fip_qc_raw_11"
 		},
 		{
-			"id": "xy-edge__248f905f-4349-4c85-ae3f-ea0d6fc21093-capsule_aind_dynamic_foraging_qc_12",
-			"source": "248f905f-4349-4c85-ae3f-ea0d6fc21093",
+			"id": "xy-edge__d46f8f0e-b8fe-41e1-8048-5d36d7460612-capsule_aind_dynamic_foraging_qc_12",
+			"source": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
 			"target": "capsule_aind_dynamic_foraging_qc_12"
 		},
 		{
@@ -92,14 +92,6 @@
 			"type": "capsule"
 		},
 		{
-			"id": "248f905f-4349-4c85-ae3f-ea0d6fc21093",
-			"position": {
-				"x": 682.8088327601455,
-				"y": -803.0918574172267
-			},
-			"type": "dataset"
-		},
-		{
 			"data": {
 				"capsule_id": "3ae91e80-10b6-4659-814a-8afee9359a40"
 			},
@@ -134,12 +126,15 @@
 			},
 			"selected": true,
 			"type": "capsule"
+		},
+		{
+			"id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
+			"position": {
+				"x": 682.8088327601455,
+				"y": -803.0918574172267
+			},
+			"type": "dataset"
 		}
 	],
-	"timestamp": 1777419099178,
-	"viewport": {
-		"x": 739.9764467979951,
-		"y": 676.0798878546025,
-		"zoom": 0.719817891957875
-	}
+	"timestamp": 1777419191181
 }
