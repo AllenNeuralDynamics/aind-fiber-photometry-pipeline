@@ -4,9 +4,10 @@
 		{
 			"name": "capsule_aind_fip_dff_9",
 			"capsule": {
-				"id": "26792844-1b2c-400d-8514-42d58028e5e5",
+				"id": "603a2149-6281-4a7b-bbd6-ff50ca0e064e",
 				"name": "aind-fip-dff",
-				"slug": "3526719"
+				"slug": "1001867",
+				"version": 16
 			},
 			"resources": {
 				"cpus": 2,
@@ -39,11 +40,10 @@
 		{
 			"name": "capsule_aind_fip_nwb_base_capsule_10",
 			"capsule": {
-				"id": "1117b9cd-46d6-4804-95bd-7349051dc910",
+				"id": "e45742e4-7920-4985-ba36-262bc891377a",
 				"name": "aind-fip-nwb-base-capsule",
-				"slug": "9216710",
-				"commit": "65cb519e44002a85d8fe2175ef5cdcc176f35821",
-				"image_tag": "e41ab74963e526b11be044d3866d3a6a"
+				"slug": "0550370",
+				"version": 21
 			},
 			"resources": {
 				"cpus": 1,

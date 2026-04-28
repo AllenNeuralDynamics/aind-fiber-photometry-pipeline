@@ -113,7 +113,7 @@
 		},
 		{
 			"data": {
-				"capsule_id": "1117b9cd-46d6-4804-95bd-7349051dc910"
+				"capsule_id": "e45742e4-7920-4985-ba36-262bc891377a"
 			},
 			"id": "capsule_aind_fip_nwb_base_capsule_10",
 			"position": {
@@ -125,7 +125,7 @@
 		},
 		{
 			"data": {
-				"capsule_id": "26792844-1b2c-400d-8514-42d58028e5e5"
+				"capsule_id": "603a2149-6281-4a7b-bbd6-ff50ca0e064e"
 			},
 			"id": "capsule_aind_fip_dff_9",
 			"position": {
@@ -136,5 +136,10 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1777418853173
+	"timestamp": 1777419099178,
+	"viewport": {
+		"x": 739.9764467979951,
+		"y": 676.0798878546025,
+		"zoom": 0.719817891957875
+	}
 }
