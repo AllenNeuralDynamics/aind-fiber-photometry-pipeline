@@ -81,19 +81,19 @@
 		},
 		{
 			"data": {
-				"capsule_id": "fa63119e-d5d1-426f-bbff-49123437decc"
+				"capsule_id": "9110d5cb-2dd4-405d-b6e9-725dd04097f5"
 			},
 			"id": "capsule_aind_dynamic_foraging_qc_12",
 			"position": {
-				"x": -286.39630090801427,
-				"y": -550.5235697823397
+				"x": -262.50929739864443,
+				"y": -506.7307300151617
 			},
 			"selected": false,
 			"type": "capsule"
 		},
 		{
 			"data": {
-				"capsule_id": "51d5201d-147c-478c-862e-2328510bd6ed"
+				"capsule_id": "62042b01-bb06-443e-b212-466ff3f7cb96"
 			},
 			"id": "capsule_aind_fip_dff_9",
 			"position": {
@@ -113,7 +113,7 @@
 		},
 		{
 			"data": {
-				"capsule_id": "5de81c3c-ba08-4afa-ba36-396c4a4bb644"
+				"capsule_id": "3ae91e80-10b6-4659-814a-8afee9359a40"
 			},
 			"id": "capsule_aind_fip_qc_raw_11",
 			"position": {
@@ -136,5 +136,10 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1776989767505
+	"timestamp": 1777406029739,
+	"viewport": {
+		"x": 126.5232176280548,
+		"y": 321.3873256415019,
+		"zoom": 0.5023652294978285
+	}
 }
