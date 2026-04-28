@@ -43,7 +43,7 @@
 				"id": "1117b9cd-46d6-4804-95bd-7349051dc910",
 				"name": "aind-fip-nwb-base-capsule",
 				"slug": "9216710",
-				"commit": "de828444c10278b39556059a1213ce262d14f71d",
+				"commit": "65cb519e44002a85d8fe2175ef5cdcc176f35821",
 				"image_tag": "e41ab74963e526b11be044d3866d3a6a"
 			},
 			"resources": {

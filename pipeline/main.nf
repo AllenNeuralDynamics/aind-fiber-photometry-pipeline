@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:dd7bcd80cdf830ff91bdd23e3b1360d47788adef144af3b43b59a04c620e148a
+// hash:sha256:076a2fed397f7b099857c8ebf4aabab397823814ffd1af5de6d0ebe7d35b3d69
 
 nextflow.enable.dsl = 1
 
@@ -102,7 +102,7 @@ process capsule_aind_fip_nwb_base_capsule_10 {
 	else
 		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9216710.git" capsule-repo
 	fi
-	git -C capsule-repo checkout de828444c10278b39556059a1213ce262d14f71d --quiet
+	git -C capsule-repo checkout 65cb519e44002a85d8fe2175ef5cdcc176f35821 --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
