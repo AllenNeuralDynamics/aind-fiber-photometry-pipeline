@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/compare/v0.2.0...v0.3.0) (2026-04-29)
+
+
+### Features
+
+* merge from main to integrate logging and other DF features - change release to bump version on master, not main ([6307e7c](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/commit/6307e7c3e2b849cdceeca62bb8dd10ac66b60715))
+
+
+
 # [0.2.0](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/compare/v0.1.0...v0.2.0) (2026-04-29)
 
 
