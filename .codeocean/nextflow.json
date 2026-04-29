@@ -2,37 +2,12 @@
 	"version": 1,
 	"processes": [
 		{
-			"name": "capsule_nwb_packaging_subject_capsule_1",
-			"capsule": {
-				"id": "bdc9f09f-0005-4d09-aaf9-7e82abd93f19",
-				"name": "NWB Packaging Subject",
-				"slug": "8198603",
-				"version": 3,
-				"app_panel": true
-			},
-			"resources": {
-				"cpus": 1,
-				"memory": 24
-			},
-			"inputs": [
-				{
-					"id": "rJWWSVOqDEYWnnyr",
-					"source_id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
-					"type": "dataset",
-					"name": "FIP",
-					"source_path": "FIP/",
-					"target_path": "fiber_session",
-					"collect": true
-				}
-			]
-		},
-		{
 			"name": "capsule_aind_fip_dff_9",
 			"capsule": {
 				"id": "603a2149-6281-4a7b-bbd6-ff50ca0e064e",
 				"name": "aind-fip-dff",
 				"slug": "1001867",
-				"version": 14
+				"version": 16
 			},
 			"resources": {
 				"cpus": 2,
@@ -43,7 +18,9 @@
 					"id": "4xi4xliOnCsyNxWr",
 					"source_id": "capsule_aind_fip_nwb_base_capsule_10",
 					"type": "capsule",
-					"name": "aind-fip-nwb-base-capsule"
+					"name": "aind-fip-nwb-base-capsule",
+					"target_path": "fib_raw_nwb",
+					"collect": true
 				},
 				{
 					"id": "igacaEDRzylO5BS6",
@@ -56,7 +33,7 @@
 				}
 			],
 			"results": {
-				"id": "603a2149-6281-4a7b-bbd6-ff50ca0e064e",
+				"id": "26792844-1b2c-400d-8514-42d58028e5e5",
 				"source_path": "nwb"
 			}
 		},
@@ -66,21 +43,13 @@
 				"id": "e45742e4-7920-4985-ba36-262bc891377a",
 				"name": "aind-fip-nwb-base-capsule",
 				"slug": "0550370",
-				"version": 20
+				"version": 21
 			},
 			"resources": {
 				"cpus": 1,
 				"memory": 8
 			},
 			"inputs": [
-				{
-					"id": "6fXBc26LcMT5gcIN",
-					"source_id": "capsule_nwb_packaging_subject_capsule_1",
-					"type": "capsule",
-					"name": "NWB-Packaging-Subject-Capsule",
-					"target_path": "nwb",
-					"collect": true
-				},
 				{
 					"id": "djG6gHrBuu8yAY60",
 					"source_id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
@@ -98,11 +67,11 @@
 				"id": "3ae91e80-10b6-4659-814a-8afee9359a40",
 				"name": "aind-fip-qc-raw",
 				"slug": "8999280",
-				"version": 8
+				"version": 11
 			},
 			"resources": {
 				"cpus": 1,
-				"memory": 24
+				"memory": 8
 			},
 			"inputs": [
 				{
@@ -122,7 +91,7 @@
 				"id": "9110d5cb-2dd4-405d-b6e9-725dd04097f5",
 				"name": "aind-dynamic-foraging-qc",
 				"slug": "6533380",
-				"version": 7
+				"version": 8
 			},
 			"resources": {
 				"cpus": 1,
