@@ -1,4 +1,13 @@
-# 0.1.0 (2026-04-16)
+# [0.2.0](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/compare/v0.1.0...v0.2.0) (2026-04-29)
+
+
+### Features
+
+* add logging to cloudwatch and integrate multiple feature requests from DF team ([4435fab](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/commit/4435fab310fff167287ec6b2d3f2b091ae873bee))
+
+
+
+# [0.1.0](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/compare/8516a6659adbfd4dcd722b3d9a44dc4c677f51a6...v0.1.0) (2026-04-16)
 
 
 ### Bug Fixes
