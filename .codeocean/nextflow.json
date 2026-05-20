@@ -4,10 +4,11 @@
 		{
 			"name": "capsule_aind_fip_dff_9",
 			"capsule": {
-				"id": "603a2149-6281-4a7b-bbd6-ff50ca0e064e",
+				"id": "26792844-1b2c-400d-8514-42d58028e5e5",
 				"name": "aind-fip-dff",
-				"slug": "1001867",
-				"version": 16
+				"slug": "3526719",
+				"commit": "cbd4c501f2b15eb654defe484264fd1596a9020c",
+				"image_tag": "082d15501851b62c1c203bf5e9cbea39"
 			},
 			"resources": {
 				"cpus": 2,
@@ -43,7 +44,7 @@
 				"id": "e45742e4-7920-4985-ba36-262bc891377a",
 				"name": "aind-fip-nwb-base-capsule",
 				"slug": "0550370",
-				"version": 21
+				"version": 22
 			},
 			"resources": {
 				"cpus": 1,
