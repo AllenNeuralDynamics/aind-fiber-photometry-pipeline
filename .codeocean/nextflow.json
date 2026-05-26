@@ -7,7 +7,7 @@
 				"id": "603a2149-6281-4a7b-bbd6-ff50ca0e064e",
 				"name": "aind-fip-dff",
 				"slug": "1001867",
-				"version": 16
+				"version": 17
 			},
 			"resources": {
 				"cpus": 2,
@@ -43,7 +43,7 @@
 				"id": "e45742e4-7920-4985-ba36-262bc891377a",
 				"name": "aind-fip-nwb-base-capsule",
 				"slug": "0550370",
-				"version": 21
+				"version": 22
 			},
 			"resources": {
 				"cpus": 1,
