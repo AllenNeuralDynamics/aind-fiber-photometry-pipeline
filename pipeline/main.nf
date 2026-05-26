@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:b38f4621e6d8a0ab98fbc6fd568459bbffc62e4d8545512879425e087ba86dcc
+// hash:sha256:e9c52b5dde775f72e738124c47fe35047312f4d186719e30cf3a6141b06fc782
 
 nextflow.enable.dsl = 1
 
@@ -18,8 +18,8 @@ capsule_aind_fip_qc_raw_11_to_capsule_aind_generic_quality_control_evaluation_ag
 
 // capsule - aind-fip-dff
 process capsule_aind_fip_dff_9 {
-	tag 'capsule-3526719'
-	container "$REGISTRY_HOST/capsule/26792844-1b2c-400d-8514-42d58028e5e5:082d15501851b62c1c203bf5e9cbea39"
+	tag 'capsule-1001867'
+	container "$REGISTRY_HOST/published/603a2149-6281-4a7b-bbd6-ff50ca0e064e:v17"
 
 	cpus 2
 	memory '15 GB'
@@ -40,7 +40,7 @@ process capsule_aind_fip_dff_9 {
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=26792844-1b2c-400d-8514-42d58028e5e5
+	export CO_CAPSULE_ID=603a2149-6281-4a7b-bbd6-ff50ca0e064e
 	export CO_CPUS=2
 	export CO_MEMORY=16106127360
 
@@ -51,11 +51,10 @@ process capsule_aind_fip_dff_9 {
 
 	echo "[${task.tag}] cloning git repo..."
 	if [[ "\$(printf '%s\n' "2.20.0" "\$(git version | awk '{print \$3}')" | sort -V | head -n1)" = "2.20.0" ]]; then
-		git -c credential.helper= clone --filter=tree:0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-3526719.git" capsule-repo
+		git -c credential.helper= clone --filter=tree:0 --branch v17.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1001867.git" capsule-repo
 	else
-		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-3526719.git" capsule-repo
+		git -c credential.helper= clone --branch v17.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1001867.git" capsule-repo
 	fi
-	git -C capsule-repo checkout cbd4c501f2b15eb654defe484264fd1596a9020c --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
