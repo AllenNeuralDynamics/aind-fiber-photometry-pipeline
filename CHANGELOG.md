@@ -1,3 +1,12 @@
+## [0.3.1](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/compare/v0.3.0...v0.3.1) (2026-05-26)
+
+
+### Bug Fixes
+
+* adds capsules to fix a host of issues with data processing ([#22](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/issues/22)) ([90ab60d](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/commit/90ab60d033b8d3def249a8b50191a2f51700ed0f))
+
+
+
 # [0.3.0](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/compare/v0.2.0...v0.3.0) (2026-04-29)
 
 
