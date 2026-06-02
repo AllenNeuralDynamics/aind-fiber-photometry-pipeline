@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:e9c52b5dde775f72e738124c47fe35047312f4d186719e30cf3a6141b06fc782
+// hash:sha256:f13c75d6a9229b0e8dd0602464e295d33f56a8e57ad7ac31d03199050c66878e
 
 nextflow.enable.dsl = 1
 
@@ -24,7 +24,7 @@ process capsule_aind_fip_dff_9 {
 	cpus 2
 	memory '15 GB'
 
-	publishDir "$RESULTS_PATH", saveAs: { filename -> filename.matches("capsule/results/nwb") ? new File(filename).getName() : null }
+	publishDir "$RESULTS_PATH", mode: 'copy', saveAs: { filename -> filename.matches("capsule/results/nwb") ? new File(filename).getName() : null }
 
 	input:
 	path 'capsule/data/fib_raw_nwb/' from capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_fip_dff_9_1.collect()
@@ -70,7 +70,7 @@ process capsule_aind_fip_dff_9 {
 // capsule - aind-fip-nwb-base-capsule
 process capsule_aind_fip_nwb_base_capsule_10 {
 	tag 'capsule-0550370'
-	container "$REGISTRY_HOST/published/e45742e4-7920-4985-ba36-262bc891377a:v22"
+	container "$REGISTRY_HOST/published/e45742e4-7920-4985-ba36-262bc891377a:v23"
 
 	cpus 1
 	memory '7.5 GB'
@@ -98,9 +98,9 @@ process capsule_aind_fip_nwb_base_capsule_10 {
 
 	echo "[${task.tag}] cloning git repo..."
 	if [[ "\$(printf '%s\n' "2.20.0" "\$(git version | awk '{print \$3}')" | sort -V | head -n1)" = "2.20.0" ]]; then
-		git -c credential.helper= clone --filter=tree:0 --branch v22.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0550370.git" capsule-repo
+		git -c credential.helper= clone --filter=tree:0 --branch v23.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0550370.git" capsule-repo
 	else
-		git -c credential.helper= clone --branch v22.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0550370.git" capsule-repo
+		git -c credential.helper= clone --branch v23.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0550370.git" capsule-repo
 	fi
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
@@ -214,7 +214,7 @@ process capsule_aind_generic_quality_control_evaluation_aggregator_13 {
 	cpus 1
 	memory '12 GB'
 
-	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+	publishDir "$RESULTS_PATH", mode: 'copy', saveAs: { filename -> new File(filename).getName() }
 
 	input:
 	path 'capsule/data/alignment-qc' from capsule_aind_fip_nwb_base_capsule_10_to_capsule_aind_generic_quality_control_evaluation_aggregator_13_6
