@@ -1,3 +1,13 @@
+> # ⚠️ DEAD BRANCH: DO NOT USE
+>
+> **This `main` branch is abandoned and was never deployed to production** (it stopped at `v0.2.0`). Do not run any pipeline from this branch, and do not build further work on top of it. Anything here is stale and unsupported.
+>
+> **Why does this repo have both `main` and `master`?** `master` is the live, actively maintained branch and the repository's default: it holds the legacy combined Dynamic Foraging + fiber photometry pipeline (currently `v0.3.1`). `main` is older and was a paused, intermediate attempt to evolve this repo into a separate fiber-only pipeline; that work was never finished here. So despite the conventional name, **`main` is NOT the default branch and is not in use.**
+>
+> The fiber-only / new-standard effort ultimately moved to a separate repo, [`aind-fiber-photometry-harp-pipeline`](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-harp-pipeline).
+>
+> For the live pipeline and current documentation, use the [`master`](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/tree/master) branch.
+
 # Fiber Photometry processing pipeline
 
 The [fiber photometry pipeline](https://codeocean.allenneuraldynamics.org/capsule/5712553/tree) runs on [Nextflow](https://www.nextflow.io/) and contains the following steps:
