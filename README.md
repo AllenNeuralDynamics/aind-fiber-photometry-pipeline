@@ -1,3 +1,11 @@
+> # ⚠️ DEAD BRANCH: DO NOT USE
+>
+> **This `feat-fiber-only-new-file-standard` branch was never deployed to production.** It was prepared as a standalone fiber-only pipeline (with v1 metadata) that was never released, and it is now abandoned.
+>
+> **Do not run any pipeline from this branch, and do not build further work on top of it.** Anything here is stale and unsupported.
+>
+> For the live, production pipeline (the combined Dynamic Foraging + fiber photometry pipeline) and current documentation, use the [`master`](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/tree/master) branch instead.
+
 # Fiber Photometry processing pipeline
 This is a pipeline in development to process Fiber Photometry data adapted to a fiber acquisition standard defined here: [Fiber Photometry Acquisition Standard](https://github.com/AllenNeuralDynamics/aind-file-standards/blob/main/file_formats/fip.md). NOTE: The data currently attached to the pipeline is a subset of the standard defined, and is only meant for testing purposes. Currently is `fiber_standard` folder in the pipeline.
 
