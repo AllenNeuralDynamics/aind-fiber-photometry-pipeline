@@ -1,27 +1,26 @@
-# Fiber Photometry processing pipeline
+# Combined Dynamic Foraging + Fiber Photometry pipeline
 
-The [fiber photometry pipeline](https://codeocean.allenneuraldynamics.org/capsule/5712553/tree) runs on [Nextflow](https://www.nextflow.io/) and contains the following steps:
+> **Note on the name:** this GitHub repo is called `aind-fiber-photometry-pipeline`, but the Code Ocean pipeline it backs has been renamed to "Combined Dynamic Foraging + fiber pipeline". The repo name predates that rename and is kept as-is to avoid breaking existing links, clones, and references. It is the same pipeline.
 
-* [nwb-subject-capsule](https://github.com/AllenNeuralDynamics/aind-subject-nwb): This simple capsule is designed to create an NWB file with basic subject and session information.
+This is the **legacy** pipeline that processes both dynamic foraging behavior and fiber photometry data for Pavlovian and Dynamic Foraging tasks, acquired together on HARP/Bonsai-based behavior systems. These legacy systems will begin to be phased out starting June 2026. New fiber-only acquisition is handled by the successor repo, [`aind-fiber-photometry-harp-pipeline`](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-harp-pipeline).
 
-* [aind-fip-nwb-base-capsule](https://github.com/AllenNeuralDynamics/aind-fip-nwb-base-capsule): FiberPhotometry Capsule which appends to an NWB subject file. Adds behavior and FiberPhotometry information if present.
+The [pipeline](https://codeocean.allenneuraldynamics.org/capsule/1307799/tree) runs on [Nextflow](https://www.nextflow.io/) and contains the following steps:
+
+* [aind-fip-nwb-base-capsule](https://github.com/AllenNeuralDynamics/aind-fip-nwb-base-capsule): Fiber photometry capsule that creates the base NWB file. Adds behavior and fiber photometry information if present.
 
 * [aind-fip-dff](https://github.com/AllenNeuralDynamics/aind-fip-dff): Processes input NWB files containing raw fiber photometry data by generating baseline-corrected (ΔF/F) and motion-corrected traces, which are then appended back to the NWB file.
 
-* [aind-dynamic-foraging-qc](https://github.com/AllenNeuralDynamics/aind-dynamic-foraging-qc): QC capsule for dynamic foraging behavior (modality:behavior) raw data acquired together with HARP/Bonsai-based behavior
+* [aind-dynamic-foraging-qc](https://github.com/AllenNeuralDynamics/aind-dynamic-foraging-qc): QC capsule for dynamic foraging behavior (modality:behavior) raw data acquired together with HARP/Bonsai-based behavior.
 
-* [aind-fip-qc-raw](https://github.com/AllenNeuralDynamics/aind-fip-qc-raw): QC capsule for fiber photometry (modality:fib, device:fip) raw data acquired together with HARP/Bonsai-based behavior (e.g. Dynamic Foraging)
+* [aind-fip-qc-raw](https://github.com/AllenNeuralDynamics/aind-fip-qc-raw): QC capsule for fiber photometry (modality:fib, device:fip) raw data acquired together with HARP/Bonsai-based behavior (e.g. Dynamic Foraging).
 
-* [aind-generic-quality-control-evaluation-aggregator](https://github.com/AllenNeuralDynamics/aind-generic-quality-control-evaluation-aggregator): Combines QC outputs into one QC JSON
+* [aind-generic-quality-control-evaluation-aggregator](https://github.com/AllenNeuralDynamics/aind-generic-quality-control-evaluation-aggregator): Combines QC outputs into one QC JSON.
 
-It currently handles both behavior processing and fiber photometry processing for Pavlovian and Dynamic Foraging tasks but will eventually be split into dedicated pipelines for each.
-
-The (work in progress) Dynamic Foraging task pipeline can be seen here: [dynamic foraging pipeline](https://codeocean.allenneuraldynamics.org/capsule/2034050/tree)
 # Input
 
 Currently, the pipeline supports the following input data types:
 
-* `aind`: data ingestion used at AIND. The input folder must contain a subdirectory called `behavior` (for planar-ophys) which contains the json including behavior timestamps. If an "fib" folder is included, fiber data will also be packaged. The root directory must contain JSON files following [aind-data-schema](https://github.com/AllenNeuralDynamics/aind-data-schema).
+* `aind`: data ingestion used at AIND. The input folder must contain a `behavior` subdirectory holding the JSON with behavior timestamps. If an `fib` folder is included, fiber data will also be packaged. The root directory must contain JSON files following [aind-data-schema](https://github.com/AllenNeuralDynamics/aind-data-schema).
 
 ```plaintext
 📦data
@@ -36,18 +35,20 @@ Currently, the pipeline supports the following input data types:
 
 Tools used to read files in python are [h5py](https://pypi.org/project/h5py/), json and csv.
 
-* `aind`: The pipeline outputs are saved under the `results` top-level folder with JSON files following [aind-data-schema](https://github.com/AllenNeuralDynamics/aind-data-schema). Each field of view (plane) runs as a parallel process from motion-correction to event detection. The first subdirectory under `results` is named according to Allen Institute for Neural Dynamics standard for derived asset formatting. Below that folder, each field of view is named according to the anatomical region of imaging and the index (or plane number) it corresponds to. The index number is generated before processing in the session.json which details out the imaging configuration during acquisition. As the movies go through the processsing pipeline, a JSON file called processing.json is created where processing data from input parameters are appended. The final JSON will sit at the root of the `results` folder at the end of processing. 
+* `aind`: Pipeline outputs are written under the top-level `results` folder, with JSON files following [aind-data-schema](https://github.com/AllenNeuralDynamics/aind-data-schema). The single subdirectory under `results` is named according to the Allen Institute for Neural Dynamics standard for derived-asset formatting. Each step appends to a `processing.json` that records its input parameters; the final `processing.json` sits at the root of `results` at the end of the run, alongside the aggregated quality control JSON.
 
 ```plaintext
 📦results
  ┣ 📂behavior_MouseID_YYYY-MM-DD_HH-M-S
- ┃ ┣ 📂dff-qc
- ┃ ┣ 📂dynamic-foraging-qc
  ┃ ┣ 📂nwb
+ ┃ ┣ 📂dff-qc
+ ┃ ┣ 📂qc-raw
+ ┃ ┣ 📂dynamic-foraging-qc
+ ┃ ┣ 📂alignment-qc
  ┗ 📜processing.json
  ```
 
-The following files will be under the 'dff-qc' directory within the `results` folder (if there is fiber data to qc):
+The following files are written under the `dff-qc` directory (produced when fiber data is present):
 
 **`dff-qc`**
 
@@ -68,17 +69,7 @@ The following files will be under the 'dff-qc' directory within the `results` fo
  ```
 *Note: Prior to pipeline version 7, these files are indexed starting from 1, rather than 0. The version of the pipeline used to process each asset is present in the processing.json*
 
-The following files will be under the 'dynamic-foraging-qc' directory within the `results` folder (if there is fiber data to qc):
-
-**`dynamic-foraging-qc`**
-
-```plaintext
-📦dynamic-foraging-qc
- ┣ 📜lick_intervals.png
- ┣ 📜side_bias.png
- ```
-
-The following files will be under the 'qc-raw' directory within the `results` folder (if there is fiber data to qc):
+The following files are written under the `qc-raw` directory (produced when fiber data is present):
 
 **`qc-raw`**
 
@@ -92,13 +83,25 @@ The following files will be under the 'qc-raw' directory within the `results` fo
 ┣ 📜raw_traces.png
 ```
 
+The following files are written under the `dynamic-foraging-qc` directory (produced from the dynamic foraging behavior data):
+
+**`dynamic-foraging-qc`**
+
+```plaintext
+📦dynamic-foraging-qc
+ ┣ 📜lick_intervals.png
+ ┣ 📜side_bias.png
+ ```
+
+The `alignment-qc` directory holds alignment QC outputs from the NWB base packaging step (`aind-fip-nwb-base-capsule`).
+
 # Parameters
 
 No parameters are used for this pipeline
 
 # Run
 
-`aind` Runs in the Code Ocean pipeline [here](https://codeocean.allenneuraldynamics.org/capsule/7026342/tree). If a user has credentials for `aind` Code Ocean, the pipeline can be run using the [Code Ocean API](https://github.com/codeocean/codeocean-sdk-python). 
+`aind` runs in the Code Ocean pipeline [here](https://codeocean.allenneuraldynamics.org/capsule/1307799/tree). If a user has credentials for `aind` Code Ocean, the pipeline can be run using the [Code Ocean API](https://github.com/codeocean/codeocean-sdk-python).
 
 Derived from the example on the [Code Ocean API Github](https://github.com/codeocean/codeocean-sdk-python/blob/main/examples/run_pipeline.py)
 
@@ -110,7 +113,6 @@ from codeocean.computation import RunParams
 from codeocean.data_asset import (
     DataAssetParams,
     DataAssetsRunParam,
-    PipelineProcessParams,
     Source,
     ComputationSource,
     Target,
@@ -121,15 +123,17 @@ from codeocean.data_asset import (
 
 client = CodeOcean(domain=os.environ["CODEOCEAN_URL"], token=os.environ["API_TOKEN"])
 
-# Run a pipeline with ordered parameters.
+# Run the pipeline against a raw session data asset. The whole asset is mounted;
+# the capsules read the behavior/ and fib/ subfolders from it.
 
 run_params = RunParams(
     pipeline_id=os.environ["PIPELINE_ID"],
     data_assets=[
         DataAssetsRunParam(
-            id="eeefcc52-b445-4e3c-80c5-0e65526cd712",
-            mount="FIP",
+            id="<raw data asset id>",
+            mount="<raw data asset name>",
         ),
+    ],
 )
 
 computation = client.computations.run_capsule(run_params)
@@ -162,5 +166,3 @@ data_asset = client.data_assets.create_data_asset(data_asset_params)
 
 data_asset = client.data_assets.wait_until_ready(data_asset)
 ```
-
-
