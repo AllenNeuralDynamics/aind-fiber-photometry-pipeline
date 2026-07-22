@@ -1,3 +1,17 @@
+# [0.4.0](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/compare/v0.3.1...v0.4.0) (2026-07-22)
+
+
+### Bug Fixes
+
+* fix env var in df qc capsule ([#40](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/issues/40)) ([c783509](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/commit/c783509ecf9f9b26d7611216dc409f1b973e90e8))
+
+
+### Features
+
+* integrate new aind-fip-nwb-base-capsule release - v23.0 ([#29](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/issues/29)) ([2ba87e2](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/commit/2ba87e2483dfcd3eb56d5034ce414c2c080733b0))
+
+
+
 ## [0.3.1](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/compare/v0.3.0...v0.3.1) (2026-05-26)
 
 
