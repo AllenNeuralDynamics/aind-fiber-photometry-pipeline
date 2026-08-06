@@ -6,7 +6,7 @@ This is the **legacy** pipeline that processes both dynamic foraging behavior an
 
 The pipeline [link to latest release](https://codeocean.allenneuraldynamics.org/capsule/1307799/tree) runs on [Nextflow](https://www.nextflow.io/) and contains the following steps:
 
-* [aind-fip-nwb-base-capsule](https://github.com/AllenNeuralDynamics/aind-fip-nwb-base-capsule): Fiber photometry capsule that creates the base NWB file. Adds behavior and fiber photometry information if present.
+* [aind-fip-nwb-base-capsule](https://github.com/AllenNeuralDynamics/aind-fip-nwb-base-capsule): Capsule that creates the base NWB file. Adds behavior trial information and fiber photometry acquisition data if present.
 
 * [aind-fip-dff](https://github.com/AllenNeuralDynamics/aind-fip-dff): Processes input NWB files containing raw fiber photometry data by generating baseline-corrected (ΔF/F) and motion-corrected traces, which are then appended back to the NWB file.
 
