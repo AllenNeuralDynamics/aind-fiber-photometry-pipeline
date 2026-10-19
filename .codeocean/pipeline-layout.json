@@ -6,8 +6,8 @@
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-d46f8f0e-b8fe-41e1-8048-5d36d7460612-capsule_aind_fip_dff_9",
-			"source": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
+			"id": "reactflow__edge-bf67fa07-8f4c-4136-aa0d-94a9816b1bed-capsule_aind_fip_dff_9",
+			"source": "bf67fa07-8f4c-4136-aa0d-94a9816b1bed",
 			"target": "capsule_aind_fip_dff_9"
 		},
 		{
@@ -16,18 +16,18 @@
 			"target": "capsule_aind_fip_dff_9"
 		},
 		{
-			"id": "reactflow__edge-d46f8f0e-b8fe-41e1-8048-5d36d7460612-capsule_aind_fip_nwb_base_capsule_10",
-			"source": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
+			"id": "reactflow__edge-bf67fa07-8f4c-4136-aa0d-94a9816b1bed-capsule_aind_fip_nwb_base_capsule_10",
+			"source": "bf67fa07-8f4c-4136-aa0d-94a9816b1bed",
 			"target": "capsule_aind_fip_nwb_base_capsule_10"
 		},
 		{
-			"id": "reactflow__edge-d46f8f0e-b8fe-41e1-8048-5d36d7460612-capsule_aind_fip_qc_raw_11",
-			"source": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
+			"id": "reactflow__edge-bf67fa07-8f4c-4136-aa0d-94a9816b1bed-capsule_aind_fip_qc_raw_11",
+			"source": "bf67fa07-8f4c-4136-aa0d-94a9816b1bed",
 			"target": "capsule_aind_fip_qc_raw_11"
 		},
 		{
-			"id": "xy-edge__d46f8f0e-b8fe-41e1-8048-5d36d7460612-capsule_aind_dynamic_foraging_qc_12",
-			"source": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
+			"id": "xy-edge__bf67fa07-8f4c-4136-aa0d-94a9816b1bed-capsule_aind_dynamic_foraging_qc_12",
+			"source": "bf67fa07-8f4c-4136-aa0d-94a9816b1bed",
 			"target": "capsule_aind_dynamic_foraging_qc_12"
 		},
 		{
@@ -97,8 +97,8 @@
 			},
 			"id": "capsule_aind_fip_qc_raw_11",
 			"position": {
-				"x": -17.746394060971852,
-				"y": -519.2661886625133
+				"x": -769.9203618082579,
+				"y": -540.3993418585499
 			},
 			"selected": false,
 			"type": "capsule"
@@ -124,11 +124,11 @@
 				"x": 437.26132475415216,
 				"y": 79.49082401844782
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
-			"id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
+			"id": "bf67fa07-8f4c-4136-aa0d-94a9816b1bed",
 			"position": {
 				"x": 471.6896546478007,
 				"y": -781.9799396059922
@@ -136,5 +136,10 @@
 			"type": "dataset"
 		}
 	],
-	"timestamp": 1780442078928
+	"timestamp": 1792374142354,
+	"viewport": {
+		"x": -48.67313012948557,
+		"y": -13.492121049760499,
+		"zoom": 0.8517422758935864
+	}
 }
