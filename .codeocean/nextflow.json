@@ -7,7 +7,7 @@
 				"id": "603a2149-6281-4a7b-bbd6-ff50ca0e064e",
 				"name": "aind-fip-dff",
 				"slug": "1001867",
-				"version": 17
+				"version": 18
 			},
 			"resources": {
 				"cpus": 2,
@@ -24,7 +24,7 @@
 				},
 				{
 					"id": "igacaEDRzylO5BS6",
-					"source_id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
+					"source_id": "bf67fa07-8f4c-4136-aa0d-94a9816b1bed",
 					"type": "dataset",
 					"name": "FIP",
 					"source_path": "FIP/",
@@ -43,7 +43,7 @@
 				"id": "e45742e4-7920-4985-ba36-262bc891377a",
 				"name": "aind-fip-nwb-base-capsule",
 				"slug": "0550370",
-				"version": 23
+				"version": 24
 			},
 			"resources": {
 				"cpus": 1,
@@ -52,7 +52,7 @@
 			"inputs": [
 				{
 					"id": "djG6gHrBuu8yAY60",
-					"source_id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
+					"source_id": "bf67fa07-8f4c-4136-aa0d-94a9816b1bed",
 					"type": "dataset",
 					"name": "FIP",
 					"source_path": "FIP/",
@@ -77,7 +77,7 @@
 			"inputs": [
 				{
 					"id": "5YoLyCJQBb81zX2Z",
-					"source_id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
+					"source_id": "bf67fa07-8f4c-4136-aa0d-94a9816b1bed",
 					"type": "dataset",
 					"name": "FIP",
 					"source_path": "FIP/",
@@ -101,7 +101,7 @@
 			"inputs": [
 				{
 					"id": "RqSqPZAqU3WB1FcN",
-					"source_id": "d46f8f0e-b8fe-41e1-8048-5d36d7460612",
+					"source_id": "bf67fa07-8f4c-4136-aa0d-94a9816b1bed",
 					"type": "dataset",
 					"name": "FIP",
 					"source_path": "FIP/",
@@ -116,11 +116,11 @@
 				"id": "03b3acfd-fdef-46b0-ad80-50e9d4e00827",
 				"name": "aind-generic-quality-control-evaluation-aggregator",
 				"slug": "5290719",
-				"version": 1
+				"version": 4
 			},
 			"resources": {
 				"cpus": 1,
-				"memory": 12
+				"memory": 8
 			},
 			"inputs": [
 				{
