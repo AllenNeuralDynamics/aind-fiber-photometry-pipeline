@@ -116,7 +116,7 @@
 				"id": "03b3acfd-fdef-46b0-ad80-50e9d4e00827",
 				"name": "aind-generic-quality-control-evaluation-aggregator",
 				"slug": "5290719",
-				"version": 4
+				"version": 1
 			},
 			"resources": {
 				"cpus": 1,
