@@ -1,3 +1,12 @@
+## [0.5.1](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/compare/v0.5.0...v0.5.1) (2026-10-23)
+
+
+### Bug Fixes
+
+* trigger patch release for capsule update in [#44](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/issues/44) ([#45](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/issues/45)) ([376ba65](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/commit/376ba65f9855293c630b64d97ffc6a109d077d7e))
+
+
+
 # [0.5.0](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/compare/v0.4.0...v0.5.0) (2026-07-27)
 
 
@@ -36,15 +45,6 @@
 ### Features
 
 * merge from main to integrate logging and other DF features - change release to bump version on master, not main ([6307e7c](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/commit/6307e7c3e2b849cdceeca62bb8dd10ac66b60715))
-
-
-
-# [0.2.0](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/compare/v0.1.0...v0.2.0) (2026-04-29)
-
-
-### Features
-
-* add logging to cloudwatch and integrate multiple feature requests from DF team ([4435fab](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/commit/4435fab310fff167287ec6b2d3f2b091ae873bee))
 
 
 
