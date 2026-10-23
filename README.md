@@ -163,3 +163,4 @@ print(computation.state, computation.end_status)
 ```
 
 Registering the results as a derived data asset (the `<input>_processed_<timestamp>` asset, with correct provenance and metadata) is handled by AIND's automation capsule, not by a hand-written `create_data_asset` call. See [`asset-creation-capsule`](https://github.com/AllenNeuralDynamics/asset-creation-capsule) for the sanctioned registration path.
+
