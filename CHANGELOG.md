@@ -1,3 +1,12 @@
+# [0.6.0](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/compare/v0.5.1...v0.6.0) (2026-11-05)
+
+
+### Features
+
+* use latest released nwb-base and dff capsules ([#47](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/issues/47)) ([42c7970](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/commit/42c7970de090ed80a0f26bdc055add9c73115e4c))
+
+
+
 ## [0.5.1](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/compare/v0.5.0...v0.5.1) (2026-10-23)
 
 
@@ -36,15 +45,6 @@
 ### Bug Fixes
 
 * adds capsules to fix a host of issues with data processing ([#22](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/issues/22)) ([90ab60d](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/commit/90ab60d033b8d3def249a8b50191a2f51700ed0f))
-
-
-
-# [0.3.0](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/compare/v0.2.0...v0.3.0) (2026-04-29)
-
-
-### Features
-
-* merge from main to integrate logging and other DF features - change release to bump version on master, not main ([6307e7c](https://github.com/AllenNeuralDynamics/aind-fiber-photometry-pipeline/commit/6307e7c3e2b849cdceeca62bb8dd10ac66b60715))
 
 
 
